@@ -1,0 +1,1 @@
+{include file="addons/discussion/views/discussion/view.tpl" object_id=$page.page_id object_type="A" title=__("discussion_title_page") wrap=true post_redirect_url="pages.view?page_id=`$page.page_id`#content_discussion"|fn_url}

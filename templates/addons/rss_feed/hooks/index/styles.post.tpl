@@ -1,0 +1,1 @@
+{style src="addons/rss_feed/styles.less"}

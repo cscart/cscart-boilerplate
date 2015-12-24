@@ -1,0 +1,1 @@
+{script src="js/addons/google_analytics/google_analytics.js"}

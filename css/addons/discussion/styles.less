@@ -1,0 +1,115 @@
+/*==================================
+=            Discussion            =
+==================================*/
+
+/* Template: templates/addons/discussion/views/discussion/view.tpl */
+.scroller-discussion-list {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.discussion-post-content {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.scroller-discussion-list-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.discussion-post {
+    position: relative;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid @base;
+}
+
+.discussion-rating-wrapper {
+    margin: 10px 0;
+}
+
+.stars,
+.discussion-review-a,
+.discussion-review-write {
+    display: inline-block;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.stars a:hover {
+    text-decoration: none;
+}
+
+.product-list-rating {
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
+
+.product-list-rating .stars {
+    margin-right: 0;
+}
+
+/* Company rating */
+.companies .stars {
+    display: block;
+    margin: 5px 0 0;
+}
+
+/* Rate stars */
+/* Template: templates/addons/discussion/views/discussion/components/rate.tpl */
+
+.rating {
+    float:left;
+}
+
+.rating-label {
+    display: inline-block;
+}
+
+.rating:not(:checked) > .rating-check {
+    position: absolute;
+    left: -9999px;
+    clip: rect(0,0,0,0);
+}
+
+.rating:not(:checked) > .rating-label {
+    float: right;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 100%;
+    line-height: 1.2;
+    margin-right: 2px;
+}
+
+.rating:not(:checked) > .rating-label:before {
+    font-family: 'Glyphicons Halflings';
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    content: "\e007";
+}
+
+.rating:not(:checked) > .rating-label:hover:before,
+.rating:not(:checked) > .rating-label:hover ~ .rating-label:before {
+    content: "\e006";
+}
+
+.rating > .rating-check:checked ~ .rating-label:before,
+.rating > .rating-check:checked + .rating-label:hover:before,
+.rating > .rating-check:checked + .rating-label:hover ~ .rating-label:before,
+.rating > .rating-check:checked ~ .rating-label:hover:before,
+.rating > .rating-check:checked ~ .rating-label:hover ~ .rating-label:before,
+.rating > .rating-label:hover ~ .rating-check:checked ~ .rating-label:before {
+    content: "\e006";
+}
+/* /Rate stars */
+
+.template-small-item-description .stars {
+    display: block;
+}
+
+/*=====  End of Discussion  ======*/

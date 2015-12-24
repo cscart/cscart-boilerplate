@@ -1,0 +1,1 @@
+{style src="addons/blog/styles.less"}

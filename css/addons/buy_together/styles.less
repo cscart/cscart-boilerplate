@@ -1,0 +1,72 @@
+/*====================================
+=            Buy together            =
+====================================*/
+
+.buy-together-products {
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.buy-together-products > div[class^='col-'] {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.buy-together-products > div[class^='col-']:after {
+    content: "+";
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 25%;
+    right: -10%;
+    font-size: 40px;
+    color: #777;
+}
+
+.buy-together-products > div[class^='col-']:last-child:after {
+    display: none;
+}
+
+.buy-together-product {
+    min-height: 300px;
+    text-align: center;
+}
+
+.buy-together-product-name,
+.buy-together-product-options,
+.buy-together-product-price {
+    margin-bottom: 10px;
+}
+
+.buy-together-product-image {
+    margin-bottom: 20px;
+}
+
+.buy-together-product-name {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.buy-together-price {
+    border-top: 1px solid #DDD;
+    padding-top: 20px;
+}
+
+.cart-items__list-item-desc {
+    overflow: hidden;
+}
+
+.buy-together-cart-items-list {
+    margin-left: 25px;
+    padding-left: 30px;
+    border-left: 1px solid #CCC;
+}
+
+.buy-together-cart-items-list li {
+    margin-bottom: 10px;
+}
+/*=====  End of Buy together  ======*/

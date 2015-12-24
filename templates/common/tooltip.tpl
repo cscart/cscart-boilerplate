@@ -1,0 +1,1 @@
+{if $tooltip} <span class="tooltip-block"><a class="cm-tooltip{if $params} {$params}{/if}" title="{$tooltip}"><i class="glyphicon glyphicon-question-sign fa fa-question-circle"></i></a></span>{/if}

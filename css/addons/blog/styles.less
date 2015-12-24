@@ -1,0 +1,106 @@
+/*============================
+=            Blog            =
+============================*/
+
+.blog-item {
+    border-bottom: 1px solid @base;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.blog,
+.blog-grid {
+    img {
+        width: auto;
+        max-width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .blog-img-block {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        img {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .page-header {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    ul.post-info > li {
+        border-right: 1px solid #adadad;
+        padding-right: 10px;
+        color: #adadad;
+        font-size: 12px;
+        
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
+/*----------  Template: templates/addons/blog/blocks/text_links.tpl  ----------*/
+
+.blog-resent-post li {
+    margin-bottom: 5px;
+}
+
+/* Recent Posts Scroller */
+.blog-recent-posts-scroller {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.blog-recent-item {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    .blog-date {
+        display: block;
+        margin-bottom: 0;
+        margin-top: 5px;
+        color: #adadad;
+        font-size: 12px;
+    }
+}
+
+.blog-recent-scroller {
+    margin-bottom: 10px;
+    max-height: 150px;
+    min-height: 150px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    
+    img {
+        display: block;
+        bottom: -100%;
+        max-width: 100%;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: -100%;
+        vertical-align: middle;
+    }
+    .no-image {
+        height: 150px;
+        min-height: initial !important;
+        min-width: initial !important;
+    }
+}
+
+/*=====  End of Blog  ======*/

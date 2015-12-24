@@ -1,0 +1,1 @@
+{style src="addons/form_builder/styles.less"}
