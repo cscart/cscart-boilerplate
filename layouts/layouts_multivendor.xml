@@ -2007,7 +2007,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="6" user_class="vendor-stores-title" linked_to_default="N" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+        <grid width="5" user_class="vendor-stores-title" linked_to_default="N" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
           <blocks>
             <block>
               <type><![CDATA[smarty_block]]></type>
@@ -2042,7 +2042,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="5" user_class="cart-content-grid col-md-2 col-sm-2" linked_to_default="N" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="RIGHT" html_element="div" clear="1">
+        <grid width="4" user_class="cart-content-grid col-md-2 col-sm-2" linked_to_default="N" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="RIGHT" html_element="div" clear="1">
           <blocks>
             <block>
               <type><![CDATA[cart_content]]></type>
@@ -2095,7 +2095,7 @@
               </block>
             </blocks>
           </grid>
-          <grid width="6" user_class="col-md-6 col-sm-6" linked_to_default="N" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+          <grid width="5" user_class="col-md-5 col-sm-5" linked_to_default="N" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
             <blocks>
               <block>
                 <type><![CDATA[vendor_search]]></type>
@@ -2119,7 +2119,7 @@
               </block>
             </blocks>
           </grid>
-          <grid width="6" user_class="vendor-information-grid" linked_to_default="N" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+          <grid width="4" user_class="vendor-information-grid col-md-4 col-sm-4" linked_to_default="N" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
             <blocks>
               <block>
                 <type><![CDATA[vendor_information]]></type>
@@ -2284,7 +2284,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="12" user_class="main-content-grid" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+        <grid width="9" user_class="main-content-grid" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
           <blocks>
             <block>
               <type><![CDATA[main]]></type>
