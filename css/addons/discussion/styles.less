@@ -22,7 +22,7 @@
     position: relative;
     margin: 10px 0;
     padding: 15px;
-    border: 1px solid @base;
+    border: 1px solid #DDD;
 }
 
 .discussion-rating-wrapper {
@@ -86,30 +86,31 @@
     margin-right: 2px;
 }
 
-.rating:not(:checked) > .rating-label:before {
-    font-family: 'Glyphicons Halflings';
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    content: "\e007";
+.rating-label .glyphicon-star,
+.rating-label .glyphicon-star-empty {
+    display: none;
 }
 
-.rating:not(:checked) > .rating-label:hover:before,
-.rating:not(:checked) > .rating-label:hover ~ .rating-label:before {
-    content: "\e006";
-}
-
-.rating > .rating-check:checked ~ .rating-label:before,
-.rating > .rating-check:checked + .rating-label:hover:before,
-.rating > .rating-check:checked + .rating-label:hover ~ .rating-label:before,
-.rating > .rating-check:checked ~ .rating-label:hover:before,
-.rating > .rating-check:checked ~ .rating-label:hover ~ .rating-label:before,
-.rating > .rating-label:hover ~ .rating-check:checked ~ .rating-label:before {
-    content: "\e006";
-}
-/* /Rate stars */
-
-.template-small-item-description .stars {
+.rating:not(:checked) > .rating-label .glyphicon-star-empty {
     display: block;
+}
+
+.rating:not(:checked) > .rating-label:hover,
+.rating:not(:checked) > .rating-label:hover ~ .rating-label,
+.rating > .rating-check:checked ~ .rating-label,
+.rating > .rating-check:checked + .rating-label:hover,
+.rating > .rating-check:checked + .rating-label:hover ~ .rating-label,
+.rating > .rating-check:checked ~ .rating-label:hover,
+.rating > .rating-check:checked ~ .rating-label:hover ~ .rating-label,
+.rating > .rating-label:hover ~ .rating-check:checked ~ .rating-label {
+    
+    .glyphicon-star-empty {
+        display: none;
+    }
+
+    .glyphicon-star {
+        display: block;
+    }
 }
 
 /*=====  End of Discussion  ======*/
