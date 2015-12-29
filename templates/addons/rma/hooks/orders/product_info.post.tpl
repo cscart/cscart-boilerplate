@@ -3,7 +3,7 @@
     <div>
         <a class="cm-combination combination-link" id="sw_ret_{$key}">
             <i title="{__("expand_sublist_of_items")}" id="on_ret_{$key}" class="glyphicon glyphicon-triangle-right fa fa-angle-right dir-list"></i>
-            <i title="{__("collapse_sublist_of_items")}" id="off_ret_{$key}" class="glyphicon glyphicon-triangle-down fa fa-angle-down hidden"></i>{__("returns_info")}
+            <i title="{__("collapse_sublist_of_items")}" id="off_ret_{$key}" class="glyphicon glyphicon-triangle-bottom fa fa-angle-down hidden"></i>{__("returns_info")}
         </a>
     </div>
     <div class="hidden" id="ret_{$key}">

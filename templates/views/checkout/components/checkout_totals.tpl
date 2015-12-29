@@ -21,11 +21,11 @@
                     {hook name="checkout:payment_extra"}
                     {/hook}
                 </div>
-                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    {hook name="checkout:payment_options"}
+                    {/hook}
+                </div>
             {/if}
-            
-            {hook name="checkout:payment_options"}
-            {/hook}
 
             <div class="col-lg-4 text-right">
                 <dl class="cart-statistic dl-horizontal">
