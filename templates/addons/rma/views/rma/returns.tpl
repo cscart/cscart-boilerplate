@@ -8,7 +8,7 @@
 
 {assign var="c_url" value=$config.current_url|fn_query_remove:"sort_by":"sort_order"}
 {if $search.sort_order == "asc"}
-{assign var="sort_sign" value="<i class=\"glyphicon glyphicon-triangle-top fa fa-caret-top\"></i>"}
+{assign var="sort_sign" value="<i class=\"glyphicon glyphicon-triangle-top fa fa-caret-up\"></i>"}
 {else}
 {assign var="sort_sign" value="<i class=\"glyphicon glyphicon-triangle-bottom fa fa-caret-down\"></i>"}
 {/if}
