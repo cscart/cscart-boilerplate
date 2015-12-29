@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block_scheme scheme="1.0">
+    <settings>
+        <clean />
+        <default_language>en</default_language>
+    </settings>
+    <location dispatch="gift_certificates" is_default="0" lang_code="en" name="Gift certificates" title="" meta_description="" meta_keywords="" position="130">
+        <containers>
+            <container position="TOP_PANEL" width="12" />
+
+            <container position="HEADER" width="12" />
+
+            <container position="CONTENT" width="12" user_class="content-grid">
+                <grid width="12" offset="0" user_class="breadcrumbs-grid" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[breadcrumbs]]></type>
+                            <properties>
+                                <template><![CDATA[common/breadcrumbs.tpl]]></template>
+                            </properties>
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Breadcrumbs]]></name>
+                            <object_id><![CDATA[0]]></object_id>
+                            <object_type />
+                            <content />
+                            <object_ids />
+                            <wrapper />
+                            <user_class />
+                            <order><![CDATA[0]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations />
+                        </block>
+                    </blocks>
+                </grid>
+                <grid width="8" offset="0" user_class="main-content-grid" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[main]]></type>
+                            <properties />
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Main Content]]></name>
+                            <object_id><![CDATA[0]]></object_id>
+                            <object_type />
+                            <content />
+                            <object_ids />
+                            <wrapper><![CDATA[blocks/wrappers/mainbox_general.tpl]]></wrapper>
+                            <user_class />
+                            <order><![CDATA[0]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations />
+                        </block>
+                    </blocks>
+                </grid>
+                <grid width="4" offset="0" user_class="certificates-verify-grid" omega="1" alpha="0" wrapper="" content_align="RIGHT" html_element="div" clear="0">
+                    <blocks>
+                        <block>
+                            <type><![CDATA[gift_certificates_verify]]></type>
+                            <properties>
+                                <template><![CDATA[addons/gift_certificates/blocks/gift_certificates_verify.tpl]]></template>
+                            </properties>
+                            <lang_code><![CDATA[en]]></lang_code>
+                            <name><![CDATA[Gift certificate verification]]></name>
+                            <object_id><![CDATA[0]]></object_id>
+                            <object_type><![CDATA[]]></object_type>
+                            <content><![CDATA[]]></content>
+                            <object_ids><![CDATA[]]></object_ids>
+                            <wrapper><![CDATA[]]></wrapper>
+                            <user_class><![CDATA[]]></user_class>
+                            <order><![CDATA[0]]></order>
+                            <status><![CDATA[A]]></status>
+                            <translations>
+                                <translation lang_code="ru">Проверка подарочного сертификата</translation>
+                                <translation lang_code="zh">检查礼卷</translation>
+                            </translations>
+                        </block>
+                    </blocks>
+                </grid>
+            </container>
+
+            <container position="FOOTER" width="12" />
+        </containers>
+        <translations>
+            <translation lang_code="ru">
+                <meta_keywords><![CDATA[]]></meta_keywords>
+                <page_title><![CDATA[]]></page_title>
+                <meta_description><![CDATA[]]></meta_description>
+                <name>Подарочные сертификаты</name>
+            </translation>
+            <translation lang_code="zh">
+                <meta_keywords><![CDATA[]]></meta_keywords>
+                <page_title><![CDATA[]]></page_title>
+                <meta_description><![CDATA[]]></meta_description>
+                <name>礼券</name>             
+            </translation>
+        </translations>
+    </location>
+</block_scheme>

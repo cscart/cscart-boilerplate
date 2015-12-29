@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<block_scheme scheme="1.0">
+  <settings>
+    <default_language>en</default_language>
+  </settings>
+  <location dispatch="pages.view?page_type=B" is_default="0" layout_id="1" object_ids="" custom_html="" position="170" lang_code="en" name="Blog" title="" meta_description="" meta_keywords="">
+    <containers>
+      <container container_id="97" location_id="25" position="TOP_PANEL" width="12" user_class="" linked_to_default="Y" status="A"/>
+      <container container_id="98" location_id="25" position="HEADER" width="12" user_class="" linked_to_default="Y" status="A"/>
+      <container container_id="99" location_id="25" position="CONTENT" width="12" user_class="" linked_to_default="Y" status="A">
+        <grid width="12" user_class="" linked_to_default="Y" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+          <blocks>
+            <block>
+              <type><![CDATA[breadcrumbs]]></type>
+              <properties>
+                <template><![CDATA[common/breadcrumbs.tpl]]></template>
+              </properties>
+              <lang_code><![CDATA[en]]></lang_code>
+              <name><![CDATA[Breadcrumbs]]></name>
+              <object_type><![CDATA[]]></object_type>
+              <content><![CDATA[]]></content>
+              <object_ids><![CDATA[]]></object_ids>
+              <wrapper><![CDATA[]]></wrapper>
+              <user_class><![CDATA[]]></user_class>
+              <order><![CDATA[0]]></order>
+              <status><![CDATA[A]]></status>
+              <translations/>
+              <contents/>
+            </block>
+          </blocks>
+        </grid>
+        <grid width="9" user_class="ty-blog-grid" linked_to_default="Y" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+          <blocks>
+            <block>
+              <type><![CDATA[main]]></type>
+              <properties><![CDATA[]]></properties>
+              <lang_code><![CDATA[en]]></lang_code>
+              <name><![CDATA[Main Content]]></name>
+              <object_type><![CDATA[]]></object_type>
+              <content><![CDATA[]]></content>
+              <object_ids><![CDATA[]]></object_ids>
+              <wrapper><![CDATA[blocks/wrappers/mainbox_general.tpl]]></wrapper>
+              <user_class><![CDATA[]]></user_class>
+              <order><![CDATA[0]]></order>
+              <status><![CDATA[A]]></status>
+              <translations/>
+              <contents/>
+            </block>
+          </blocks>
+        </grid>
+        <grid width="3" user_class="" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+          <blocks>
+            <block>
+              <type><![CDATA[blog]]></type>
+              <properties>
+                <template><![CDATA[addons/blog/blocks/recent_posts.tpl]]></template>
+              </properties>
+              <lang_code><![CDATA[en]]></lang_code>
+              <name><![CDATA[Recent posts]]></name>
+              <object_type><![CDATA[]]></object_type>
+              <content>
+                <items>
+                  <filling><![CDATA[blog.recent_posts]]></filling>
+                  <period><![CDATA[A]]></period>
+                  <last_days><![CDATA[1]]></last_days>
+                  <limit><![CDATA[3]]></limit>
+                </items>
+              </content>
+              <object_ids><![CDATA[]]></object_ids>
+              <wrapper><![CDATA[blocks/wrappers/sidebox_general.tpl]]></wrapper>
+              <user_class><![CDATA[]]></user_class>
+              <order><![CDATA[0]]></order>
+              <status><![CDATA[A]]></status>
+              <translations>
+                <translation lang_code="ru">Недавнее</translation>
+              </translations>
+              <contents/>
+            </block>
+          </blocks>
+        </grid>
+      </container>
+      <container container_id="100" location_id="25" position="FOOTER" width="12" user_class="" linked_to_default="Y" status="A"/>
+    </containers>
+    <translation lang_code="ru">
+        <meta_keywords><![CDATA[]]></meta_keywords>
+        <page_title><![CDATA[]]></page_title>
+        <meta_description><![CDATA[]]></meta_description>
+        <name>Блог</name>
+    </translation>
+  </location>
+</block_scheme>
