@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="compare-products-item">
-                                {include file="blocks/list_templates/simple_list.tpl" min_qty=true product=$product show_add_to_cart=true but_role="action" hide_price=true}
+                                {include file="blocks/list_templates/simple_list.tpl" min_qty=true product=$product show_add_to_cart=true but_role="action" hide_price=true quantity_text=__('qty')}
                             </div>
                         </div>
                     </td>

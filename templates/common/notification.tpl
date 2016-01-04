@@ -15,7 +15,7 @@
                 {$message.message nofilter}
             </div>
         {else}
-            <div class="cm-notification-content alert {if $message.message_state == "I"} cm-auto-hide{/if} {if $message.type == "N"}alert-success{elseif $message.type == "W"}alert-warning{/if}" data-ca-notification-key="{$key}">
+            <div class="cm-notification-content alert alert-danger {if $message.message_state == "I"} cm-auto-hide{/if} {if $message.type == "N"}alert-success{elseif $message.type == "W"}alert-warning{/if}" data-ca-notification-key="{$key}">
                 <button type="button" class="close cm-notification-close {if $message.message_state == "S"} cm-notification-close-ajax{/if}" {if $message.message_state != "S"}data-dismiss="alert"{/if}>&times;</button>
                 <strong>{$message.title}</strong>
                 {$message.message nofilter}

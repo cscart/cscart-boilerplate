@@ -152,7 +152,7 @@
 
                 {if  !$hide_compare_list_button}
                     {$c_url = $redirect_url|default:$config.current_url|escape:url}
-                    {include file="common/button.tpl" text=__("add_to_comparison_list") href="product_features.add_product?product_id=`$product.product_id`&redirect_url=$c_url" target_id="comparison_list,account_info*" meta="add-to-compare $ajax_class" rel="nofollow"}
+                    {include file="common/button.tpl" text=__("add_to_comparison_list") href="product_features.add_product?product_id=`$product.product_id`&redirect_url=$c_url" target_id="comparison_list,account_info*" meta="add-to-compare btn-default $ajax_class" rel="nofollow"}
                 {/if}
                 
             {/if}
@@ -456,20 +456,22 @@
                 </select>
                 {else}
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7 cm-value-changer">
-                    <div class="input-group quantity-bar">
-                        <span class="input-group-btn">
-                            {if $settings.Appearance.quantity_changer == "Y"}
-                                <a class="btn btn-default cm-increase">&#43;</a>
-                            {/if}
-                        </span>
-                        <input type="text" size="5" class="form-control cm-amount" id="qty_count_{$obj_prefix}{$obj_id}" name="product_data[{$obj_id}][amount]" value="{$default_amount}"{if $product.qty_step > 1} data-ca-step="{$product.qty_step}"{/if} data-ca-min-qty="1" />
-                        <span class="input-group-btn">
-                            {if $settings.Appearance.quantity_changer == "Y"}
-                                <a class="cm-decrease btn btn-default">&minus;</a>
-                            {/if}
-                        </span>
-                    </div>
                     
+                    <div class="input-group spinner btn-bar">
+                        <input type="text" size="5" class="form-control cm-amount" id="qty_count_{$obj_prefix}{$obj_id}" name="product_data[{$obj_id}][amount]" value="{$default_amount}"{if $product.qty_step > 1} data-ca-step="{$product.qty_step}"{/if} data-ca-min-qty="1" />
+
+                        {if $settings.Appearance.quantity_changer == "Y"}
+                        <div class="input-group-btn-vertical">
+                            <a class="btn btn-default cm-increase">
+                                <i class="glyphicon glyphicon-triangle-top fa fa-caret-up"></i>
+                            </a>
+                            
+                            <a class="btn btn-default cm-decrease">
+                                <i class="glyphicon glyphicon-triangle-bottom fa fa-caret-down"></i>
+                            </a>
+                        </div>
+                        {/if}
+                    </div>
                 </div>
                 {/if}
             </div>

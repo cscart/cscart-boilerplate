@@ -16,16 +16,6 @@
 {/if}
 
 {assign var="obj_prefix" value="`$block.block_id`000"}
-{if $block.properties.outside_navigation == "Y"}
-    <div class="owl-theme owl-controls">
-        <div class="owl-controls clickable owl-controls-outside"  id="owl_outside_nav_{$block.block_id}">
-            <div class="owl-buttons">
-                <div id="owl_prev_{$obj_prefix}" class="owl-prev"><i class="glyphicon glyphicon-menu-left fa fa-angle-left"></i></div>
-                <div id="owl_next_{$obj_prefix}" class="owl-next"><i class="glyphicon glyphicon-menu-right fa fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-{/if}
 
 <div id="scroll_list_{$block.block_id}" class="owl-carousel scroller-list">
     {foreach from=$items item="product" name="for_products"}
@@ -48,5 +38,16 @@
         {/hook}
     {/foreach}
 </div>
+
+{if $block.properties.outside_navigation == "Y"}
+    <div class="owl-theme owl-controls">
+        <div class="owl-controls clickable owl-controls-outside"  id="owl_outside_nav_{$block.block_id}">
+            <div class="owl-buttons">
+                <div id="owl_prev_{$obj_prefix}" class="owl-prev"><i class="glyphicon glyphicon-menu-left fa fa-angle-left"></i></div>
+                <div id="owl_next_{$obj_prefix}" class="owl-next"><i class="glyphicon glyphicon-menu-right fa fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+{/if}
 
 {include file="common/scroller_init.tpl" prev_selector="#owl_prev_`$obj_prefix`" next_selector="#owl_next_`$obj_prefix`"}
