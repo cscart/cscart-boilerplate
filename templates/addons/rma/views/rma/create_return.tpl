@@ -4,13 +4,15 @@
     <input name="user_id" type="hidden" value="{$order_info.user_id}" />
 
     {if $actions}
-        <div class="rma-register-actions">
-            <strong>{__("what_you_would_like_to_do")}:</strong>
-            <select class="form-control" name="action">
-                {foreach from=$actions item="action" key="action_id"}
-                    <option value="{$action_id}">{$action.property}</option>
-                {/foreach}
-            </select>
+        <div class="rma-register-actions row">
+            <label class="form-label col-lg-12">{__("what_you_would_like_to_do")}:</label>
+            <div class="col-lg-4">
+                <select class="form-control" name="action">
+                    {foreach from=$actions item="action" key="action_id"}
+                        <option value="{$action_id}">{$action.property}</option>
+                    {/foreach}
+                </select>
+            </div>
         </div>
     {/if}
     

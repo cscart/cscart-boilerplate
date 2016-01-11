@@ -46,7 +46,7 @@
 {** /RETURN PRODUCTS SECTION **}
 
 {** DECLINED PRODUCTS SECTION **}
-    <div id="content_declined_products" class="hidden tab-pane">
+    <div id="content_declined_products" class="tab-pane">
         {if $return_info.items[$smarty.const.RETURN_PRODUCT_DECLINED]}
         <table class="table rma-detail-table">
         <thead>
