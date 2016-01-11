@@ -5,7 +5,7 @@
         {__("points_in_use")}&nbsp;({__("points_lowercase", [$cart.points_info.in_use.points])})
     </dt>
     <dd>
-        {include file="common/button.tpl" href="checkout.delete_points_in_use?redirect_url=`$_redirect_url`" meta="cm-post btn-xs" icon="glyphicon-remove-sign fa fa-times-circle-o" target_id="checkout_totals,subtotal_price_in_points,checkout_steps`$additional_ids`"}
+        {include file="common/button.tpl" href="checkout.delete_points_in_use?redirect_url=`$_redirect_url`" meta="cm-post btn-xs" icon="glyphicon-remove fa fa-times-circle-o" target_id="checkout_totals,subtotal_price_in_points,checkout_steps`$additional_ids`"}
     </dd>
 {/if}
 
