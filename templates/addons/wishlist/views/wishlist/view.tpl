@@ -21,7 +21,7 @@
         is_wishlist=true}
 {else}
     {math equation="100 / x" x=$columns|default:"2" assign="cell_width"}
-    <div class="grid-list{if $wishlist_is_empty} wish-list-empty{/if}">
+    <div class="grid-list clearfix {if $wishlist_is_empty} wish-list-empty{/if}">
         {assign var="iteration" value=0}
         {capture name="iteration"}{$iteration}{/capture}
             {hook name="wishlist:view"}
@@ -30,7 +30,12 @@
         {if $iteration == 0 || $iteration % $columns != 0}
             {math assign="empty_count" equation="c - it%c" it=$iteration c=$columns}
             {section loop=$empty_count name="empty_rows"}
-                <span>{__("empty")}</span>
+                {$cols = 12/$columns}
+                <div class="col-lg-{$cols|floor}">
+                    <div class="thumbnail wishlist-empty">
+                        {__("empty")}
+                    </div>
+                </div>
             {/section}
         {/if}
     </div>

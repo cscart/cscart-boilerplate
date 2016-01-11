@@ -2,26 +2,25 @@
 
 {foreach from=$wishlist.gift_certificates item="gift" key="gift_key" name="gift_certificates"}
 {math equation="it + 1" assign="iteration" it=$iteration}
+    {$cols = 12/$columns}
+    <div class="gift-certificate-wishlist thumbnail grid-thumbnail col-sm-{$cols|floor} col-lg-{$cols|floor} col-md-{$cols|floor}">
 
-    <div class="gift-certificate-wishlist column{$columns}">
-
-            <div class="grid-list__item quick-view-button__wrapper">
-                <div class="twishlist-item">
-                    <a href="{"gift_certificates.wishlist_delete?gift_cert_wishlist_id=`$gift_key`"|fn_url}" class="cm-post twishlist-item__remove remove" title="{__("remove")}"><i class="remove__icon icon-cancel-circle"></i><span class="remove__txt twishlist-item__txt">{__("remove")}</span></a>
+            <div class="grid-list-item">
+                <div class="wishlist-remove-item">
+                    <a href="{"gift_certificates.wishlist_delete?gift_cert_wishlist_id=`$gift_key`"|fn_url}" class="cm-post" title="{__("remove")}">
+                        <i class="glyphicon glyphicon-remove fa fa-remove"></i>
+                        <span>{__("remove")}</span></a>
                 </div>
-                <div class="grid-list__image">
+                <div class="grid-list-image">
                     <a href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}">{include file="addons/gift_certificates/views/gift_certificates/components/gift_certificates_cart_icon.tpl" width=$settings.Thumbnails.product_lists_thumbnail_width height=$settings.Thumbnails.product_lists_thumbnail_height}</a>
                 </div>
-                <div class="grid-list__item-name">
-                    <a href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}">{__("gift_certificate")}{if $gift.products} + {__("free_products")}{/if}</a>
-                </div>
-                <div class="grid-list__price">
-                    {include file="common/price.tpl" value=$gift.amount}
-                </div>
-
-                <div class="grid-list__control">
-                    <div class="quick-view-button">
-                        <a id="opener_gift_cert_picker_{$gift_key}" class="btn btn__secondary btn__big cm-dialog-opener cm-dialog-auto-size" data-ca-target-id="gift_cert_quick_view_{$gift_key}" href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}" rel="nofollow">{__("quick_view")}</a>
+                <div class="caption">
+                    <a href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}" class="product-title">{__("gift_certificate")}{if $gift.products} + {__("free_products")}{/if}</a>
+                    {include file="common/price.tpl" value=$gift.amount class="price"}
+                    <div class="actions grid-list-actions">
+                        <div class="quick-view-button">
+                            <a id="opener_gift_cert_picker_{$gift_key}" class="btn btn-default cm-dialog-opener cm-dialog-auto-size" data-ca-target-id="gift_cert_quick_view_{$gift_key}" href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}" rel="nofollow">{__("quick_view")}</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,35 +45,41 @@
                 {if $gift.state}<input type="hidden" name="gift_cert_data[state]" value="{$gift.state}" />{/if}
                 {if $gift.zipcode}<input type="hidden" name="gift_cert_data[zipcode]" value="{$gift.zipcode}" />{/if}
 
-                <div class="quick-view__wrapper product-block">
-                    <div class="product-block__img">
+                <div class="wishlist-product-block row">
+                    <div class="col-lg-3 col-sm-3 col-xs-12">
                         <a href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}">{include file="addons/gift_certificates/views/gift_certificates/components/gift_certificates_cart_icon.tpl" width="150" height="150"}</a>
 
-                        <div class="mtb-xs center">{include file="common/button.tpl" text=__("edit") href="gift_certificates.update?gift_cert_wishlist_id=$gift_key"}</div>
+                        <div class="center">{include file="common/button.tpl" text=__("edit") href="gift_certificates.update?gift_cert_wishlist_id=$gift_key"}</div>
                     </div>
-                    <div class="product-block__left">
+                    <div class="col-lg-9 col-sm-9 col-xs-12">
                         <a href="{"gift_certificates.update?gift_cert_wishlist_id=`$gift_key`"|fn_url}" class="product-title">{__("gift_certificate")}</a>
-                        <div class="control-group product-list-field">
-                            <label class="control-group__label">{__("gift_cert_to")}:</label>
-                            <span class="control-group__item">{$gift.recipient}</span>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+                                <strong>{__("gift_cert_to")}:</strong>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">{$gift.recipient}</div>
                         </div>
-                        <div class="control-group product-list-field">
-                            <label class="control-group__label">{__("gift_cert_from")}:</label>
-                            <span class="control-group__item">{$gift.sender}</span>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+                                <strong>{__("gift_cert_from")}:</strong>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">{$gift.sender}</div>
                         </div>
-                        <div class="control-group product-list-field">
-                            <label class="control-group__label">{__("amount")}:</label>
-                            <span class="control-group__item">{include file="common/price.tpl" value=$gift.amount}</span>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+                                <strong>{__("amount")}:</strong>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">{include file="common/price.tpl" value=$gift.amount}</div>
                         </div>
-                        <div class="control-group product-list-field">
-                            <label class="control-group__label">{__("send_via")}:</label>
-                            <span class="control-group__item">{if $gift.send_via == "E"}{__("email")}{else}{__("postal_mail")}{/if}</span>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+                                <strong>{__("send_via")}:</strong>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">{if $gift.send_via == "E"}{__("email")}{else}{__("postal_mail")}{/if}</div>
                         </div>
 
-                        <div class="clearfix"></div>
                         {if $gift.products && $addons.gift_certificates.free_products_allow == "Y"}
                         <div class="clearfix">
-
                             <p><strong>{__("free_products")}:</strong></p>
 
                             {assign var="gift_price" value=""}
@@ -114,18 +119,22 @@
                             {/foreach}
                             </table>
 
-                            <div class="control-group product-list-field pull-right">
-                                <label class="control-group__label">{__("price_summary")}:</label>
-                                <span class="control-group__item">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+                                    <strong>{__("price_summary")}:</strong>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">
                                     {math equation="item_price + gift_" item_price=$gift_price|default:"0" gift_=$gift.amount|default:"0" assign="gift_price"}
                                     <strong>{include file="common/price.tpl" value=$gift_price}</strong>
-                                </span>
+                                </div>
                             </div>
                         </div>
                         {/if}
-
-                        <div class="product-block__button">
-                            {include file="common/add_to_cart.tpl" name="dispatch[gift_certificates.add]"}
+                        
+                        <div class="row">
+                            <div class="col-lg-12 product-block-button">
+                                {include file="common/add_to_cart.tpl" name="dispatch[gift_certificates.add]"}
+                            </div>
                         </div>
                     </div>
                 </div>
