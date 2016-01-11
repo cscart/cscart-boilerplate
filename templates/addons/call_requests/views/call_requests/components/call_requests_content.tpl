@@ -36,9 +36,9 @@
             </div>
 
             <div class="cr-popup-error-box">
-                <div class="hidden cm-cr-error-box label label-danger">
+                <p class="cm-cr-error-box text-danger" style="display: none;">
                     {__("call_requests.enter_phone_or_email_text")}
-                </div>
+                </p>
             </div>
 
         {else}
