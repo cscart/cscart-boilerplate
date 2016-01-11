@@ -11,6 +11,10 @@
         <i class="glyphicon glyphicon-star fa fa-star"></i>
     {/section}
 
+    {if $stars.part}
+        <i class="glyphicon glyphicon-star-empty fa fa-star-o"></i>
+    {/if}
+
     {section name="full_star" loop=$stars.empty}
         <i class="glyphicon glyphicon-star-empty fa fa-star-o"></i>
     {/section}
