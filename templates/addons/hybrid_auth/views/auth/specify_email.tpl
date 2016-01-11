@@ -1,14 +1,14 @@
 {assign var="id" value=$id|default:"main_login"}
 
 <div class="connect-social">
-    <form name="connect-social" action="{""|fn_url}" method="post">
+    <form name="connect-social" action="{""|fn_url}" method="post" class="form">
         <input type="hidden" name="return_url" value="{$smarty.request.return_url|default:$config.current_url}" />
         <input type="hidden" name="redirect_url" value="{$redirect_url|default:$config.current_url}" />
         <input type="hidden" name="provider" value="{$provider}" />
 
-        <div class="control-group">
+        <div class="form-group">
             <label for="login_{$id}" class="control-label cm-required cm-trim cm-email">{__("email")}</label>
-            <input type="text" id="login_{$id}" name="user_email" size="30" class="login__input"/>
+            <input type="text" id="login_{$id}" name="user_email" size="30" class="form-control"/>
         </div>
 
         <div class="panel panel-default buttons-container clearfix">
