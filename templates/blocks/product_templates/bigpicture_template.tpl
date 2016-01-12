@@ -7,7 +7,7 @@
             <div class="bigpicture-left col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     {hook name="products:main_info_title"}
                         {if !$hide_title}
-                            <h2 {live_edit name="product:product:{$product.product_id}"}>{$product.product nofilter}</h2>
+                            <h2 {live_edit name="product:product:{$product.product_id}"} class="text-center">{$product.product nofilter}</h2>
                         {/if}
                     {/hook}
 
@@ -116,7 +116,7 @@
                         </li>
                         <li class="list-group-item">
                             {if $capture_buttons}{capture name="buttons"}{/if}
-                            <div class="bigpicture-button">
+                            <div class="bigpicture-button actions">
                                 {if $show_details_button}
                                     {include file="common/button.tpl" href="products.view?product_id=`$product.product_id`" text=__("view_details") class="btn-lg"}
                                 {/if}
@@ -131,9 +131,6 @@
                         </li>
                     </ul>
                 </div>
-
-
-                
 
                 {assign var="form_close" value="form_close_`$obj_id`"}
                 {$smarty.capture.$form_close nofilter}
