@@ -36,7 +36,7 @@
             {include file="common/button.tpl" href=$continue_url|fn_url text=__("continue_shopping")}
         </div>
         <div class="pull-right cart-content-right-buttons">
-            {include file="common/button.tpl" external_click_id="button_cart" text=__("recalculate") meta="btn-default cm-external-click"}
+            {include file="common/button.tpl" external_click_id="button_cart" text=__("recalculate") meta="btn-default cm-external-click" as="link"}
             {if $payment_methods}
                 {assign var="m_name" value="checkout"}
                 {assign var="link_href" value="checkout.checkout"}
