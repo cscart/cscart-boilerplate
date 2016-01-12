@@ -78,7 +78,7 @@
                                 </div>
                                 {if $capture_options_vs_qty}{/capture}{/if}
 
-                                <div class="bigpicture-advanced-sku row">
+                                <div class="bigpicture-advanced-sku">
                                     {assign var="sku" value="sku_`$obj_id`"}
                                     {$smarty.capture.$sku nofilter}
                                 </div>
