@@ -37,19 +37,20 @@
         {if $settings.Appearance.display_track_orders == 'Y'}
             <li role="separator" class="divider"></li>
             <li id="track_orders_block_{$block.snapping_id}">
-                <div class="form">
-                    <form action="{""|fn_url}" method="get" class="cm-ajax cm-ajax-full-render" name="track_order_quick">
+                <form action="{""|fn_url}" method="get" class="cm-ajax cm-ajax-full-render" name="track_order_quick">
+                    <div class="form">
                         <input type="hidden" name="result_ids" value="track_orders_block_*" />
                         <input type="hidden" name="return_url" value="{$smarty.request.return_url|default:$config.current_url}" />
-                        <label for="track_order_item{$block.snapping_id}">{__("track_my_order")}</label>
+                        <label for="track_order_item{$block.snapping_id}" class="cm-required control-label">{__("track_my_order")}</label>
                         <div class="input-group">
-                            <label for="track_order_item{$block.snapping_id}" class="cm-required hidden">{__("track_my_order")}</label>
                             <input type="text" size="20" class="form-control" id="track_order_item{$block.snapping_id}" name="track_data" placeholder="{__("order_id")}{if !$auth.user_id}/{__("email")}{/if}" />
                             {include file="common/go.tpl" name="orders.track_request" alt=__("go")}
-                            {include file="common/image_verification.tpl" option="track_orders" align="left" sidebox=true}
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form">
+                        {include file="common/image_verification.tpl" option="track_orders" align="left" sidebox=true}
+                    </div>
+                </form>
             <!--track_orders_block_{$block.snapping_id}--></li>
             <li role="separator" class="divider"></li>
         {/if}
