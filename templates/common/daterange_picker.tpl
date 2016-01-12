@@ -11,7 +11,7 @@
                 {$start_date|date_format:"%d %b %Y"} — {$end_date|date_format:"%d %b %Y"}
             {/if}
         </span>
-        <i class="glyphicon glyphicon-triangle-top fa fa-caret-down"></i>
+        <i class="glyphicon glyphicon-triangle-bottom fa fa-caret-down"></i>
     </a>
 </div>
 

@@ -463,11 +463,11 @@
                         {if $settings.Appearance.quantity_changer == "Y"}
                         <div class="input-group-btn-vertical">
                             <a class="btn btn-default cm-increase">
-                                <i class="glyphicon glyphicon-triangle-top fa fa-caret-up"></i>
+                                <span class="caret"></span>
                             </a>
                             
                             <a class="btn btn-default cm-decrease">
-                                <i class="glyphicon glyphicon-triangle-bottom fa fa-caret-down"></i>
+                                <span class="caret"></span>
                             </a>
                         </div>
                         {/if}

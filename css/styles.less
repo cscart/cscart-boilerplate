@@ -75,6 +75,10 @@ hr {
     margin-bottom: 15px;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .inline {
     display: inline;
 }
@@ -239,7 +243,7 @@ div.ui-dialog .ui-dialog-title {
 }
 
 .submenu-items {
-    min-width: 178px;
+    min-width: 180px;
     display: inline-block;
     vertical-align: top;
 }
@@ -623,9 +627,16 @@ div.ui-dialog .ui-dialog-title {
     border-bottom-right-radius: 4px;
 }
 
-.input-group-btn-vertical i {
-    position: absolute;
-    left: 4px;
+.input-group-btn-vertical {
+    .btn:first-child .caret {
+        transform: rotate(180deg);
+    }
+
+    .caret {
+        position: absolute;
+        left: 7px;
+        top: 6px;
+    }
 }
 
 .fileuploader-file-local {

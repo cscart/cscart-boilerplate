@@ -7,7 +7,7 @@
 {/if}
 
 <div class="search-section panel panel-default {if $class} {$class}{/if}" id="ds_{$rnd}">
-    <div class="panel-heading {if !$collapse}open{/if} cm-combination cm-save-state cm-ss-reverse" id="sw_{$id}">
+    <div class="panel-heading cursor-pointer {if !$collapse}open{/if} cm-combination cm-save-state cm-ss-reverse" id="sw_{$id}">
         <span>{$section_title nofilter}</span>
         <span class="search-section-switch pull-right">
         	<i class="switch-icon glyphicon glyphicon-triangle-bottom fa fa-caret-down"></i>
