@@ -25,7 +25,7 @@ Follow these steps to install the Boilerplate theme from GitHub:
 
 2. Clone the Boilerplate theme repository:
   ```bash
-  git clone git@github.com:cscart/cscart-boilerplate.git design/themes/boilerplate
+  git clone https://github.com/cscart/cscart-boilerplate.git design/themes/boilerplate
   ```
 
 3. Go to the CS-Cart administration panel, and on the Design → Themes page select the CS-Cart Boilerplate theme.
