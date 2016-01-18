@@ -113,17 +113,19 @@
             {/if}
         {elseif (($product.out_of_stock_actions == "S") && ($product.tracking != "ProductTracking::TRACK_WITH_OPTIONS"|enum))}
             <div class="form-group">
-                <label for="sw_product_notify_{$obj_prefix}{$obj_id}">
-                    <input id="sw_product_notify_{$obj_prefix}{$obj_id}" type="checkbox" class="checkbox cm-switch-availability cm-switch-visibility" name="product_notify" {if $product_notification_enabled == "Y"}checked="checked"{/if} onclick="
-                        {if !$auth.user_id}
-                            if (!this.checked) {
-                                Tygh.$.ceAjax('request', '{"products.product_notifications?enable="|fn_url}' + 'N&amp;product_id={$product.product_id}&amp;email=' + $('#product_notify_email_{$obj_prefix}{$obj_id}').get(0).value, {$ldelim}cache: false{$rdelim});
-                            }
-                        {else}
-                            Tygh.$.ceAjax('request', '{"products.product_notifications?enable="|fn_url}' + (this.checked ? 'Y' : 'N') + '&amp;product_id=' + '{$product.product_id}', {$ldelim}cache: false{$rdelim});
-                        {/if}
-                    "/>{__("notify_when_back_in_stock")}
-                </label>
+                <div class="checkbox">
+                    <label for="sw_product_notify_{$obj_prefix}{$obj_id}">
+                        <input id="sw_product_notify_{$obj_prefix}{$obj_id}" type="checkbox" class="cm-switch-availability cm-switch-visibility" name="product_notify" {if $product_notification_enabled == "Y"}checked="checked"{/if} onclick="
+                            {if !$auth.user_id}
+                                if (!this.checked) {
+                                    Tygh.$.ceAjax('request', '{"products.product_notifications?enable="|fn_url}' + 'N&amp;product_id={$product.product_id}&amp;email=' + $('#product_notify_email_{$obj_prefix}{$obj_id}').get(0).value, {$ldelim}cache: false{$rdelim});
+                                }
+                            {else}
+                                Tygh.$.ceAjax('request', '{"products.product_notifications?enable="|fn_url}' + (this.checked ? 'Y' : 'N') + '&amp;product_id=' + '{$product.product_id}', {$ldelim}cache: false{$rdelim});
+                            {/if}
+                        "/>{__("notify_when_back_in_stock")}
+                    </label>
+                </div>
             </div>
             {if !$auth.user_id }
             <div class="form-group {if $product_notification_enabled != "Y"}hidden{/if}" id="product_notify_{$obj_prefix}{$obj_id}">

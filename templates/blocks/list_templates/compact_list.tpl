@@ -32,15 +32,15 @@
                                 {$smarty.capture.$discount_label nofilter}
                             </div>
                             
-                            <div class="compact-list-title col-lg-6 col-md-6 col-sm-6">
+                            <div class="compact-list-title col-lg-5 col-md-5 col-sm-5">
                                 {assign var="name" value="name_$obj_id"}{$smarty.capture.$name nofilter}
                                 {$sku = "sku_`$obj_id`"}
                                 {$smarty.capture.$sku nofilter}
                             </div>
 
-                            <div class="col-lg-5 col-md-5 col-sm-5">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="row">
-                                    <div class="compact-list-price col-lg-2 col-md-2 col-sm-2">
+                                    <div class="compact-list-price col-lg-4 col-md-4 col-sm-4">
                                         {assign var="old_price" value="old_price_`$obj_id`"}
                                         {assign var="price" value="price_`$obj_id`"}
 
@@ -50,7 +50,7 @@
                                         {$smarty.capture.$price nofilter}
                                     </div>
                                     
-                                    <div class="col-lg-5 col-md-5 col-sm-5 compact-list-control">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 compact-list-control">
                                     {if !$smarty.capture.capt_options_vs_qty}
                                         {assign var="product_options" value="product_options_`$obj_id`"}
                                         {$smarty.capture.$product_options nofilter}

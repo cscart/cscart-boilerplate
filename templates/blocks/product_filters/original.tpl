@@ -45,7 +45,13 @@
                         <li class="list-group-item">
                             <div id="sw_content_{$filter_uid}" class="cm-combination-filter_{$filter_uid}{if !$collapse} open{/if} cm-save-state {if $filter.display == "Y"}cm-ss-reverse{/if}">
                                 <i class="product-filter-switch-icon pull-right switch-icon glyphicon glyphicon-triangle-bottom fa fa-caret-down"></i>
-                                <h5 class="product-filters-title">{$filter.filter}{if $filter.selected_variants} ({$filter.selected_variants|sizeof}){/if}{if $reset_url}<a class="cm-ajax cm-ajax-full-render cm-history" href="{$reset_url|fn_url}" data-ca-event="ce.filtersinit" data-ca-target-id="{$ajax_div_ids}" data-ca-scroll=".mainbox-title"><i class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i></a>{/if}</h5>
+                                <h5 class="product-filters-title">
+                                    {$filter.filter}{if $filter.selected_variants} ({$filter.selected_variants|sizeof}){/if}{if $reset_url}
+                                    <a class="cm-ajax cm-ajax-full-render cm-history" href="{$reset_url|fn_url}" data-ca-event="ce.filtersinit" data-ca-target-id="{$ajax_div_ids}" data-ca-scroll=".mainbox-title">
+                                            <i class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>
+                                    </a>
+                                    {/if}
+                                </h5>
                             </div>
 
                         {if $filter.slider}

@@ -8,7 +8,9 @@
     {include file="views/products/components/product_notification_items.tpl"}
     {$product_info nofilter}
 </div>
-<div class="product-notification-buttons clearfix">
-    {$product_buttons nofilter}
-</div>
+{if $product_buttons}
+    <div class="product-notification-buttons clearfix">
+        {$product_buttons nofilter}
+    </div>
+{/if}
 {/strip}

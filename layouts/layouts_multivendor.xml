@@ -2070,7 +2070,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="12" user_class="" linked_to_default="N" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
+        <grid width="12" user_class="vendor-info-grid" linked_to_default="N" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
           <grid width="3" user_class="col-md-3 col-sm-3" linked_to_default="N" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
             <blocks>
               <block>
