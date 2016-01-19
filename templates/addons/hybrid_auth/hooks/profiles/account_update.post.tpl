@@ -8,7 +8,7 @@
         {if in_array($provider_data.provider, $linked_providers)}
             <li>
                 <a class="cm-unlink-provider hybrid-auth-remove btn btn-xs btn-link" data-idp="{$provider_data.provider}">
-                    <i class="glyphicon glyphicon-remove fa fa-remove"></i>
+                    <i class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>
                 </a>
                 <img src="{$images_dir}/addons/hybrid_auth/icons/{$addons.hybrid_auth.icons_pack}/{$provider_data.provider}.png" title="{__("hybrid_auth.linked_provider")}" alt="{$provider_data.provider}"/>
             </li>

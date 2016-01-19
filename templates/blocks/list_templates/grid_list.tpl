@@ -45,6 +45,13 @@
                                 {assign var="form_open" value="form_open_`$obj_id`"}
                                 {$smarty.capture.$form_open nofilter}
                                 {hook name="products:product_multicolumns_list"}
+                                        {assign var="rating" value="rating_$obj_id"}
+                                        {if $smarty.capture.$rating}
+                                            <div class="grid-list-rating">
+                                                {$smarty.capture.$rating nofilter}
+                                            </div>
+                                        {/if}
+
                                         <div class="grid-list-image">
                                             {include file="views/products/components/product_icon.tpl" product=$product show_gallery=true}
 
@@ -61,7 +68,7 @@
                                             {assign var="name" value="name_$obj_id"}
                                             {$smarty.capture.$name nofilter}
 
-                                            <h4>
+                                            <div class="grid-list-price">
                                                 {assign var="old_price" value="old_price_`$obj_id`"}
                                                 {if $smarty.capture.$old_price|trim}{$smarty.capture.$old_price nofilter}{/if}
 
@@ -73,7 +80,7 @@
 
                                                 {assign var="list_discount" value="list_discount_`$obj_id`"}
                                                 {$smarty.capture.$list_discount nofilter}
-                                            </h4>
+                                            </div>
 
                                             <div class="actions grid-list-actions">
                                                 {if $settings.Appearance.enable_quick_view == 'Y'}
@@ -84,13 +91,6 @@
                                                     {$smarty.capture.$add_to_cart nofilter}
                                                 {/if}
                                             </div>
-
-                                            {assign var="rating" value="rating_$obj_id"}
-                                            {if $smarty.capture.$rating}
-                                                <div class="grid-list-rating">
-                                                    {$smarty.capture.$rating nofilter}
-                                                </div>
-                                            {/if}
                                         </div>
                                         
                                 {/hook}
@@ -114,7 +114,7 @@
                         {$cols = 12/$columns}
                         {section loop=$empty_count name="empty_rows"}
                             <div class="col-sm-{$cols|floor} col-lg-{$cols|floor} col-md-{$cols|floor}">
-                                <div class="product-empty">
+                                <div class="product-empty thumbnail">
                                     <span class="product-empty-text">{__("empty")}</span>
                                 </div>
                             </div>

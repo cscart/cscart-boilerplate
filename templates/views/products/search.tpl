@@ -5,7 +5,7 @@
     {assign var="layouts" value=""|fn_get_products_views:false:0}
 
     {if $layouts.$selected_layout.template}
-        {include file="`$layouts.$selected_layout.template`" columns=$settings.Appearance.columns_in_products_list show_qty=true}
+        {include file="`$layouts.$selected_layout.template`" columns=4 show_qty=true}
     {/if}
 {else}
     {hook name="products:search_results_no_matching_found"}

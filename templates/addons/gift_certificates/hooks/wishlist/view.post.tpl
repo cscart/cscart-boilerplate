@@ -8,7 +8,7 @@
             <div class="grid-list-item">
                 <div class="wishlist-remove-item">
                     <a href="{"gift_certificates.wishlist_delete?gift_cert_wishlist_id=`$gift_key`"|fn_url}" class="cm-post" title="{__("remove")}">
-                        <i class="glyphicon glyphicon-remove fa fa-remove"></i>
+                        <i class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>
                         <span>{__("remove")}</span></a>
                 </div>
                 <div class="grid-list-image">
