@@ -7,7 +7,7 @@
 {if $search.sort_order == "asc"}
 {assign var="sort_sign" value="<i class=\"glyphicon glyphicon-sort-by-attributes fa fa-sort-amount-asc\"></i>"}
 {else}
-{assign var="sort_sign" value="<i class=\"glyphicon glyphicon-sort-by-attributes-alt fa fa-sort-amount-asc-alt\"></i>"}
+{assign var="sort_sign" value="<i class=\"glyphicon glyphicon-sort-by-attributes-alt fa fa-sort-amount-desc\"></i>"}
 {/if}
 {if !$config.tweaks.disable_dhtml}
     {assign var="ajax_class" value="cm-ajax"}

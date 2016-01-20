@@ -4,7 +4,7 @@
         {if $feature.feature_type != "ProductFeatures::GROUP"|enum}
             <tr>
                 <td class="product-feature-label">
-                    <span>
+                    <span class="cursor-pointer">
                         {$feature.description nofilter}
                         {if $feature.full_description|trim}
                             {include file="common/popupbox.tpl" act="notes" id="content_`$feature.feature_id`_notes" text=$feature.description  content=$feature.full_description link_text="<i class=\"glyphicon glyphicon-question-sign fa fa-question-circle\"></i>" show_brackets=false}

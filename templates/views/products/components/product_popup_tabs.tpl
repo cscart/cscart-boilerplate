@@ -13,10 +13,13 @@
             {/capture}
 
             {if $smarty.capture.$tab_content_capture|trim}
-                <li class="popup-tabs-item"><i class="glyphicon glyphicon-share fa fa-share-alt"></i><a id="{$tab.html_id}" class="cm-dialog-opener" data-ca-target-id="content_block_popup_{$tab_id}" rel="nofollow">{$tab.name}</a></li>
-                <div id="content_block_popup_{$tab_id}" class="hidden" title="{$tab.name}" data-ca-keep-in-place="true">
-                    {$smarty.capture.$tab_content_capture nofilter}
-                </div>
+                <li class="popup-tabs-item">
+                    <i class="glyphicon glyphicon-new-window fa fa-external-link-square"></i>
+                    <a id="{$tab.html_id}" class="cm-dialog-opener cursor-pointer" data-ca-target-id="content_block_popup_{$tab_id}" rel="nofollow">{$tab.name}</a>
+                    <div id="content_block_popup_{$tab_id}" class="hidden" title="{$tab.name}" data-ca-keep-in-place="true">
+                        {$smarty.capture.$tab_content_capture nofilter}
+                    </div>
+                </li>
             {/if}
         {/if}
     {/foreach}
@@ -24,7 +27,7 @@
 
 {capture name="popupsbox_content"}
     {if $smarty.capture.popupsbox|trim}
-        <ul class="popup-tabs">
+        <ul class="list-inline popup-tabs">
             {$smarty.capture.popupsbox nofilter}
         </ul>
     {/if}
