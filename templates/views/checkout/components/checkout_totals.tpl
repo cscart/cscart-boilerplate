@@ -25,6 +25,8 @@
                     {hook name="checkout:payment_options"}
                     {/hook}
                 </div>
+            {else}
+                <div class="col-lg-8"></div>
             {/if}
 
             <div class="col-lg-4 text-right">

@@ -1,5 +1,5 @@
 {if $product.max_qty}
-<div class="form-group product-list-field">
+<div class="form-group product-list-field clearfix">
     {if ($product.min_qty)}
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
             <label class="control-label">{__("allow_qty")}:</label>
