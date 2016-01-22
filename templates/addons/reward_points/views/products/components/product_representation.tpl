@@ -1,5 +1,5 @@
 {if $product.points_info.price}
-<div class="reward-group">
+<div class="reward-group row">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
         <strong>{__("price_in_points")}:</strong>
     </div>

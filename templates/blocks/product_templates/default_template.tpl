@@ -72,7 +72,7 @@
             </div>
             {if $capture_options_vs_qty}{/capture}{/if}
 
-            <div class="product-block-advanced-option row">
+            <div class="product-block-advanced-option">
                 {if $capture_options_vs_qty}{capture name="product_options"}{$smarty.capture.product_options nofilter}{/if}
                 {assign var="advanced_options" value="advanced_options_`$obj_id`"}
                 {$smarty.capture.$advanced_options nofilter}

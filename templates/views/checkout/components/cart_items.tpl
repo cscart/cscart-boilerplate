@@ -104,7 +104,7 @@
                             {/capture}
 
                             {if $smarty.capture.$name|trim}
-                            <div id="options_{$key}" class="product-options group-block">
+                            <div id="options_{$key}" class="product-options group-block row">
                                 <div class="group-block-arrow">
                                     <span class="caret-info">
                                         <span class="caret-outer"></span><span class="caret-inner"></span>

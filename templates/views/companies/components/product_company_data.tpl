@@ -1,5 +1,5 @@
 {if "MULTIVENDOR"|fn_allowed_for && ($company_name || $company_id) && $settings.Vendors.display_vendor == "Y"}
-    <div class="form-group{if !$capture_options_vs_qty} product-list-field{/if} clearfix">
+    <div class="form-group{if !$capture_options_vs_qty} product-list-field{/if} row clearfix">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
             <label class="control-label">{__("vendor")}:</label>
         </div>
