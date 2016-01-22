@@ -11,8 +11,10 @@
     {if $product_file.license}
         <div>
             <br>
-            <a id="sw_licence_{$product_file.file_id}" class="cm-combination">
-            <i class="glyphicon glyphicon-exclamation-sign fa fa-exclamation-circle"></i>{__("license_agreement")}</a>
+            <a id="sw_licence_{$product_file.file_id}" class="cm-combination cursor-pointer">
+                <i class="glyphicon glyphicon-exclamation-sign fa fa-exclamation-circle"></i>
+                {__("license_agreement")}
+            </a>
             <div class="hidden" id="licence_{$product_file.file_id}">
                 {$product_file.license nofilter}
             </div>
