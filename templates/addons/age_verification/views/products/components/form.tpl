@@ -3,7 +3,6 @@
         <form action="{""|fn_url}" method="post" name="age_verification" class="form">
             <div class="panel panel-default age-verification-panel">
                 <div class="panel-body">
-                    <p>{$age_warning_message}</p>
                     {if $age_warning_message}<p class="">{$age_warning_message}</p>{/if}
                     <input type="hidden" name="redirect_url" value="{$smarty.request.return_url}" />
                     <div class="form-group">
