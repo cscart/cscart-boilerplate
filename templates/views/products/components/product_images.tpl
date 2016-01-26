@@ -63,6 +63,6 @@
 {/if}
 
 {script src="js/tygh/previewers/`$settings.Appearance.default_image_previewer`.previewer.js"}
-{script src="js/tygh/product_image_gallery.js"}
+{script src="design/themes/`$runtime.layout.theme_name`/js/product_image_gallery.js"}
 
 {hook name="products:product_images"}{/hook}
