@@ -5,7 +5,7 @@
         {if $category_data.product_columns}
             {assign var="product_columns" value=$category_data.product_columns}
         {else}
-            {assign var="product_columns" value=$settings.Appearance.columns_in_products_list}
+            {assign var="product_columns" value=4}
         {/if}
         {if $layouts.$selected_layout.template}
             {include file="`$layouts.$selected_layout.template`" columns=$product_columns show_qty=true}
