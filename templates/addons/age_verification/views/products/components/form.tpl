@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    {include file="common/button.tpl" meta="btn-info" text=__("verify") name="dispatch[age_verification.verify]"}
+                    {include file="common/button.tpl" meta="btn-warning" text=__("verify") name="dispatch[age_verification.verify]"}
                 </div>
             </div>
         </form>  
