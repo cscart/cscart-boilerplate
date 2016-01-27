@@ -13,7 +13,7 @@
             <th class="cart-content-title text-left">{__("product")}</th>
             <th class="cart-content-title text-left">&nbsp;</th>
             <th class="cart-content-title text-right">{__("unit_price")}</th>
-            <th class="cart-content-title quantity-cell">{__("quantity")}</th>
+            <th class="cart-content-title quantity-cell text-center" style="width:135px">{__("quantity")}</th>
             <th class="cart-content-title text-right">{__("total_price")}</th>
         </tr>
     </thead>
@@ -115,11 +115,11 @@
                             {/if}
                         </td>
 
-                        <td class="cart-content-price cm-reload-{$obj_id}" id="price_display_update_{$obj_id}">
+                        <td class="cart-content-price text-right cm-reload-{$obj_id}" id="price_display_update_{$obj_id}">
                         {include file="common/price.tpl" value=$product.display_price span_id="product_price_`$key`"}
                         <!--price_display_update_{$obj_id}--></td>
 
-                        <td class="cart-content-qty {if $product.is_edp == "Y" || $product.exclude_from_calculate} quantity-disabled{/if}">
+                        <td class="cart-content-qty {if $product.is_edp == "Y" || $product.exclude_from_calculate} quantity-disabled{/if} text-center">
                             {if $use_ajax == true && $cart.amount != 1}
                                 {assign var="ajax_class" value="cm-ajax"}
                             {/if}
@@ -154,7 +154,7 @@
                             <!--quantity_update_{$obj_id}--></div>
                         </td>
 
-                        <td class="cart-content-price cm-reload-{$obj_id}" id="price_subtotal_update_{$obj_id}">
+                        <td class="cart-content-price text-right cm-reload-{$obj_id}" id="price_subtotal_update_{$obj_id}">
                             {include file="common/price.tpl" value=$product.display_subtotal span_id="product_subtotal_`$key`" class="price"}
                             {if $product.zero_price_action == "A"}
                                 <input type="hidden" name="cart_products[{$key}][price]" value="{$product.base_price}" />
