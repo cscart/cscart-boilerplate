@@ -16,7 +16,7 @@
                 {/if}
             {/hook}
         </div>
-        <div class="product-block-left col-lg-8 col-sm-12 col-xs-12">
+        <div class="product-block-left col-lg-8 col-sm-8 col-xs-12">
             {assign var="form_open" value="form_open_`$obj_id`"}
             {$smarty.capture.$form_open nofilter}
 

@@ -29,14 +29,13 @@
 <div class="row" id="option_{$id}_AOC">
     <div class="cm-picker-product-options product-options" id="opt_{$obj_prefix}{$id}">
         {foreach name="product_options" from=$product_options item="po"}
-        
         {assign var="selected_variant" value=""}
         <div class="form-group product-options-item{if !$capture_options_vs_qty} product-list-field{/if} clearfix" id="opt_{$obj_prefix}{$id}_{$po.option_id}">
             {if !("SRC"|strpos:$po.option_type !== false && !$po.variants && $po.missing_variants_handling == "H")}
-                <label id="option_description_{$id}_{$po.option_id}" {if $po.option_type !== "F"}for="option_{$obj_prefix}{$id}_{$po.option_id}"{/if} class="col-lg-3 control-label {if $po.required == "Y"} cm-required{/if}{if $po.regexp} cm-regexp{/if}" {if $po.regexp}data-ca-regexp="{$po.regexp}" data-ca-message="{$po.incorrect_message}"{/if}>{$po.option_name}{if $po.description|trim} <span class="cm-tooltip" title="{$po.description}"><i class="glyphicon glyphicon-question-sign fa fa-question-circle"></i></span>{/if}:</label>
+                <label id="option_description_{$id}_{$po.option_id}" {if $po.option_type !== "F"}for="option_{$obj_prefix}{$id}_{$po.option_id}"{/if} class="col-lg-3 col-md-3 col-sm-3 control-label {if $po.required == "Y"} cm-required{/if}{if $po.regexp} cm-regexp{/if}" {if $po.regexp}data-ca-regexp="{$po.regexp}" data-ca-message="{$po.incorrect_message}"{/if}>{$po.option_name}{if $po.description|trim} <span class="cm-tooltip" title="{$po.description}"><i class="glyphicon glyphicon-question-sign fa fa-question-circle"></i></span>{/if}:</label>
+                <div class="col-lg-7 col-md-7 col-sm-7">
             {if $po.option_type == "S"} {*Selectbox*}
                 {if $po.variants}
-                <div class="col-lg-4">
                     {if ($po.disabled || $disabled) && !$po.not_required}<input type="hidden" value="{$po.value}" name="{$name}[{$id}][product_options][{$po.option_id}]" id="option_{$obj_prefix}{$id}_{$po.option_id}" />{/if}
                     <select class="form-control" name="{$name}[{$id}][product_options][{$po.option_id}]" {if !$po.disabled && !$disabled}id="option_{$obj_prefix}{$id}_{$po.option_id}"{/if} onchange="{if $product.options_update}fn_change_options('{$obj_prefix}{$id}', '{$id}', '{$po.option_id}');{else} fn_change_variant_image('{$obj_prefix}{$id}', '{$po.option_id}');{/if}" {if $product.exclude_from_calculate && !$product.aoc || $po.disabled || $disabled}disabled="disabled" class="disabled"{/if}>
                         {if $product.options_type == "S"}
@@ -53,14 +52,12 @@
                             {/if}
                         {/foreach}
                     </select>
-                </div>
                 {else}
                     <input type="hidden" name="{$name}[{$id}][product_options][{$po.option_id}]" value="{$po.value}" id="option_{$obj_prefix}{$id}_{$po.option_id}" />
                     <span>{__("na")}</span>
                 {/if}
             {elseif $po.option_type == "R"} {*Radiobutton*}
                 {if $po.variants}
-                    <div class="col-lg-12">
                         <input type="hidden" name="{$name}[{$id}][product_options][{$po.option_id}]" value="{$po.value}" id="option_{$obj_prefix}{$id}_{$po.option_id}" />
                         <ul id="option_{$obj_prefix}{$id}_{$po.option_id}_group" class="product-options-elem">
                             {if !$po.disabled && !$disabled}
@@ -75,7 +72,6 @@
                             {/if}
                         </ul>
                         {if !$po.value && $product.options_type == "S" && !($po.disabled || $disabled)}<p class="product-options-description">{__("please_select_one")}</p>{elseif !$po.value && $product.options_type == "S" && ($po.disabled || $disabled)}<p class="product-options-description">{__("select_option_above")}</p>{/if}
-                    </div>
                 {else}
                     <input type="hidden" name="{$name}[{$id}][product_options][{$po.option_id}]" value="{$po.value}" id="option_{$obj_prefix}{$id}_{$po.option_id}" />
                     <span>{__("na")}</span>
@@ -86,11 +82,9 @@
                 {if $vr.position == 0}
                     <input id="unchecked_option_{$obj_prefix}{$id}_{$po.option_id}" type="hidden" name="{$name}[{$id}][product_options][{$po.option_id}]" value="{$vr.variant_id}" {if $po.disabled || $disabled}disabled="disabled"{/if} />
                 {else}
-                    <label class="product-options-box col-lg-4 checkbox">
-                        <label class="cm-field-container">
-                            <input id="option_{$obj_prefix}{$id}_{$po.option_id}" type="checkbox" name="{$name}[{$id}][product_options][{$po.option_id}]" value="{$vr.variant_id}" class="checkbox" {if $po.value == $vr.variant_id}checked="checked"{/if} {if $product.exclude_from_calculate && !$product.aoc || $po.disabled || $disabled}disabled="disabled"{/if} {if $product.options_update}onclick="fn_change_options('{$obj_prefix}{$id}', '{$id}', '{$po.option_id}');"{/if}/>
-                            {if $show_modifiers}{hook name="products:options_modifiers"}{if $vr.modifier|floatval}({include file="common/modifier.tpl" mod_type=$vr.modifier_type mod_value=$vr.modifier display_sign=true}){/if}{/hook}{/if}
-                        </label>
+                    <label class="cm-field-container">
+                        <input id="option_{$obj_prefix}{$id}_{$po.option_id}" type="checkbox" name="{$name}[{$id}][product_options][{$po.option_id}]" value="{$vr.variant_id}" class="checkbox" {if $po.value == $vr.variant_id}checked="checked"{/if} {if $product.exclude_from_calculate && !$product.aoc || $po.disabled || $disabled}disabled="disabled"{/if} {if $product.options_update}onclick="fn_change_options('{$obj_prefix}{$id}', '{$id}', '{$po.option_id}');"{/if}/>
+                        {if $show_modifiers}{hook name="products:options_modifiers"}{if $vr.modifier|floatval}({include file="common/modifier.tpl" mod_type=$vr.modifier_type mod_value=$vr.modifier display_sign=true}){/if}{/hook}{/if}
                     </label>
                 {/if}
                 {foreachelse}
@@ -103,14 +97,12 @@
             {elseif $po.option_type == "T"} {*Textarea*}
                 <textarea id="option_{$obj_prefix}{$id}_{$po.option_id}" class="form-control {if $po.inner_hint} cm-hint{/if}{if $product.exclude_from_calculate && !$product.aoc} disabled{/if}" rows="3" name="{$name}[{$id}][product_options][{$po.option_id}]" {if $product.exclude_from_calculate && !$product.aoc}disabled="disabled"{/if} {if $po.inner_hint}title="{$po.inner_hint}"{/if} >{$po.value|default:$po.inner_hint}</textarea>
             {elseif $po.option_type == "F"} {*File*}
-                <div class="product-options-elem">
-                    {include file="common/fileuploader.tpl" images=$product.extra.custom_files[$po.option_id] var_name="`$name`[`$po.option_id``$id`]" multiupload=$po.multiupload hidden_name="`$name`[custom_files][`$po.option_id``$id`]" hidden_value="`$id`_`$po.option_id`" label_id="option_`$obj_prefix``$id`_`$po.option_id`" prefix=$obj_prefix}
-                </div>
+                {include file="common/fileuploader.tpl" images=$product.extra.custom_files[$po.option_id] var_name="`$name`[`$po.option_id``$id`]" multiupload=$po.multiupload hidden_name="`$name`[custom_files][`$po.option_id``$id`]" hidden_value="`$id`_`$po.option_id`" label_id="option_`$obj_prefix``$id`_`$po.option_id`" prefix=$obj_prefix}
             {/if}
             {/if}
 
             {if $po.comment}
-                <div class="product-options-description">{$po.comment}</div>
+                <div class="product-options-description text-muted">{$po.comment}</div>
             {/if}
 
             {capture name="variant_images"}
@@ -125,11 +117,13 @@
                 {/if}
             {/capture}
             {if $smarty.capture.variant_images|trim}
-                <div class="col-lg-12"></div>
-                <div class="col-lg-offset-3 col-lg-8">
-                    {$smarty.capture.variant_images nofilter}
+                <div class="row">
+                    <div class="col-lg-7">
+                        {$smarty.capture.variant_images nofilter}
+                    </div>
                 </div>
             {/if}
+            </div>
         </div>
         {/foreach}
     </div>

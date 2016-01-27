@@ -3,7 +3,7 @@
 
 {assign var="id_var_name" value="`$prefix`{$var_name|md5}"}
 
-<div class="fileuploader col-lg-4 cm-field-container">
+<div class="fileuploader cm-field-container">
     <input type="hidden" id="{$label_id}" value="{if $images}{$id_var_name}{/if}" />
 
     {foreach from=$images key="image_id" item="image"}
@@ -21,7 +21,23 @@
 
                 {hook name="fileuploader:uploaded_files"}
                     {if $delete_link}
-                    <a class="cm-ajax" href="{$delete_link|fn_url}">{/if}{if !($po.required == "Y" && $images|count == 1)}<i id="clean_selection_{$id_var_name}_{$image.file}" title="{__("remove_this_item")}" onclick="Tygh.fileuploader.clean_selection(this.id); {if $multiupload != "Y"}Tygh.fileuploader.toggle_links('{$id_var_name}', 'show');{/if} Tygh.fileuploader.check_required_field('{$id_var_name}', '{$label_id}');" class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>{/if}{if $delete_link}</a>{/if}<span class="fileuploader-filename">{if $download_link}<a class="cm-no-ajax" href="{$download_link|fn_url}">{/if}{$image.name}{if $download_link}</a>{/if}</span>
+                        <a class="cm-ajax" href="{$delete_link|fn_url}">
+                    {/if}
+                    {if !($po.required == "Y" && $images|count == 1)}
+                        <i id="clean_selection_{$id_var_name}_{$image.file}" title="{__("remove_this_item")}" onclick="Tygh.fileuploader.clean_selection(this.id); {if $multiupload != "Y"}Tygh.fileuploader.toggle_links('{$id_var_name}', 'show');{/if} Tygh.fileuploader.check_required_field('{$id_var_name}', '{$label_id}');" class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>
+                    {/if}
+                    {if $delete_link}
+                        </a>
+                    {/if}
+                    <span class="fileuploader-filename">
+                        {if $download_link}
+                            <a class="cm-no-ajax" href="{$download_link|fn_url}">
+                        {/if}
+                        {$image.name}
+                        {if $download_link}
+                            </a>
+                        {/if}
+                    </span>
                 {/hook}
             </p>
         </div>
@@ -30,7 +46,10 @@
     {hook name="fileuploader:uploader"}
     <div class="cleafix" id="file_uploader_{$id_var_name}">
         <div class="fileuploader-file-section" id="message_{$id_var_name}" title="">
-            <p class="cm-fu-file hidden"><i id="clean_selection_{$id_var_name}" title="{__("remove_this_item")}" onclick="Tygh.fileuploader.clean_selection(this.id); {if $multiupload != "Y"}Tygh.fileuploader.toggle_links(this.id, 'show');{/if} Tygh.fileuploader.check_required_field('{$id_var_name}', '{$label_id}');" class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i><span class="fileuploader-filename"></span></p>
+            <p class="cm-fu-file hidden">
+                <i id="clean_selection_{$id_var_name}" title="{__("remove_this_item")}" onclick="Tygh.fileuploader.clean_selection(this.id); {if $multiupload != "Y"}Tygh.fileuploader.toggle_links(this.id, 'show');{/if} Tygh.fileuploader.check_required_field('{$id_var_name}', '{$label_id}');" class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>
+                    <span class="fileuploader-filename"></span>
+            </p>
         </div>
 
         {strip}

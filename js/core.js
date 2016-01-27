@@ -3650,7 +3650,7 @@ var Tygh = {
                         lbl.addClass('cm-failed-label');
 
                         if (!elm.hasClass('cm-no-failed-msg')) {
-                            lbl.parent().append('<span id="' + elm_id + '_error_message" class="help-inline help-block">' + _getMessage(elm_id) + '</span>');
+                            elm.parent().append('<span id="' + elm_id + '_error_message" class="help-inline help-block">' + _getMessage(elm_id) + '</span>');
                         }
 
                         if (!message_set) {
