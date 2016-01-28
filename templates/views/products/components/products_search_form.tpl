@@ -49,15 +49,7 @@
 {/hook}
 <div class="form-group row">
     <label class="control-label col-lg-12">{__("search_in_category")}</label>
-    {if "categories"|fn_show_picker:$smarty.const.CATEGORY_THRESHOLD}
-        {if $search.cid}
-            {assign var="s_cid" value=$search.cid}
-        {else}
-            {assign var="s_cid" value="0"}
-        {/if}
-        {include file="pickers/categories/picker.tpl" data_id="location_category" input_name="cid" item_ids=$s_cid hide_link=true hide_delete_button=true default_name=__("all_categories") extra=""}
-    {else}
-    <div class="col-lg-5">{* dont delete this div. its really needed! *}
+    <div class="col-lg-5">
         {assign var="all_categories" value=0|fn_get_plain_categories_tree:false}
         <select name="cid" class="form-control">
             <option value="0" {if $category_data.parent_id == "0"}selected{/if}>- {__("all_categories")} -</option>
@@ -66,7 +58,6 @@
             {/foreach}
         </select>
     </div>
-    {/if}
     <div class="checkbox col-lg-5">
         <input type="hidden" name="subcats" value="N" />
         <label for="subcats" class="control-label">

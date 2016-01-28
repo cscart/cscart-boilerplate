@@ -1,9 +1,11 @@
 {if $files}
 <table class="table">
-<tr>
-    <th>{__("filename")}</th>
-    <th>{__("filesize")}</th>
-</tr>
+<thead>
+    <tr>
+        <th>{__("filename")}</th>
+        <th>{__("filesize")}</th>
+    </tr>
+</thead>
 {foreach from=$files item="file"}
 <tr>
     <td style="width: 80%">
