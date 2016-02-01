@@ -31,7 +31,7 @@
             </div>
             <div class="scroller-list-description">
                 {strip}
-                    {include file="blocks/list_templates/simple_list.tpl" product=$product show_trunc_name=true show_price=true show_add_to_cart=$_show_add_to_cart but_role="action" hide_price=$_hide_price hide_qty=true show_discount_label=true}
+                    {include file="blocks/list_templates/simple_list.tpl" product=$product show_price=true show_add_to_cart=$_show_add_to_cart but_role="action" hide_price=$_hide_price hide_qty=true show_discount_label=true}
                 {/strip}
             </div>
         </div>

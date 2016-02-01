@@ -10,7 +10,6 @@
     {include file="blocks/list_templates/grid_list.tpl" 
         columns=$columns
         show_empty=true
-        show_trunc_name=true 
         show_old_price=true 
         show_price=true 
         show_clean_price=true 

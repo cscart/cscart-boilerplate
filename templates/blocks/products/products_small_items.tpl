@@ -12,7 +12,6 @@
     obj_prefix="`$block.block_id`000" 
     item_number=$block.properties.item_number 
     show_name=$_show_name 
-    show_trunc_name=$_show_trunc_name 
     show_price=false
     show_rating=true 
     show_add_to_cart=$_show_add_to_cart 

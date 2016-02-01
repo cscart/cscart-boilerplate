@@ -16,7 +16,6 @@
     no_ids="Y"
     obj_prefix="`$block.block_id`000"
     item_number=$block.properties.item_number
-    show_trunc_name=true
     show_old_price=true
     show_price=true
     show_rating=true
