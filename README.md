@@ -79,7 +79,7 @@ To contribute to Boilerplate development, do this:
 2. [Fork](https://help.github.com/articles/fork-a-repo/) the Boilerplate theme—get your own copy of the main Boilerplate repository to work on and experiment with.
 3. [Clone your fork](https://help.github.com/articles/cloning-a-repository/) to your local machine—a local repository is where all the work is done.
 4. [Create a branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) in your local clone—having separate branches for different tasks helps to keep things organized.
-5. Work on the Boilerplate theme in this branch. Please make sure to follow our coding standards (coming soon!)
+5. Work on the Boilerplate theme in this branch. Please make sure to follow our [coding standards](http://docs.cs-cart.com/4.3.x/developer_guide/core/coding_standards/index.html)
 6. [Push your changed branch](https://help.github.com/articles/pushing-to-a-remote/) to your fork in your GitHub account—the changes you made locally will appear in your online repository.
 7. [Create a pull request](https://help.github.com/articles/using-pull-requests)—submit your changes to us.
 
