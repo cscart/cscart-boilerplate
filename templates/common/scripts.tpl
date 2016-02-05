@@ -26,6 +26,7 @@
     {script src="design/themes/`$runtime.layout.theme_name`/lib/bootstrap/3.3.5/js/bootstrap.min.js"}
     {script src="js/lib/modernizr/modernizr.custom.js"}
     {script src="design/themes/`$runtime.layout.theme_name`/js/core.js"}
+    {script src="design/themes/`$runtime.layout.theme_name`/js/responsive.js"}
     {script src="js/tygh/ajax.js"}
     {script src="js/tygh/history.js"}
     {script src="js/lib/autonumeric/autoNumeric.js"}
