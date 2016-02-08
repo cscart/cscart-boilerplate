@@ -363,7 +363,7 @@
           </grid>
         </grid>
         <grid width="12" user_class="footer-menu" linked_to_default="Y" status="A" offset="0" omega="1" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="1">
-          <grid width="3" user_class="col-md-3 col-sm-3" linked_to_default="Y" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="LEFT" html_element="div" clear="0">
+          <grid width="3" user_class="col-md-3 col-sm-3 clearfix" linked_to_default="Y" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="LEFT" html_element="div" clear="0">
             <blocks>
               <block>
                 <type><![CDATA[template]]></type>
@@ -385,7 +385,7 @@
               </block>
             </blocks>
           </grid>
-          <grid width="3" user_class="col-md-3 col-sm-3" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="LEFT" html_element="div" clear="0">
+          <grid width="3" user_class="col-md-3 col-sm-3 clearfix" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="LEFT" html_element="div" clear="0">
             <blocks>
               <block>
                 <type><![CDATA[smarty_block]]></type>
@@ -434,7 +434,7 @@
               </block>
             </blocks>
           </grid>
-          <grid width="3" user_class="col-md-3 col-sm-3" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="LEFT" html_element="div" clear="0">
+          <grid width="3" user_class="col-md-3 col-sm-3 clearfix" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="LEFT" html_element="div" clear="0">
             <blocks>
               <block>
                 <type><![CDATA[smarty_block]]></type>
@@ -477,7 +477,7 @@
               </block>
             </blocks>
           </grid>
-          <grid width="3" user_class="col-md-3 col-sm-3" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="LEFT" html_element="div" clear="1">
+          <grid width="3" user_class="col-md-3 col-sm-3 clearfix" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="LEFT" html_element="div" clear="1">
             <blocks>
               <block>
                 <type><![CDATA[smarty_block]]></type>

@@ -29,7 +29,7 @@
                             {hook name="checkout:minicart_product_info"}
                             {if $block.properties.products_links_type == "thumb"}
                             <div class="media-left">
-                                {include file="common/image.tpl" image_width="40" image_height="40" images=$product.main_pair no_ids=true}
+                                {include file="common/image.tpl" image_width="40" image_height="40" images=$product.main_pair no_ids=true class="media-object"}
                             </div>
                             {/if}
                             <div class="media-body">

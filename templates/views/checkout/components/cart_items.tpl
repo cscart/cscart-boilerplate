@@ -37,7 +37,7 @@
                             {/if}
                         </td>
 
-                        <td class="cart-content-description" style="width: 50%;">
+                        <td class="cart-content-description">
                             <a href="{"products.view?product_id=`$product.product_id`"|fn_url}">
                                 {$product.product nofilter}
                             </a>

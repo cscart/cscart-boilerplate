@@ -955,6 +955,7 @@ div.ui-dialog .ui-dialog-title {
     .input-group {
         display: inline-table;
         vertical-align: middle;
+        max-width: 100px;
     }
 
     .input-group .form-control {
@@ -1071,6 +1072,7 @@ div.ui-dialog .ui-dialog-title {
 /*----------  Small devices  ----------*/
 
 @media (max-width: 767px) {
+
     header, .top-menu-grid {
         padding-top: 20px;
     }
@@ -1160,6 +1162,36 @@ div.ui-dialog .ui-dialog-title {
         right: 0px;
         min-width: 100%;
         width: 100%;
+    }
+
+    .cart-dropdown .dropdown-menu {
+        min-width: 300px;
+    }
+
+    .cart-dropdown .media-object {
+        max-width: inherit;
+    }
+
+    .cart-content-left-buttons,
+    .cart-content-right-buttons {
+        margin-bottom: 10px;
+        float: none !important;
+    }
+
+    .cart-content-left-buttons .btn,
+    .cart-content-right-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .quantity-bar input[type="text"].form-control {
+        min-width: 45px;
+    }
+
+    .horizontal-product-filters li {
+        display: block;
+        margin-bottom: 10px;
     }
 }
 

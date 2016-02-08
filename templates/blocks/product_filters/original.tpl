@@ -43,7 +43,7 @@
                     {/if}
 
                         <li class="list-group-item">
-                            <div id="sw_content_{$filter_uid}" class="cm-combination-filter_{$filter_uid}{if !$collapse} open{/if} cm-save-state {if $filter.display == "Y"}cm-ss-reverse{/if}">
+                            <div id="sw_content_{$filter_uid}" class="cm-combination-filter_{$filter_uid}{if !$collapse} open{/if} cm-save-state {if $filter.display == "Y"}cm-ss-reverse{/if} cursor-pointer">
                                 <i class="product-filter-switch-icon pull-right switch-icon glyphicon glyphicon-triangle-bottom fa fa-caret-down"></i>
                                 <h5 class="product-filters-title">
                                     {$filter.filter}{if $filter.selected_variants} ({$filter.selected_variants|sizeof}){/if}{if $reset_url}
