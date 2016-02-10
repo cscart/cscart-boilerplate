@@ -23,7 +23,7 @@
        When working with this code, please note that we will be modifying or removing it in the
        future versions of the developer theme.
     *}
-    {script src="design/themes/`$runtime.layout.theme_name`/lib/bootstrap/3.3.5/js/bootstrap.min.js"}
+    {script src="design/themes/`$runtime.layout.theme_name`/lib/bootstrap/3.3.6/js/bootstrap.min.js"}
     {script src="js/lib/modernizr/modernizr.custom.js"}
     {script src="design/themes/`$runtime.layout.theme_name`/js/core.js"}
     {script src="design/themes/`$runtime.layout.theme_name`/js/responsive.js"}

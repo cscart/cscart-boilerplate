@@ -5,7 +5,7 @@
 {hook name="index:styles"}
     
     {style src="../lib/jqueryui/1.10.1/jqueryui.less"}
-    {style src="../lib/bootstrap/3.3.5/css/bootstrap.min.css"}
+    {style src="../lib/bootstrap/3.3.6/css/bootstrap.min.css"}
     {style src="icons.less"}
     {style src="styles.less"}
     
