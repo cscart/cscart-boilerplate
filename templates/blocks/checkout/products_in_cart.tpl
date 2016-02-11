@@ -10,7 +10,7 @@
                             <div class="media-heading">
                                 <a href="{"products.view?product_id=`$product.product_id`"|fn_url}">{$product.product nofilter}</a>
                             </div>
-                            {$product.amount}&nbsp;x&nbsp;{include file="common/price.tpl" value=$product.display_price}
+                            <div>{$product.amount}&nbsp;x&nbsp;{include file="common/price.tpl" value=$product.display_price}</div>
                             {include file="common/options_info.tpl" product_options=$product.product_options no_block=true}
                             {hook name="block_checkout:product_extra"}{/hook}
                         </div>
