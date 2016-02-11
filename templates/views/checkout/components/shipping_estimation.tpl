@@ -22,7 +22,7 @@
     <h3>{__("calculate_shipping_cost")}</h3>
 {/if}
     
-        <div id="shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix}" class="panel-body">
+        <div class="panel-body" id="shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix}">
 
             {$states = 1|fn_get_all_states}
             {if !$smarty.capture.states_built}
@@ -86,7 +86,7 @@
             {if $runtime.mode == "shipping_estimation" || $smarty.request.show_shippings == "Y"}
                 {if !$cart.shipping_failed && !$cart.company_shipping_failed}
                     {if $location == "popup"}
-                        <h3>{__("select_shipping_method")}</h3>
+                        <h4>{__("select_shipping_method")}</h4>
                     {/if}
                     <form class="cm-ajax" name="{$prefix}select_shipping_form{$id_suffix}" action="{""|fn_url}" method="post">
                     <input type="hidden" name="redirect_mode" value="cart" />
@@ -99,7 +99,7 @@
                         <strong>{__("vendor")}:&nbsp;</strong>{$group.name|default:__("none")}
                         </p>
                         {if !"ULTIMATE"|fn_allowed_for || $product_groups|count > 1}
-                            <ul>
+                            <ul class="list-unstyled">
                             {foreach from=$group.products item="product"}
                                 <li>
                                     {if $product.product}
@@ -145,7 +145,10 @@
                                     {/if}
 
                                     <div class="radio">
-                                        <input type="radio" class="form-control"  id="sh_{$group_key}_{$shipping.shipping_id}" name="shipping_ids[{$group_key}]" value="{$shipping.shipping_id}" onclick="fn_calculate_total_shipping();" {$checked} /><label for="sh_{$group_key}_{$shipping.shipping_id}" class="control-label">{$shipping.shipping} {$delivery_time} - {$rate nofilter}</label>
+                                        <label for="sh_{$group_key}_{$shipping.shipping_id}">
+                                            <input type="radio" id="sh_{$group_key}_{$shipping.shipping_id}" name="shipping_ids[{$group_key}]" value="{$shipping.shipping_id}" onclick="fn_calculate_total_shipping();" {$checked} />
+                                            {$shipping.shipping} {$delivery_time} - {$rate nofilter}
+                                        </label>
                                     </div>
                                     {/hook}
                                 {/if}
