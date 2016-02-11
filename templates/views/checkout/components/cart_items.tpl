@@ -128,7 +128,7 @@
                                     <input type="hidden" class="hidden" name="cart_products[{$key}][product_id]" value="{$product.product_id}" />
                                     {if $product.exclude_from_calculate}<input type="hidden" name="cart_products[{$key}][extra][exclude_from_calculate]" value="{$product.exclude_from_calculate}" />{/if}
                                     <label class="hidden" for="amount_{$key}"></label>
-                                    <div class="cm-value-changer input-group">
+                                    <div class="cm-value-changer input-group spinner">
                                     {if $product.is_edp == "Y" || $product.exclude_from_calculate}
                                         {$product.amount}
                                     {else}

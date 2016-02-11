@@ -459,19 +459,17 @@
                 {else}
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-7 cm-value-changer">
                     
-                    <div class="input-group spinner btn-bar">
-                        <input type="text" size="5" class="form-control cm-amount" id="qty_count_{$obj_prefix}{$obj_id}" name="product_data[{$obj_id}][amount]" value="{$default_amount}"{if $product.qty_step > 1} data-ca-step="{$product.qty_step}"{/if} data-ca-min-qty="1" />
-
+                    <div class="input-group spinner">
                         {if $settings.Appearance.quantity_changer == "Y"}
-                        <div class="input-group-btn-vertical">
-                            <a class="btn btn-default cm-increase">
-                                <span class="caret"></span>
-                            </a>
-                            
-                            <a class="btn btn-default cm-decrease">
-                                <span class="caret"></span>
-                            </a>
-                        </div>
+                            <span class="input-group-btn">
+                                <a class="btn btn-default cm-increase">&#43;</a>
+                            </span>
+                        {/if}
+                        <input type="text" size="5" class="form-control cm-amount" id="qty_count_{$obj_prefix}{$obj_id}" name="product_data[{$obj_id}][amount]" value="{$default_amount}"{if $product.qty_step > 1} data-ca-step="{$product.qty_step}"{/if} data-ca-min-qty="1" />
+                        {if $settings.Appearance.quantity_changer == "Y"}
+                            <span class="input-group-btn">
+                                <a class="btn btn-default cm-decrease">&minus;</a>
+                            </span>
                         {/if}
                     </div>
                 </div>
