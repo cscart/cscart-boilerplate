@@ -1983,7 +1983,7 @@
         </grid>
       </container>
       <container container_id="54" location_id="14" position="HEADER" width="12" user_class="" linked_to_default="N" status="A">
-        <grid width="3" user_class="" linked_to_default="N" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+        <grid width="3" user_class="col-md-3 col-sm-3 col-xs-12" linked_to_default="N" status="A" offset="0" omega="0" alpha="1" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
           <blocks>
             <block>
               <type><![CDATA[template]]></type>
@@ -2007,7 +2007,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="5" user_class="vendor-stores-title" linked_to_default="N" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+        <grid width="5" user_class="col-md-5 col-sm-5 col-xs-5 vendor-stores-title" linked_to_default="N" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
           <blocks>
             <block>
               <type><![CDATA[smarty_block]]></type>
