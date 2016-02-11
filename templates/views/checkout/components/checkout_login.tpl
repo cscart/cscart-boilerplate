@@ -12,7 +12,7 @@
         {capture name="register"}
             {if $settings.General.approve_user_profiles != "Y"}
                 <div id="register_checkout" class="{if $settings.Checkout.sign_in_default_action != "register"} cm-noscript{/if}">
-                    {include file="common/button.tpl" onclick="fn_switch_checkout_type();Tygh.$('.cm-focus').focus();" meta="btn-default" text=__("register") as="link"}
+                    {include file="common/button.tpl" onclick="Tygh.$('.cm-focus').focus();" meta="btn-default cm-combination" id="sw_step_one_register" text=__("register") as="link"}
                 </div>
             {/if}
         {/capture}

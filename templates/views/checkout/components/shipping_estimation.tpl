@@ -15,13 +15,11 @@
 {if !$cart}
     {$cart = $smarty.session.cart}
 {/if}
-
 {if $location != "sidebox" && $location != "popup"}
 
 <div id="est_box{$id_suffix}" class="panel panel-default">
     <div class="panel-header">
-        <h3>{__("calculate_shipping_cost")}</h3>
-    </div>
+    <h3>{__("calculate_shipping_cost")}</h3>
 {/if}
     
         <div id="shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix}" class="panel-body">
@@ -38,7 +36,7 @@
                 <input type="hidden" name="result_ids" value="shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix},shipping_estimation_buttons" />
 
                 {hook name="checkout:shipping_estimation_fields"}
-                <div class="forum-group">
+                <div class="form-group">
                     <label for="{$prefix}elm_country{$id_suffix}" class="control-label">{__("country")}</label>
                     <select id="{$prefix}elm_country{$id_suffix}" class="cm-country cm-location-estimation{$class_suffix} form-control" name="customer_location[country]">
                         <option value="">- {__("select_country")} -</option>
@@ -85,11 +83,10 @@
                 </div>
 
             </form>
-
             {if $runtime.mode == "shipping_estimation" || $smarty.request.show_shippings == "Y"}
                 {if !$cart.shipping_failed && !$cart.company_shipping_failed}
                     {if $location == "popup"}
-                        {__("select_shipping_method")}
+                        <h3>{__("select_shipping_method")}</h3>
                     {/if}
                     <form class="cm-ajax" name="{$prefix}select_shipping_form{$id_suffix}" action="{""|fn_url}" method="post">
                     <input type="hidden" name="redirect_mode" value="cart" />
@@ -183,14 +180,15 @@
         <!--shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix}--></div>
 
 {if $location != "sidebox" && $location != "popup"}
+    </div>
 </div>
 {/if}
 
 {if $location == "popup"}
 <div class="panel-footer col-lg-12 buttons-container" id="shipping_estimation_buttons">
     {if $runtime.mode == "shipping_estimation" || $smarty.request.show_shippings == "Y"}
-        {include file="common/button.tpl" text=__("recalculate_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click pull-right" as="link"}
-
+        {include file="common/button.tpl" text=__("recalculate_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click" as="link"}
+        <br>
         {include file="common/button.tpl" text=__("select_shipping_method") external_click_id="but_select_shipping" meta="btn-default cm-external-click cm-dialog-closer" as="link"}
     {else}
         {include file="common/button.tpl" text=__("get_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click" as="link"}

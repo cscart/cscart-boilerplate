@@ -35,10 +35,10 @@
     </div>
     <div id="step_one_body" class="panel-body {if !$edit} hidden{/if}">
         {if ($settings.Checkout.disable_anonymous_checkout == "Y" && !$auth.user_id) || ($settings.Checkout.disable_anonymous_checkout != "Y" && !$auth.user_id && !$contact_info_population) || $smarty.session.failed_registration == true}
-            <div id="step_one_login" {if $smarty.request.login_type == "register"}class="hidden"{/if}>
+            <div id="on_step_one_register" {if $smarty.request.login_type == "register"}class="hidden"{/if}>
                     {include file="views/checkout/components/checkout_login.tpl" checkout_type="one_page"}
             </div>
-            <div id="step_one_register" class="clearfix{if $smarty.request.login_type != "register"} hidden{/if}">
+            <div id="off_step_one_register" class="clearfix{if $smarty.request.login_type != "register"} hidden{/if}">
                 <form name="step_one_register_form" class="{$ajax_form} cm-ajax-full-render" action="{""|fn_url}" method="post">
                     <input type="hidden" name="result_ids" value="checkout*,account*" />
                     <input type="hidden" name="return_to" value="checkout" />
@@ -55,7 +55,7 @@
                         <div class="clearfix"></div>
                     </div>
                         {include file="common/button.tpl" meta="btn-primary" name="dispatch[checkout.add_profile]" text=__("register")}
-                        {include file="common/button.tpl" onclick="Tygh.$('#step_one_register').hide(); Tygh.$('#step_one_login').show();" text=__("cancel") meta="btn-default" as="link"} 
+                        {include file="common/button.tpl" onclick="Tygh.$('#off_step_one_register').hide(); Tygh.$('#on_step_one_register').show();" text=__("cancel") meta="btn-default" as="link"} 
                     
                 </form>
             </div>

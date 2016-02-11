@@ -65,7 +65,7 @@
                         </block>
                     </blocks>
                 </grid>
-                <grid width="8" user_class="top-links-grid" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="RIGHT" html_element="div" clear="1">
+                <grid width="8" user_class="col-md-8 col-sm-8 col-xs-8 top-links-grid" linked_to_default="Y" status="A" offset="0" omega="1" alpha="0" wrapper="" content_align="RIGHT" html_element="div" clear="1">
                     <blocks>
                         <block>
                             <type><![CDATA[my_account]]></type>

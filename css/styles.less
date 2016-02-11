@@ -101,6 +101,10 @@ hr {
     margin-bottom: 5px;
 }
 
+.template-small-img img {
+    min-width: 40px;
+}
+
 // FIXME replace to select2.
 .select-object-link {
     a {
@@ -732,6 +736,10 @@ div.ui-dialog .ui-dialog-title {
     background: #f7f7f7;
 }
 
+.cart-statistic.dl-horizontal dt {
+    width: 260px;
+}
+
 /*=====  End of Cart content  ======*/
 
 
@@ -1084,15 +1092,21 @@ div.ui-dialog .ui-dialog-title {
 
 @media (max-width: 767px) {
 
-    header, .top-menu-grid {
-        padding-top: 20px;
+    .product-block-button .btn {
+        margin-bottom: 5px;
+    }
+
+    .checkout-steps h4 {
+        font-size: 15px;
+        line-height: 21px;
     }
 
     .bigpicture-right {
         margin-top: 20px;
     }
 
-    .logo-block {
+    .logo-block,
+    .vendor-logo-block {
         text-align: center;
     }
 
@@ -1102,7 +1116,9 @@ div.ui-dialog .ui-dialog-title {
     }
 
     .search-block,
-    .logo-block {
+    .logo-block,
+    .vendor-logo-block,
+    .vendor-search-block {
         margin-bottom: 20px;
     }
 
@@ -1204,6 +1220,8 @@ div.ui-dialog .ui-dialog-title {
         display: block;
         margin-bottom: 10px;
     }
+
+
 }
 
 /*=====  End of Media Queries  ======*/

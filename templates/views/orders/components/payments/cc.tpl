@@ -6,7 +6,7 @@
 {assign var="id_suffix" value=""}
 {/if}
 <div class="row credit-card">
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
+    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
         <div class="panel panel-default ">
             <div class="panel-body">
                 <div class="form-group">
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
                 <label for="credit_card_cvv2_{$id_suffix}" class="cm-required cm-integer cm-cc-cvv2 cm-autocomplete-off control-label">{__("cvv2")}</label>
