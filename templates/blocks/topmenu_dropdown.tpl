@@ -23,7 +23,7 @@
             {if $subitems_count}
             {/if}
             <li class="dropdown {if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}{if $item1.class} {$item1.class}{/if}">
-                <a {if $item1_url} href="{$item1_url}"{/if} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$item1.$name} <span class="caret"></span></a>
+                <a {if $item1_url} href="{$item1_url}"{/if} class="dropdown-toggle">{$item1.$name} <span class="caret"></span></a>
 
                 {if $item1.$childs}
                     {if !$item1.$childs|fn_check_second_level_child_array:$childs}

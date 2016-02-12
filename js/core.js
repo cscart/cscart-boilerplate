@@ -1034,6 +1034,29 @@ var Tygh = {
                 });
             }
 
+            // Fix Bootstrap navbar hover menu
+            if (Modernizr.touchevents) {
+                $('.nav .dropdown').on({
+                    click: function() {
+                        if($(this).hasClass('open')) {
+                            return true;
+                        }
+
+                        $(this).addClass('open');
+                        return false;
+                    }
+                });
+            } else {
+                $('.nav .dropdown').on({
+                    mouseenter: function () {
+                        $(this).addClass('open');
+                    },
+                    mouseleave: function () {
+                        $(this).removeClass('open');
+                    }
+                });
+            }
+
             return true;
         },
 
