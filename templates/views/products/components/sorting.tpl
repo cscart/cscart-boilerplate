@@ -58,7 +58,6 @@
                 {$pagination.items_per_page} {__("per_page")} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
                 {foreach from=$product_steps item="step"}
                 {if $step != $pagination.items_per_page}
                     <li>
