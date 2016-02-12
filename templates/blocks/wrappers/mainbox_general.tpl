@@ -4,7 +4,7 @@
         {if $title || $smarty.capture.title|trim}
             {hook name="wrapper:mainbox_general_title_wrapper"}
                 <div class="page-header">
-                    <h2>
+                    <h1>
                         {hook name="wrapper:mainbox_general_title"}
                         {if $smarty.capture.title|trim}
                             {$smarty.capture.title nofilter}
@@ -12,7 +12,7 @@
                             {$title nofilter}
                         {/if}
                         {/hook}
-                    </h2>
+                    </h1>
                 </div>
             {/hook}
         {/if}

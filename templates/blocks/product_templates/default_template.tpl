@@ -22,7 +22,7 @@
 
             {hook name="products:main_info_title"}
                 {if !$hide_title}
-                    <h2 {live_edit name="product:product:{$product.product_id}"}>{$product.product nofilter}</h2>
+                    <h1 {live_edit name="product:product:{$product.product_id}"}>{$product.product nofilter}</h1>
                 {/if}
 
                 {hook name="products:brand"}

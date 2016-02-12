@@ -69,9 +69,9 @@
 
                         {hook name="products:quick_view_title"}
                             {if !$hide_title}
-                                <h3 class="product-block-title">
+                                <h1 class="product-block-title">
                                     <a href="{"products.view?product_id=`$product.product_id`"|fn_url}" class="quick-view-title" {live_edit name="product:product:{$product.product_id}"}>{$product.product nofilter}</a>
-                                </h3>
+                                </h1>
                             {/if}
                         {/hook}
 
