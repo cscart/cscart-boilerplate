@@ -548,8 +548,14 @@ div.ui-dialog .ui-dialog-title {
     display: block;
 }
 
-.cart-dropdown .dropdown-menu {
-    min-width: 350px;
+.cart-dropdown {
+    .media-object {
+        max-width: inherit;
+    }
+    
+    .dropdown-menu {
+        min-width: 350px;
+    }
 }
 
 .product-list {
@@ -1165,10 +1171,6 @@ div.ui-dialog .ui-dialog-title {
 
     .cart-dropdown .dropdown-menu {
         min-width: 300px;
-    }
-
-    .cart-dropdown .media-object {
-        max-width: inherit;
     }
 
     .cart-content-left-buttons,
