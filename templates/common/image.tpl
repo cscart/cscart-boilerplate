@@ -18,7 +18,9 @@
 {if $image_data.image_path}
     <img class="{$valign} {$class} {if $lazy_load}lazyOwl{/if} {if $generate_image}spinner{/if}"  {if $obj_id && !$no_ids}id="det_img_{$obj_id}"{/if} {if $generate_image}data-ca-image-path="{$image_data.image_path}"{/if} {if $lazy_load}data-{/if}src="{if $generate_image}{$images_dir}/icons/spacer.gif{else}{$image_data.image_path}{/if}" alt="{$image_data.alt}" title="{$image_data.alt}" {if $image_onclick}onclick="{$image_onclick}"{/if} />
 {else}
-    <span class="no-image" style="min-width: {$image_width|default:$image_height}px; min-height: {$image_height|default:$image_width}px;"><i class="no-image" title="{__("no_image")}"></i></span>
+    <div class="no-image">
+        <img src="{$images_dir}/icons/no_image.png" title="{__("no_image")}" alt="{__("no_image")}" style="width: {$image_width|default:$image_height}px; height: auto;" />
+    </div>
 {/if}
 
 {if $show_detailed_link}
