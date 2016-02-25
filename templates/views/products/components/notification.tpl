@@ -4,7 +4,7 @@
    So, it is STRONGLY recommended to use strip tags in such templates
 *}
 {strip}
-<div class="product-notification-body cm-notification-max-height">
+<div class="product-notification-body">
     {include file="views/products/components/product_notification_items.tpl"}
     {$product_info nofilter}
 </div>
