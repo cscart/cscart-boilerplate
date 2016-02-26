@@ -137,7 +137,7 @@
                             <content><![CDATA[]]></content>
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[]]></wrapper>
-                            <user_class><![CDATA[]]></user_class>
+                            <user_class><![CDATA[block-logo]]></user_class>
                             <order><![CDATA[0]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
@@ -185,7 +185,7 @@
                       <content><![CDATA[]]></content>
                       <object_ids><![CDATA[]]></object_ids>
                       <wrapper><![CDATA[]]></wrapper>
-                      <user_class><![CDATA[]]></user_class>
+                      <user_class><![CDATA[block-call-request]]></user_class>
                       <order><![CDATA[0]]></order>
                       <status><![CDATA[A]]></status>
                       <translations>
@@ -245,7 +245,7 @@
                           </content>
                           <object_ids><![CDATA[]]></object_ids>
                           <wrapper><![CDATA[]]></wrapper>
-                          <user_class><![CDATA[]]></user_class>
+                          <user_class><![CDATA[block-main-menu]]></user_class>
                           <order><![CDATA[0]]></order>
                           <status><![CDATA[A]]></status>
                           <translations>
@@ -271,7 +271,7 @@
                             <content><![CDATA[]]></content>
                             <object_ids><![CDATA[]]></object_ids>
                             <wrapper><![CDATA[]]></wrapper>
-                            <user_class><![CDATA[]]></user_class>
+                            <user_class><![CDATA[block-breadcrumbs]]></user_class>
                             <order><![CDATA[0]]></order>
                             <status><![CDATA[A]]></status>
                             <translations>
