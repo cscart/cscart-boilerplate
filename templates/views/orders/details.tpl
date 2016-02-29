@@ -298,7 +298,7 @@
         {if $use_shipments}
             <div id="content_shipment_info" class="orders-shipment tab-pane">
                 {foreach from=$shipments item="shipment"}
-                    <h3>{__("shipment")} #`$shipment.shipment_id`"}</h3>
+                    <h3>{__("shipment")} #{$shipment.shipment_id}</h3>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <table class="table orders-shipment-table">
