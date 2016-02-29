@@ -29,7 +29,7 @@
     and uses a certain template to display it (e.g. list with thumbnails).
 *}
 <!DOCTYPE html>
-<html lang="{$smarty.const.CART_LANGUAGE}" dir="{$language_direction}">
+<html {hook name="index:html"}{/hook} lang="{$smarty.const.CART_LANGUAGE}" dir="{$language_direction}">
 <head>
 {capture name="page_title"}
     {hook name="index:title"}
@@ -61,6 +61,7 @@ window.onerror = function(errorMessage) {
 </head>
 
 <body class="dispatch-{$runtime.controller}-{$runtime.mode}{if $runtime.action}-{$runtime.action}{/if}">
+{hook name="index:body"}{/hook}
 <div class="page" id="tygh_container">
 
 <div id="ajax_overlay" class="ajax-overlay"></div>
