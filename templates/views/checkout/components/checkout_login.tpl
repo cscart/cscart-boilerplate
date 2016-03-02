@@ -64,7 +64,7 @@
                                 <label for="checkout_type_guest" class="control-label">
                                     <input type="radio" id="checkout_type_guest" name="checkout_type" value=""{if $settings.Checkout.sign_in_default_action != "register"} checked="checked"{/if} onclick="fn_show_checkout_buttons('guest')" />
                                     <strong>{__("checkout_as_guest")}</strong><br>
-                                    {__("create_guest_account")}>
+                                    {__("create_guest_account")}
                                 </label>
                             </div>
                         </li>
