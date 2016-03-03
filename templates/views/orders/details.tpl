@@ -28,7 +28,7 @@
                             {/hook}
                         {/if}
                         
-                        {include file="common/button.tpl" text=__("re_order") but_href="orders.reorder?order_id=`$order_info.order_id`" icon="orders-actions-icon glyphicon glyphicon-repeat fa fa-refresh"}
+                        {include file="common/button.tpl" text=__("re_order") href="orders.reorder?order_id=`$order_info.order_id`" icon="orders-actions-icon glyphicon glyphicon-repeat fa fa-refresh"}
                     </div>
 
                 </div>
