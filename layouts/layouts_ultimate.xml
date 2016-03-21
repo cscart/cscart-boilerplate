@@ -137,7 +137,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="4" user_class="search-block-grid col-md-4 col-sm-3" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+        <grid width="4" user_class="search-block-grid col-md-5 col-sm-5" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
           <blocks>
             <block>
               <type><![CDATA[template]]></type>
@@ -159,7 +159,7 @@
             </block>
           </blocks>
         </grid>
-        <grid width="3" user_class="cr-content-grid col-md-3 col-sm-3" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
+        <grid width="3" user_class="cr-content-grid col-md-4 col-sm-4" linked_to_default="Y" status="A" offset="0" omega="0" alpha="0" wrapper="" content_align="FULL_WIDTH" html_element="div" clear="0">
           <blocks>
             <block>
               <type><![CDATA[call_request]]></type>

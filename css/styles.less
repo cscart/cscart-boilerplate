@@ -177,7 +177,7 @@ html.dialog-is-open {
 }
 
 .ui-widget-content.ui-dialog {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .ui-dialog .ui-dialog-titlebar {
@@ -227,7 +227,7 @@ div.ui-dialog .ui-dialog-title {
     padding: 15px 20px;
     border: 1px solid #e3e3e3;
     width: 100%;
-    margin-left: -20px;
+    margin:0px -20px -20px -20px;
 }
 
 .ui-dialog .ui-dialog-titlebar-close {
@@ -718,9 +718,12 @@ div.ui-dialog .ui-dialog-title {
     background: #f7f7f7;
 }
 
-.cart-statistic.dl-horizontal dt {
-    width: 260px;
+.cart-statistic.dl-horizontal {
+    dt {
+        width: 230px;    
+    }
 }
+
 
 /*=====  End of Cart content  ======*/
 
@@ -1206,6 +1209,12 @@ div.ui-dialog .ui-dialog-title {
     td.cart-content-description {
         min-width: 20em;
         white-space: normal !important;
+    }
+
+    .cart-statistic.dl-horizontal {
+        dt {
+            width: 100%;    
+        }
     }
 
 

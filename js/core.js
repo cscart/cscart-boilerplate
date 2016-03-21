@@ -2628,11 +2628,12 @@ var Tygh = {
                 }
 
                 if(dialogHeight > max_height) {
-                   d.parent().outerHeight(max_height);
+                    d.parent().css({
+                        bottom: 0
+                    });
                 }
 
                 containerHeight = d.parent().outerHeight() - titleHeight;
-
                 if(buttonsElm && _.area == "C" ) {
                     if(dialogHeight >= max_height) {
                         containerHeight = containerHeight - buttonsHeight;

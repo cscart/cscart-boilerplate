@@ -16,7 +16,7 @@
     <div class="panel-body cart-total-wrapper clearfix" id="checkout_totals">
         <div class="row">
             {if $cart_products}
-                <div class="coupons-container col-lg-4">
+                <div class="coupons-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     {include file="views/checkout/components/promotion_coupon.tpl"}
                     {hook name="checkout:payment_extra"}
                     {/hook}
@@ -29,7 +29,7 @@
                 <div class="col-lg-8"></div>
             {/if}
 
-            <div class="col-lg-4 text-right">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-0 col-xs-offset-0 text-right">
                 <dl class="cart-statistic dl-horizontal">
                     <dt class="subtotal">{__("subtotal")}</dt>
                     <dd class="subtotal">{include file="common/price.tpl" value=$cart.display_subtotal}</dd>
