@@ -320,7 +320,7 @@
                                 <content><![CDATA[]]></content>
                                 <object_ids><![CDATA[]]></object_ids>
                                 <wrapper><![CDATA[]]></wrapper>
-                                <user_class><![CDATA[]]></user_class>
+                                <user_class><![CDATA[block-subscribe]]></user_class>
                                 <order><![CDATA[2]]></order>
                                 <status><![CDATA[A]]></status>
                                 <translations>
@@ -357,7 +357,7 @@
                                 </content>
                                 <object_ids><![CDATA[]]></object_ids>
                                 <wrapper><![CDATA[]]></wrapper>
-                                <user_class><![CDATA[]]></user_class>
+                                <user_class><![CDATA[block-social]]></user_class>
                                 <order><![CDATA[2]]></order>
                                 <status><![CDATA[A]]></status>
                                 <translations>
@@ -568,7 +568,7 @@
                                 <content><![CDATA[]]></content>
                                 <object_ids><![CDATA[]]></object_ids>
                                 <wrapper><![CDATA[]]></wrapper>
-                                <user_class><![CDATA[]]></user_class>
+                                <user_class><![CDATA[block-copyright]]></user_class>
                                 <order><![CDATA[2]]></order>
                                 <status><![CDATA[A]]></status>
                                 <translations>
@@ -592,7 +592,7 @@
                                 <content><![CDATA[]]></content>
                                 <object_ids><![CDATA[]]></object_ids>
                                 <wrapper><![CDATA[]]></wrapper>
-                                <user_class><![CDATA[]]></user_class>
+                                <user_class><![CDATA[block-footer-payments]]></user_class>
                                 <order><![CDATA[2]]></order>
                                 <status><![CDATA[A]]></status>
                                 <translations>
