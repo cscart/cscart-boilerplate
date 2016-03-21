@@ -29,7 +29,7 @@
     and uses a certain template to display it (e.g. list with thumbnails).
 *}
 <!DOCTYPE html>
-<html {hook name="index:html"}{/hook} lang="{$smarty.const.CART_LANGUAGE}" dir="{$language_direction}">
+<html {hook name="index:html_tag"}{/hook} lang="{$smarty.const.CART_LANGUAGE}" dir="{$language_direction}">
 <head>
 {capture name="page_title"}
     {hook name="index:title"}
