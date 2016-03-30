@@ -462,13 +462,13 @@
                     <div class="input-group spinner">
                         {if $settings.Appearance.quantity_changer == "Y"}
                             <span class="input-group-btn">
-                                <a class="btn btn-default cm-increase">&#43;</a>
+                                <a class="btn btn-default cm-decrease">&minus;</a>
                             </span>
                         {/if}
                         <input type="text" size="5" class="form-control cm-amount" id="qty_count_{$obj_prefix}{$obj_id}" name="product_data[{$obj_id}][amount]" value="{$default_amount}"{if $product.qty_step > 1} data-ca-step="{$product.qty_step}"{/if} data-ca-min-qty="1" />
                         {if $settings.Appearance.quantity_changer == "Y"}
                             <span class="input-group-btn">
-                                <a class="btn btn-default cm-decrease">&minus;</a>
+                                <a class="btn btn-default cm-increase">&#43;</a>
                             </span>
                         {/if}
                     </div>
