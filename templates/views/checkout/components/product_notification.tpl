@@ -1,12 +1,15 @@
 {capture name="buttons"}
     <div class="pull-left">
-        {include file="common/button.tpl" text=__("view_cart") meta="btn-primary" href="checkout.cart"}
+        {include file="common/button.tpl" text=__("continue_shopping") meta="btn-default cm-notification-close"}
     </div>
-    {if $settings.General.checkout_redirect != "Y"}
-        <div class="pull-right">
+
+    <div class="pull-right">
+        {if $settings.General.checkout_redirect == "Y"}
+            {include file="common/button.tpl" href="checkout.cart" text=__("view_cart") meta="btn-primary"}
+        {else}
             {include file="common/button.tpl" href="checkout.checkout" text=__("checkout") meta="btn-primary"}
-        </div>
-    {/if}
+        {/if}
+    </div>
 {/capture}
 {capture name="info"}
     <div class="product-notification-total-info row clearfix">
