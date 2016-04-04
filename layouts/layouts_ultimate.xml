@@ -10,7 +10,6 @@
     <layout_width>fluid</layout_width>
     <min_width>260</min_width>
     <max_width>1200</max_width>
-    <style_id>Default</style_id>
   </layout>
   <location dispatch="default" is_default="1" layout_id="3" object_ids="" custom_html="" position="10" lang_code="en" name="Default" title="" meta_description="" meta_keywords="">
     <containers>
