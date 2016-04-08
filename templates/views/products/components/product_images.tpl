@@ -26,7 +26,7 @@
         {else}
             {assign var="img_id" value=$image_pair.detailed_id}
         {/if}
-        {include file="common/image.tpl" images=$image_pair link_class="cm-image-previewer hidden" obj_id="`$preview_id`_`$img_id`" image_width=$image_width image_height=$image_height image_id="preview[product_images_`$preview_id`]"}
+        {include file="common/image.tpl" images=$image_pair link_class="cm-image-previewer hidden-na" obj_id="`$preview_id`_`$img_id`" image_width=$image_width image_height=$image_height image_id="preview[product_images_`$preview_id`]"}
     {/if}
 {/foreach}
 </div>
