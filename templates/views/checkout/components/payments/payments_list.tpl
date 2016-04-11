@@ -1,5 +1,5 @@
 <div class="payments-list row">
-    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <ul class="list-group">
             {hook name="checkout:payment_method"}
                 {foreach from=$payments item="payment"}
@@ -23,7 +23,7 @@
                     {if $payment_id == $payment.payment_id}
                         {if $payment.template && $payment.template != "cc_outside.tpl"}
                             {capture name="payment_template"}
-                                {include file=$payment.template}
+                                {include file=$payment.template payment_list=true}
                             {/capture}
                             {if $smarty.capture.payment_template|trim}
                             <li class="list-group-item">
@@ -36,7 +36,7 @@
             {/hook}
         </ul>
     </div>
-    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         {$instructions nofilter}
     </div>
 </div>
