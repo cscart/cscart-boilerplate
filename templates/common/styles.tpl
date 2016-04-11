@@ -11,3 +11,7 @@
     
 {/hook}
 {/styles}
+
+{if $runtime.customization_mode.live_editor || $runtime.customization_mode.design}
+        {style src="../lib/cs-cart/design_mode.css"}
+{/if}

@@ -61,7 +61,11 @@ window.onerror = function(errorMessage) {
 </head>
 
 <body class="dispatch-{$runtime.controller}-{$runtime.mode}{if $runtime.action}-{$runtime.action}{/if}">
-{hook name="index:body"}{/hook}
+{hook name="index:body"}
+    {if $runtime.customization_mode.live_editor}
+        {include file="common/toolbar.tpl" title=__("on_site_live_editing") href="customization.disable_mode?type=live_editor"}
+    {/if}
+{/hook}
 <div class="page" id="tygh_container">
 
 <div id="ajax_overlay" class="ajax-overlay"></div>

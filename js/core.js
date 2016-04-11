@@ -4171,12 +4171,11 @@ var Tygh = {
         function _processTranslation(text)
         {
             if (_.live_editor_mode && text.indexOf('[lang') != -1) {
-                text = '<var class="live-edit-wrap"><i class="cm-icon-live-edit icon-live-edit ty-icon-live-edit"></i><var class="cm-live-edit live-edit-item" data-ca-live-edit="langvar::' + text.substring(text.indexOf('=') + 1, text.indexOf(']')) + '">' + text.substring(text.indexOf(']') + 1, text.lastIndexOf('[')) + '</var></var>';
+                text = '<var class="live-edit-wrap"><i class="cm-icon-live-edit glyphicon glyphicon-pencil fa fa-pencil badge"></i><var class="cm-live-edit live-edit-item" data-ca-live-edit="langvar::' + text.substring(text.indexOf('=') + 1, text.indexOf(']')) + '">' + text.substring(text.indexOf(']') + 1, text.lastIndexOf('[')) + '</var></var>';
             }
 
             return text;
         }
-
         function _pickFromDialog(event) {
             var nt = $('.cm-notification-content', $(event.target));
             if (nt.length) {

@@ -32,10 +32,10 @@
     {script src="js/lib/autonumeric/autoNumeric.js"}
     {script src="js/lib/appear/jquery.appear-1.1.1.js"}
 
-{if !$runtime.customization_mode.live_editor}
-    {script src="js/lib/tools/tooltip.min.js"}
+{if $runtime.customization_mode.live_editor}
+    {script src="js/lib/autosize/jquery.autosize.js"}
+    {script src="design/themes/`$runtime.layout.theme_name`/js/live_editor_mode.js"}
 {/if}
-
 {script src="js/tygh/editors/`$settings.Appearance.default_wysiwyg_editor`.editor.js"}
 
 <script type="text/javascript">
@@ -109,6 +109,13 @@
         current_host: '{$config.current_host|escape:javascript nofilter}',
         init_context: '{$smarty.request.init_context|escape:javascript nofilter}'
     });
+
+    {if $live_editor_objects}
+        $.extend(_, {
+            live_editor_mode: true,
+            live_editor_objects: {$live_editor_objects|json_encode nofilter}
+        });
+    {/if}
 
     {if !$smarty.request.init_context}
 

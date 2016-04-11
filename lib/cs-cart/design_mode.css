@@ -1,0 +1,59 @@
+/* Translate
+   ========================================================================== */
+/* Translate icon (Smarty filter) */
+.live-edit-wrap {
+    position: relative;
+}
+.live-edit-wrap .editable-click,
+.live-edit-wrap a.editable-click,
+.live-edit-wrap a.editable-click:hover {
+    border-bottom: none !important;
+}
+.live-edit-wrap .cm-live-edit {
+    display: inline-block;
+    outline: 1px dashed #999;
+    outline-offset: -1px;
+}
+.live-edit-wrap .fa.fa-pencil {
+    background-color: #e6e6e6;
+    border: 1px solid #cccccc;
+    color: #333 !important;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe5e5e5', GradientType=0);
+    font-size: 11px;
+    opacity: 0;
+    padding: 2px;
+    position: absolute;
+    z-index: 1050;
+    border-radius: 3px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.live-edit-wrap .fa.fa-pencil:hover {
+    background-color: #dbdbdb;
+    color: #111 !important;
+}
+
+.editable-pre-wrapped {
+    white-space: normal !important;
+}
+
+.live-edit-wrap:hover .fa.fa-pencil {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+/* Landscape phone to desktop/tablet */
+@media (max-width: 767px) {
+    .editable-input {
+        max-width: 400px !important;
+    }
+}
+/* Phone */
+@media (max-width: 480px) {
+    .editable-input {
+        max-width: 200px !important;
+    }
+}

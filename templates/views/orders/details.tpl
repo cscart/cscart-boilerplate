@@ -259,10 +259,12 @@
                                         <td data-ct-orders-summary="summary-surchange">{include file="common/price.tpl" value=$order_info.payment_surcharge}</td>
                                     </tr>
                                 {/if}
-                                <tr>
-                                    <td class="orders-summary-total"><strong>{__("total")}:&nbsp;</strong></td>
-                                    <td class="orders-summary-total" data-ct-orders-summary="summary-total">{include file="common/price.tpl" value=$order_info.total}</td>
-                                </tr>
+                                {hook name="orders:order_total"}
+                                    <tr>
+                                        <td class="orders-summary-total"><strong>{__("total")}:&nbsp;</strong></td>
+                                        <td class="orders-summary-total" data-ct-orders-summary="summary-total">{include file="common/price.tpl" value=$order_info.total}</td>
+                                    </tr>
+                                {/hook}
                             {/hook}
                         </table>
                     </div>
