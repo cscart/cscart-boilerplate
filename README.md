@@ -1,6 +1,8 @@
 # The CS-Cart Boilerplate Theme
 ### A CS-Cart theme based on HTML5 Twitter Bootstrap 3.3.5
 
+![boilerplate-theme](https://cloud.githubusercontent.com/assets/11404497/14453514/f8823fec-009d-11e6-9737-46437f87c96a.png )
+
 The Boilerplate theme exists to simplify custom design development for CS-Cart. It uses [Bootstrap 3.3.5](http://getbootstrap.com/), that provides pre-built reusable components such as dropdowns, navigation, buttons, and other interface elements. You get the building blocks and the example of how they can be put together to create a theme.
 
 Boilerplate only has 1,000 lines of our CSS code left, as opposed to 11,000 lines in CS-Cart’s standard Responsive theme (and we aim to get rid of our CSS entirely). That way you don’t have to figure out our code: if you are familiar with Bootstrap, you can get started quickly.
