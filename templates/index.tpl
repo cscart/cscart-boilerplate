@@ -61,28 +61,29 @@ window.onerror = function(errorMessage) {
 </head>
 
 <body class="dispatch-{$runtime.controller}-{$runtime.mode}{if $runtime.action}-{$runtime.action}{/if}">
-{hook name="index:body"}
-    {if $runtime.customization_mode.live_editor}
-        {include file="common/toolbar.tpl" title=__("on_site_live_editing") href="customization.disable_mode?type=live_editor"}
-    {/if}
-{/hook}
-<div class="page" id="tygh_container">
+    {hook name="index:body"}
+        {if $runtime.customization_mode.live_editor}
+            {include file="common/toolbar.tpl" title=__("on_site_live_editing") href="customization.disable_mode?type=live_editor"}
+        {/if}
 
-<div id="ajax_overlay" class="ajax-overlay"></div>
-<div id="ajax_loading_box" class="ajax-loading-box"></div>
+        <div class="page" id="tygh_container">
 
-{include file="common/notification.tpl"}
+        <div id="ajax_overlay" class="ajax-overlay"></div>
+        <div id="ajax_loading_box" class="ajax-loading-box"></div>
 
-<main class="page-container" id="tygh_main_container" role="main">
-    {hook name="index:content"}
-        {render_location}
+        {include file="common/notification.tpl"}
+
+        <main class="page-container" id="tygh_main_container" role="main">
+            {hook name="index:content"}
+                {render_location}
+            {/hook}
+        <!--tygh_main_container--></main>
+
+        {hook name="index:footer"}{/hook}
+        <!--tygh_container--></div>
+
+        {include file="common/scripts.tpl"}
     {/hook}
-<!--tygh_main_container--></main>
-
-{hook name="index:footer"}{/hook}
-<!--tygh_container--></div>
-
-{include file="common/scripts.tpl"}
 </body>
 
 </html>
