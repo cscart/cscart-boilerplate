@@ -83,6 +83,13 @@ window.onerror = function(errorMessage) {
         <!--tygh_container--></div>
 
         {include file="common/scripts.tpl"}
+
+        {if $runtime.customization_mode.design}
+            {include file="backend:common/template_editor.tpl"}
+        {/if}
+        {if $runtime.customization_mode.theme_editor}
+            {include file="backend:common/theme_editor.tpl"}
+        {/if}
     {/hook}
 </body>
 
