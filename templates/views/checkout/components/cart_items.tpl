@@ -46,7 +46,7 @@
                                     <i class="glyphicon glyphicon-remove-sign fa fa-times-circle"></i>
                                 </a>
                             {/if}
-                            <div class="sku {if !$product.product_code} hidden{/if}" id="sku_{$key}">
+                            <div class="sku cm-hidden-wrapper{if !$product.product_code} hidden{/if}" id="sku_{$key}">
                                 {__("sku")}: <span class="cm-reload-{$obj_id}" id="product_code_update_{$obj_id}">{$product.product_code}<!--product_code_update_{$obj_id}--></span>
                             </div>
                             {if $product.product_options}
