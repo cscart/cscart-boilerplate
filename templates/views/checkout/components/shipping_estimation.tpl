@@ -165,9 +165,9 @@
                         {/if}
 
                     {/foreach}
-
-                    <p><strong>{__("total")}:</strong>&nbsp;{include file="common/price.tpl" value=$cart.display_shipping_cost }</p>
-
+                    <div id="shipping_estimation_total">
+                        <p><strong>{__("total")}:</strong>&nbsp;{include file="common/price.tpl" value=$cart.display_shipping_cost }</p>
+                    <!--shipping_estimation_total--></div>
                     {/hook}
 
                     <div class="{$buttons_class}">
