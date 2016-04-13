@@ -50,15 +50,15 @@
 
 {capture name="sku_`$obj_id`"}
     {if $show_sku}
-        <div class="form-group row sku-item cm-reload-{$obj_prefix}{$obj_id} cm-hidden-wrapper{if !$product.product_code} hidden{/if}" id="sku_update_{$obj_prefix}{$obj_id}">
+        <div class="form-group row sku-item cm-hidden-wrapper{if !$product.product_code} hidden{/if}" >
             <input type="hidden" name="appearance[show_sku]" value="{$show_sku}" />
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
                 <label class="control-label" id="sku_{$obj_prefix}{$obj_id}">{__("sku")}:</label>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-7">
-                <span id="product_code_{$obj_prefix}{$obj_id}">{$product.product_code}</span>
+                <span class="cm-reload-{$obj_prefix}{$obj_id}" id="product_code_{$obj_prefix}{$obj_id}">{$product.product_code}<!--product_code_{$obj_prefix}{$obj_id}--></span>
             </div>
-        <!--sku_update_{$obj_prefix}{$obj_id}--></div>
+        </div>
     {/if}
 {/capture}
 {if $no_capture}
