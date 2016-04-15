@@ -91,7 +91,7 @@
                                 {/if}
 
                                 {strip}
-                                    {if $feature.prefix}{$feature.prefix}{/if}
+                                    {if $feature.prefix && $feature.feature_type != "ProductFeatures::MULTIPLE_CHECKBOX"|enum}{$feature.prefix}{/if}
                                     {if $feature.feature_type == "ProductFeatures::SINGLE_CHECKBOX"|enum}
                                         <span class="compare-checkbox" title="{$feature.value}">{if $feature.value == "Y"}<i class="glyphicon glyphicon-check fa fa-check-square-o"></i>{/if}</span>
                                     {elseif $feature.feature_type == "ProductFeatures::DATE"|enum}
@@ -100,7 +100,7 @@
                                         <ul class="compare-list">
                                         {foreach from=$feature.variants item="var"}
                                         {if $var.selected}
-                                        <li class="compare-list-item"><span class="compare-checkbox" title="{$var.variant}"><i class="glyphicon glyphicon-check fa fa-check-square-o"></i></span>{$var.variant}</li>
+                                        <li class="compare-list-item"><span class="compare-checkbox" title="{$var.variant}"><i class="glyphicon glyphicon-check fa fa-check-square-o"></i></span>&nbsp;{$feature.prefix}&nbsp;{$var.variant}&nbsp;{$feature.suffix}</li>
                                         {/if}
                                         {/foreach}
                                         </ul>
@@ -113,7 +113,7 @@
                                     {else}
                                         {$feature.value|default:"-"}
                                     {/if}
-                                    {if $feature.suffix}{$feature.suffix}{/if}
+                                    {if $feature.suffix && $feature.feature_type != "ProductFeatures::MULTIPLE_CHECKBOX"|enum}{$feature.suffix}{/if}
                                 {/strip}
                             {/foreach}
                         </tr>
