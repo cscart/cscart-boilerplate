@@ -32,7 +32,7 @@
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
 }
-.live-edit-wrap .fa.fa-pencil:hover {
+.live-edit-wrap .fa.fa-pencil:hover, .fa.fa-pencil:hover, button:hover .fa.fa-pencil{
     background-color: #dbdbdb;
     color: #111 !important;
 }
@@ -41,7 +41,11 @@
     white-space: normal !important;
 }
 
-.live-edit-wrap:hover .fa.fa-pencil {
+.editable-container {
+    z-index: 100000 !important; 
+}
+
+.live-edit-wrap:hover .fa.fa-pencil, button:hover .live-edit-wrap:hover .fa.fa-pencil{
     opacity: 1;
     filter: alpha(opacity=100);
 }

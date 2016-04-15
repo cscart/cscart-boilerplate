@@ -61,6 +61,8 @@
                             rule = _.live_editor_objects[object_name];
                         
                         var params = {
+                            container    : 'body',
+                            placement    : 'auto',
                             type         : 'text',
                             pk           : 1,
                             escape       : false,
@@ -244,10 +246,10 @@
             // add the class ty-wysiwyg-content for properly display WISYWIG
             $.fn.editableform.template = '<form class="form-inline editableform"><div class="control-group ty-wysiwyg-content"><div><div class="editable-input"></div><div class="editable-buttons"></div></div><div class="editable-error-block"></div></div></form>';
 
-            $(_.doc).on('click', '.cm-icon-live-edit', function(e) {
+            $('.cm-icon-live-edit').on('click', function(e) {
                 // attach translation icon click processing with highest priority
                 // to prevent processing of events attached to translation icon parents
-                e.stopPropagation();
+                e.stopImmediatePropagation();
                 e.preventDefault();
                 return $.ceLiveEditorMode('dispatch', e);
             });
