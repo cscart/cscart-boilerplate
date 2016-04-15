@@ -97,7 +97,7 @@
                                     {elseif $feature.feature_type == "ProductFeatures::DATE"|enum}
                                         {$feature.value_int|date_format:"`$settings.Appearance.date_format`"}
                                     {elseif $feature.feature_type == "ProductFeatures::MULTIPLE_CHECKBOX"|enum && $feature.variants}
-                                        <ul class="compare-list">
+                                        <ul class="compare-list list-unstyled">
                                         {foreach from=$feature.variants item="var"}
                                         {if $var.selected}
                                         <li class="compare-list-item"><span class="compare-checkbox" title="{$var.variant}"><i class="glyphicon glyphicon-check fa fa-check-square-o"></i></span>&nbsp;{$feature.prefix}&nbsp;{$var.variant}&nbsp;{$feature.suffix}</li>
