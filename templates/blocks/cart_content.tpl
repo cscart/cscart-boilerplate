@@ -2,7 +2,7 @@
 {assign var="r_url" value=$config.current_url|escape:url}
 {hook name="checkout:cart_content"}
 <div class="dropdown cart-dropdown" id="cart_status_{$dropdown_id}">
-    <button class="btn btn-default dropdown-toggle" type="button" id="cart_dropdown_{$dropdown_id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="btn btn-default dropdown-toggle" type="button" id="cart_dropdown_{$dropdown_id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     {hook name="checkout:dropdown_title"}
         {if $smarty.session.cart.amount}
             <i class="glyphicon glyphicon-shopping-cart fa fa-shopping-cart filled"></i>
@@ -14,7 +14,7 @@
             <span class="caret"></span>
         {/if}
     {/hook}
-    </button>
+    </span>
 
     <ul aria-labelledby="cart_dropdown_{$dropdown_id}" class="cm-cart-content dropdown-menu dropdown-menu-right {if $block.properties.products_links_type == "thumb"}cm-cart-content-thumb{/if} {if $block.properties.display_delete_icons == "Y"}cm-cart-content-delete{/if}">
         {hook name="checkout:minicart"}

@@ -1,10 +1,10 @@
 {** block-description:my_account **}
 <div class="dropdown account-dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="my_account_{$block.snapping_id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="btn btn-default dropdown-toggle" id="my_account_{$block.snapping_id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <i class="glyphicon glyphicon-user fa fa-user"></i>&nbsp;
         <span {live_edit name="block:name:{$block.block_id}"}>{$title}</span>
         <span class="caret"></span>
-    </button>
+    </span>
 
     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="my_account_{$block.snapping_id}" id="account_info_{$block.snapping_id}">
         {assign var="return_current_url" value=$config.current_url|escape:url}

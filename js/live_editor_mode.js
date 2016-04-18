@@ -246,7 +246,7 @@
             // add the class ty-wysiwyg-content for properly display WISYWIG
             $.fn.editableform.template = '<form class="form-inline editableform"><div class="control-group ty-wysiwyg-content"><div><div class="editable-input"></div><div class="editable-buttons"></div></div><div class="editable-error-block"></div></div></form>';
 
-            $('.cm-icon-live-edit').on('click', function(e) {
+            $('.cm-icon-live-edit').click( function(e) {
                 // attach translation icon click processing with highest priority
                 // to prevent processing of events attached to translation icon parents
                 e.stopImmediatePropagation();
