@@ -64,6 +64,7 @@ window.onerror = function(errorMessage) {
     {hook name="index:body"}
         {if $runtime.customization_mode.live_editor}
             {include file="common/toolbar.tpl" title=__("on_site_live_editing") href="customization.disable_mode?type=live_editor"}
+            <div class="live-editor-wrapp"></div>
         {/if}
 
         <div class="page" id="tygh_container">

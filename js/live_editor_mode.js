@@ -87,7 +87,7 @@
                         }
                         
                         var str_len = phrase.length ? phrase.length : 1;
-
+                        params.onblur = 'ignore';
                         if (live_editor_obj.type == 'input') {
                             params.tpl = '<input type="text" size="' + str_len + '">';
                         } else if (live_editor_obj.type == 'textarea') {
@@ -97,7 +97,6 @@
                         } else if (live_editor_obj.type == 'wysiwyg') {
                             // params.type = 'wysihtml5';
                             params.type = 'textarea';
-                            params.onblur = 'ignore';
                             elm_id_index ++;
                             params.tpl = '<textarea cols="70" class="cm-wysiwyg" id="live_editor_elm_' + elm_id_index + '"></textarea>';
                         } else if (live_editor_obj.type == 'price') {
@@ -249,7 +248,7 @@
             $('.cm-icon-live-edit').click( function(e) {
                 // attach translation icon click processing with highest priority
                 // to prevent processing of events attached to translation icon parents
-                e.stopImmediatePropagation();
+                e.stopPropagation();
                 e.preventDefault();
                 return $.ceLiveEditorMode('dispatch', e);
             });

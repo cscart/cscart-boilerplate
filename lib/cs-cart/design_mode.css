@@ -14,7 +14,7 @@
     outline: 1px dashed #999;
     outline-offset: -1px;
 }
-.live-edit-wrap .fa.fa-pencil {
+.live-edit-wrap .fa.fa-pencil, .ty-icon-live-edit {
     background-color: #e6e6e6;
     border: 1px solid #cccccc;
     color: #333 !important;
@@ -33,7 +33,16 @@
     transition: all 0.2s linear;
 }
 
-.live-edit-wrap .fa.fa-pencil:hover, .fa.fa-pencil:hover {
+.ty-icon-live-edit:before{
+    content: "\270f";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.live-edit-wrap .fa.fa-pencil:hover, .fa.fa-pencil:hover, .ty-icon-live-edit:hover {
     background-color: #dbdbdb;
     color: #111 !important;
 }
@@ -46,7 +55,7 @@
     z-index: 100000 !important; 
 }
 
-.live-edit-wrap:hover .fa.fa-pencil, button:hover .fa.fa-pencil{
+.live-edit-wrap:hover .fa.fa-pencil, .live-edit-wrap:hover .ty-icon-live-edit, button:hover .fa.fa-pencil{
     opacity: 1 !important;
     filter: alpha(opacity=100);
 }
