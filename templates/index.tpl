@@ -73,8 +73,10 @@ window.onerror = function(errorMessage) {
         <div id="ajax_loading_box" class="ajax-loading-box"></div>
 
         {include file="common/notification.tpl"}
-
+        {include file="common/modal.tpl"}
+        
         <main class="page-container" id="tygh_main_container" role="main">
+            <a href="#" class="cm-modal-show" id="myModal" >BS3 Modal</a>
             {hook name="index:content"}
                 {render_location}
             {/hook}

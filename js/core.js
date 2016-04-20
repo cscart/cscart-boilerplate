@@ -2278,6 +2278,35 @@ var Tygh = {
 
 
 
+    /* BS3 Dialog */
+
+    (function($){
+        var methods = {
+            open: function(params) {
+                var modal = $(this);
+                var modalId = modal.attr('id');
+                $('#'+modalId).modal();
+                
+            }
+        }
+
+        $.fn.ceModal = function(method) {
+            if (methods[method]) {
+                return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+            } else if ( typeof method === 'object' || ! method ) {
+                return methods.init.apply(this, arguments);
+            } else {
+                $.error('ceBsDialog: method ' +  method + ' does not exist');
+            }
+        }
+
+    })($);
+
+
+    $('.cm-modal-show').click(function(){
+        $(this).ceModal('open');
+    });
+
     /*
      * Dialog opener
      *
