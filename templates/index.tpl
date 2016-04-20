@@ -74,7 +74,7 @@ window.onerror = function(errorMessage) {
 
         {include file="common/notification.tpl"}
 
-        <main class="page-container" id="tygh_main_container" role="main">
+        <main class="page-container" role="main" id="tygh_main_container">
             {hook name="index:content"}
                 {render_location}
             {/hook}
