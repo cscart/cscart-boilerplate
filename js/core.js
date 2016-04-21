@@ -2282,11 +2282,27 @@ var Tygh = {
 
     (function($){
         var methods = {
+
             open: function(params) {
-                var modal = $(this);
-                var modalId = modal.attr('id');
-                $('#'+modalId).modal();
+
+                var self = $(this);
                 
+                var params = $.ceModal('get_params', self);
+                var modalId = self.data('caModalId');
+
+                if (self.attr("href")) {
+
+                    $.ceAjax('request', params.href, {
+                        full_render: 1,
+                        result_ids: 'modal-body',
+                        skip_result_ids_check: true,
+                        callback: function() {
+                            $('#'+modalId).modal();
+                            return true;
+                        }
+                    });
+
+                }
             }
         }
 
@@ -2300,10 +2316,18 @@ var Tygh = {
             }
         }
 
+        $.ceModal = function(action, params) {
+            var self = $(this);
+            
+
+            return params;
+        }
+
     })($);
 
 
-    $('.cm-modal-show').click(function(){
+    $('.cm-modal-show').click(function(e){
+        e.preventDefault();
         $(this).ceModal('open');
     });
 
@@ -2499,10 +2523,6 @@ var Tygh = {
 
                 var ws = $.getWindowSizes();
                 var container_parent = container.parent();
-
-                if (params.height !== 'auto' && _.area == "A") {
-                    params.height = (ws.view_height - height_border);
-                }
 
                 if (!container.find('form').length && !container.parents('.object-container').length && !container.data('caKeepInPlace')) {
                     params.keepInPlace = true;

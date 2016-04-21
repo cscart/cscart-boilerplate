@@ -1,4 +1,3 @@
-<div class="quick-view-wrapper">
     {assign var="quick_view" value="true"}
     {capture name="val_hide_form"}{/capture}
     {capture name="val_capture_options_vs_qty"}{/capture}
@@ -177,4 +176,3 @@
 
     {/hook}
     <!--product_main_info_{$obj_prefix}--></div>
-</div>

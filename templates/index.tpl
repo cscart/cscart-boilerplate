@@ -76,7 +76,6 @@ window.onerror = function(errorMessage) {
         {include file="common/modal.tpl"}
         
         <main class="page-container" id="tygh_main_container" role="main">
-            <a href="#" class="cm-modal-show" id="myModal" >BS3 Modal</a>
             {hook name="index:content"}
                 {render_location}
             {/hook}
