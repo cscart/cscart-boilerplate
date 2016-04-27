@@ -13,7 +13,7 @@
 <input type="hidden" name="return_status" value="{$return_info.status}" />
 {capture name="tabsbox"}
 {** RETURN PRODUCTS SECTION **}
-    <div id="content_return_products" class="tab-pane">
+    <div id="content_return_products" >
         {if $return_info.items[$smarty.const.RETURN_PRODUCT_ACCEPTED]}
         <table class="table rma-detail__table">
             <thead>
@@ -46,7 +46,7 @@
 {** /RETURN PRODUCTS SECTION **}
 
 {** DECLINED PRODUCTS SECTION **}
-    <div id="content_declined_products" class="tab-pane">
+    <div id="content_declined_products" >
         {if $return_info.items[$smarty.const.RETURN_PRODUCT_DECLINED]}
         <table class="table rma-detail-table">
         <thead>

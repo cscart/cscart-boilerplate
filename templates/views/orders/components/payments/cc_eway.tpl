@@ -74,7 +74,7 @@
 
             $.ceFormValidator('registerValidator', {
                 class_name: 'cm-cc-cvv2',
-                message: "{__("error_validator_ccv")}",
+                message: '{__("error_validator_ccv")}',
                 func: function(id) {
                     return ccCv2Input.inputmask("isComplete");
                 }
