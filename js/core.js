@@ -704,7 +704,7 @@ var Tygh = {
 
 
                     // process the anchors on the same page to avoid base href redirect
-                    if ($('base').length && _lnk.attr('href') && _lnk.attr('href').indexOf('#') == 0) {
+                    if ($('base').length && _lnk.attr('href') && _lnk.attr('href').indexOf('#') == 0 && _lnk.attr('href') != '#') {
                         var anchor_name = _lnk.attr('href').substr(1, _lnk.attr('href').length);
 
                         url = window.location.href;

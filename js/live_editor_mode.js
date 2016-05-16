@@ -28,11 +28,6 @@
         dispatch: function(e) {
             var jelm = $(e.target);
 
-            //fix for Redactor with acrive SEO addon. Stop scrolling top by clicking on toolbar link.
-            if (jelm.hasClass('re-icon')) {
-                e.preventDefault();
-            }
-
             if (e.type == 'click' && $.browser.mozilla && e.which != 1) {
                 return true;
             }
