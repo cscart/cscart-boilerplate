@@ -154,13 +154,13 @@
 
     {if $show_product_tabs}
         <div class="col-lg-12">
-        {include file="views/products/components/product_tabs.tpl" product_details_in_tab="N"}
+            {include file="views/products/components/product_tabs.tpl"}
 
-        {if $blocks.$tabs_block_id.properties.wrapper}
-            {include file=$blocks.$tabs_block_id.properties.wrapper content=$smarty.capture.tabsbox_content title=$blocks.$tabs_block_id.description}
-        {else}
-            {$smarty.capture.tabsbox_content nofilter}
-        {/if}
+            {if $blocks.$tabs_block_id.properties.wrapper}
+                {include file=$blocks.$tabs_block_id.properties.wrapper content=$smarty.capture.tabsbox_content title=$blocks.$tabs_block_id.description}
+            {else}
+                {$smarty.capture.tabsbox_content nofilter}
+            {/if}
         </div>
     {/if}
 </div>
