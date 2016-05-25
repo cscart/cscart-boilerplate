@@ -19,7 +19,3 @@
 {if $runtime.customization_mode.theme_editor}
     {style src="tygh/theme_editor.css" area="A"}
 {/if}
-
-{if $language_direction == 'rtl'}
-    {style src="tygh/rtl.less"}
-{/if}
