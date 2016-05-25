@@ -2276,6 +2276,7 @@ var Tygh = {
         };
     })($);
 
+<<<<<<< Updated upstream
 
 
     /* BS3 Dialog */
@@ -2324,6 +2325,8 @@ var Tygh = {
         }
 
     })($);
+=======
+>>>>>>> Stashed changes
 
 
     $('.cm-modal-show').click(function(e){
