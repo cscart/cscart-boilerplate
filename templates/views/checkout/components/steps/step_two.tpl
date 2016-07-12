@@ -39,7 +39,7 @@
             {if $edit}
                 <div class="clearfix">
                     <div class="checkout-block">
-                        {include file="views/profiles/components/multiple_profiles.tpl" show_text=true hide_profile_name=$hide_profile_name hide_profile_delete=true profile_id=$cart.profile_id create_href="checkout.checkout?edit_step=step_two&from_step=$cart.edit_step&profile=new"}
+                        {include file="views/profiles/components/multiple_profiles.tpl" show_text=true hide_profile_name=$hide_profile_name hide_profile_delete=true profile_id=$cart.profile_id create_href="checkout.checkout?edit_step=step_two&from_step={$cart.edit_step}&profile=new"}
                     </div>
                 </div>
             {/if}
