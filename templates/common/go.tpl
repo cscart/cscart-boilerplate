@@ -1,6 +1,6 @@
 <input type="hidden" name="dispatch" value="{$name}" />
 <span class="input-group-btn">
-    <button  title="{$alt}" type="submit" class="btn btn-default" type="button">
+    <button  title="{$alt}" type="submit" class="btn btn-default">
         {$text}
         {if $icon}
             <i class="glyphicon {$icon}"></i>

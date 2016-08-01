@@ -16,7 +16,7 @@
             {assign var="search_title" value=__("search_products")}
         {/if}
         <div class="input-group">
-            <input type="text" class="form-control cm-hint" placeholder="{$search.q}" type="text" name="q" value="{$search.q}" id="search_input{$smarty.capture.search_input_id}" title="{$search_title}" />
+            <input type="text" class="form-control cm-hint" placeholder="{$search.q}" name="q" value="{$search.q}" id="search_input{$smarty.capture.search_input_id}" title="{$search_title}" />
             {if $settings.General.search_objects}
                 {include file="common/go.tpl" name="search.results" alt=__("search") icon="glyphicon-search fa fa-search"}
             {else}
