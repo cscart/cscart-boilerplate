@@ -7,4 +7,4 @@
     {$quick_nav_ids = ","|implode:$quick_nav_ids}
     {$quick_view_url = $quick_view_url|fn_link_attach:"n_items=`$quick_nav_ids`"}
 {/if}
-<a class="btn btn-default cm-modal-show cm-modal-large" data-ca-view-id="{$product.product_id}" data-ca-modal-id="modal-view" href="{$quick_view_url|fn_url}" data-ca-modal-title="{__("quick_product_viewer")}" rel="nofollow">{__("quick_view")}</a>
+<a class="btn btn-default cm-modal-show cm-modal-large" data-ca-view-id="{$product.product_id}" data-ca-target-id="product_quick_view" href="{$quick_view_url|fn_url}" data-ca-modal-title="{__("quick_product_viewer")}" rel="nofollow">{__("quick_view")}</a>

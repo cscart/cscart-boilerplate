@@ -346,6 +346,16 @@ var Tygh = {
                     return false;
                 }
 
+                if (jelm.closest('.cm-modal-show').length) {
+
+                    var _e = jelm.closest('.cm-modal-show');
+                    var params = $.ceModal('get_params', _e);
+
+                    $(_e).ceModal('open', params);
+
+                    return false;
+                }
+
                 // change modal dialogs displaying
                 if (jelm.data('toggle') == "modal" && $.ceDialog('get_last').length) {
                     var href = jelm.prop('href');
@@ -2276,9 +2286,6 @@ var Tygh = {
         };
     })($);
 
-<<<<<<< Updated upstream
-
-
     /* BS3 Dialog */
 
     (function($){
@@ -2286,53 +2293,199 @@ var Tygh = {
 
             open: function(params) {
 
-                var self = $(this);
-                
-                var params = $.ceModal('get_params', self);
-                var modalId = self.data('caModalId');
+                var elm = $(this);
+                var params = params || {};
 
-                if (self.attr("href")) {
+                
+                $.popupStack.add({
+                    name: params.id
+                });
+
+                $(elm).ceModal('generate_template', params);
+                
+                if (params.href) {
+                    $(elm).ceModal('_load_content', params);
+                    return;    
+                } else {
+                    $(elm).ceModal('_init', params);
+                }
+
+            }, 
+            _is_empty: function(){
+                var container = $(this);
+
+                var content = $.trim(container.html());
+
+                if (content) {
+                    content = content.replace(/<!--(.*?)-->/g, '');
+                }
+
+                if (!$.trim(content)) {
+                    return true;
+                }
+
+                return false;
+            },
+
+            _load_content: function(params) {
+
+                if (params.href) {
 
                     $.ceAjax('request', params.href, {
                         full_render: 1,
                         result_ids: 'modal-body',
                         skip_result_ids_check: true,
                         callback: function() {
-                            $('#'+modalId).modal();
+                            $('#'+params.id).ceModal('_init',params);
                             return true;
                         }
                     });
 
                 }
+            },
+
+            _init: function(params) {
+                
+                var container = $(this),
+                modal = container.find('.modal-dialog'),
+
+                params = params || [],
+                title = params.title || '',
+                size = params.size || 'medium';
+
+                modal.addClass('modal-'+params.size);
+
+                if (title != '') {
+                    container.find('.modal-title').html(title);
+                }
+
+                container.modal();
+
+                container.on('hidden.bs.modal', function(params){
+                    $.popupStack.remove(params.id);
+                });
+
+                
+
+            }, 
+
+            generate_template: function(params){
+
+                var modal_body = '';
+
+                if ( $('#'+params.id).length != 0 ) {
+                    
+                    if ($('#'+params.id).hasClass('modal')) {
+                        return;
+                    }
+
+                    modal_body = $('#'+params.id);
+                    modal_body.removeAttr('id');
+                    modal_body.removeClass('hidden');
+                    
+                }
+
+                var template = $('#modal-template').clone().appendTo(_.body);
+                template.attr('id', params.id);
+
+                if (modal_body != '') {
+                    template.find('.modal-body').append(modal_body);
+                }
+                
+                return template;
+
             }
+
         }
 
         $.fn.ceModal = function(method) {
             if (methods[method]) {
                 return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
             } else if ( typeof method === 'object' || ! method ) {
-                return methods.init.apply(this, arguments);
+                return methods.open.apply(this, arguments);
             } else {
-                $.error('ceBsDialog: method ' +  method + ' does not exist');
+                $.error('ceModal: method ' +  method + ' does not exist');
             }
         }
 
-        $.ceModal = function(action, params) {
-            var self = $(this);
-            
+        $.ceModal = function(action, elm) {
 
-            return params;
+            var self = elm;
+
+            var action = action;
+            var params = params || [];
+
+            if (action == 'get_params') {
+
+                if ( self.data('caTargetId') )
+                {
+                    params.id = self.data('caTargetId');
+                } 
+
+                if (self.data('caModalTitle')) {
+                    params.title = self.data('caModalTitle');
+                } else {
+                    params.title = self.text();
+                }
+
+                if (self.hasClass('cm-modal-large')) {
+                    params.size = 'lg';
+                }
+
+                if (self.hasClass('cm-modal-small')) {
+                    params.size = 'sm';
+                }
+
+                if (self.attr("href")) {
+                    params.href = self.attr("href");
+                }
+
+                return params;
+            }
+            
         }
 
+        $.extend({
+            popupStack: {
+                stack: [],
+                add: function(params) {
+                    return this.stack.push(params);
+                },
+                remove: function(name) {
+                    var position = this.stack.indexOf(name);
+                    if (position != -1) {
+                        return this.stack.splice(position, 1);
+                    }
+                },
+                last_close: function() {
+                    var obj = this.stack.pop();
+                    if (obj && obj.close) {
+                        obj.close();
+                        return true;
+                    }
+                    return false;
+                },
+                last: function() {
+                    return this.stack[this.stack.length-1];
+                },
+                close: function(name) {
+                    var position = this.stack.indexOf(name);
+                    if (position != -1) {
+                        var object = this.stack.splice(position, 1)[0];
+                        if (object.close) {
+                            object.close();
+                        }
+                        return true;
+                    }
+                    return false;
+                },
+                clear_stack: function() {
+                    return this.stack = [];
+                }
+            }
+        });
+
     })($);
-=======
->>>>>>> Stashed changes
-
-
-    $('.cm-modal-show').click(function(e){
-        e.preventDefault();
-        $(this).ceModal('open');
-    });
 
     /*
      * Dialog opener
@@ -2827,45 +2980,7 @@ var Tygh = {
             }
         };
 
-        $.extend({
-            popupStack: {
-                stack: [],
-                add: function(params) {
-                    return this.stack.push(params);
-                },
-                remove: function(name) {
-                    var position = this.stack.indexOf(name);
-                    if (position != -1) {
-                        return this.stack.splice(position, 1);
-                    }
-                },
-                last_close: function() {
-                    var obj = this.stack.pop();
-                    if (obj && obj.close) {
-                        obj.close();
-                        return true;
-                    }
-                    return false;
-                },
-                last: function() {
-                    return this.stack[this.stack.length-1];
-                },
-                close: function(name) {
-                    var position = this.stack.indexOf(name);
-                    if (position != -1) {
-                        var object = this.stack.splice(position, 1)[0];
-                        if (object.close) {
-                            object.close();
-                        }
-                        return true;
-                    }
-                    return false;
-                },
-                clear_stack: function() {
-                    return this.stack = [];
-                }
-            }
-        });
+
     })($);
 
 
