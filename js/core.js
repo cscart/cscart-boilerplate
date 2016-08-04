@@ -2376,7 +2376,7 @@ var Tygh = {
                 if ( $('#'+params.id).length != 0 ) {
                     
                     if ($('#'+params.id).hasClass('modal')) {
-                        return;
+                        return; //dialog is init
                     }
 
                     modal_body = $('#'+params.id);
@@ -2385,7 +2385,9 @@ var Tygh = {
                     
                 }
 
-                var template = $('#modal-template').clone().appendTo(_.body);
+                $('#modal-template').clone().appendTo(_.body);
+
+                var template = $('body').find('#modal-template').last();
                 template.attr('id', params.id);
 
                 if (modal_body != '') {
