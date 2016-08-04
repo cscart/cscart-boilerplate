@@ -18,7 +18,7 @@
                 {/if}
             {/if}
 
-            <div id="content_{$tab.html_id}" class="wysiwyg-content tab-pane content-{$tab.html_id} {if $tab_id > 1}hidden{/if}">
+            <div id="content_{$tab.html_id}" class="wysiwyg-content tab-pane content-{$tab.html_id} {if $tab_id > 1}hidden-simple{/if}">
                 {$smarty.capture.$tab_content_capture nofilter}
             </div>
         {/if}
