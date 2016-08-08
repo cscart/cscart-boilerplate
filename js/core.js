@@ -2292,27 +2292,25 @@ var Tygh = {
         var methods = {
 
             open: function(params) {
-
+                
                 var elm = $(this);
                 var params = params || {};
+                var container = $(elm).ceModal('generate_template', params);
 
-                
                 $.popupStack.add({
                     name: params.id
                 });
 
-                $(elm).ceModal('generate_template', params);
-                
-                if (params.href) {
-                    $(elm).ceModal('_load_content', params);
+                if ((params.href && container.ceModal('_is_empty')) || params.update == true) {
+                    container.ceModal('_load_content', params);
                     return;    
                 } else {
-                    $(elm).ceModal('_init', params);
+                    container.ceModal('_init', params);
                 }
 
             }, 
-            _is_empty: function(){
-                var container = $(this);
+            _is_empty: function(params){
+                var container = $(this).find('.modal-body');
 
                 var content = $.trim(container.html());
 
@@ -2329,14 +2327,17 @@ var Tygh = {
 
             _load_content: function(params) {
 
-                if (params.href) {
+                var obj = $(this);
+
+                if (!$(params.id).length) {
 
                     $.ceAjax('request', params.href, {
                         full_render: 1,
-                        result_ids: 'modal-body',
+                        method: 'post',
+                        result_ids: params.id+'-body',
                         skip_result_ids_check: true,
                         callback: function() {
-                            $('#'+params.id).ceModal('_init',params);
+                            obj.ceModal('_init',params);
                             return true;
                         }
                     });
@@ -2349,9 +2350,11 @@ var Tygh = {
                 var container = $(this),
                 modal = container.find('.modal-dialog'),
 
+
                 params = params || [],
                 title = params.title || '',
                 size = params.size || 'medium';
+                update = params.update || false;
 
                 modal.addClass('modal-'+params.size);
 
@@ -2361,9 +2364,23 @@ var Tygh = {
 
                 container.modal();
 
-                container.on('hidden.bs.modal', function(params){
-                    $.popupStack.remove(params.id);
+                
+
+                container.on('shown.bs.modal', function(params){
+                    var container = $(this),
+                        zi = $.popupStack.stack.length,
+                        bg = $(_.body).find('.modal-backdrop').last();
+
+                    container.css('z-index', 1050+(10*zi));
+                    bg.css('z-index',1040+(10*zi));
+
                 });
+
+                container.on('hidden.bs.modal', function(params){
+                    $.popupStack.remove($.popupStack.last());
+                });
+
+
 
                 
 
@@ -2376,7 +2393,7 @@ var Tygh = {
                 if ( $('#'+params.id).length != 0 ) {
                     
                     if ($('#'+params.id).hasClass('modal')) {
-                        return; //dialog is init
+                        return $('#'+params.id); //dialog is init
                     }
 
                     modal_body = $('#'+params.id);
@@ -2385,13 +2402,14 @@ var Tygh = {
                     
                 }
 
-                $('#modal-template').clone().appendTo(_.body);
+                var template = $('#modal-template').clone();
 
-                var template = $('body').find('#modal-template').last();
                 template.attr('id', params.id);
+                template.appendTo(_.body);
+                template.find('#modal-body').attr('id',params.id+'-body').html('<!--'+params.id+'-body-->');
 
                 if (modal_body != '') {
-                    template.find('.modal-body').append(modal_body);
+                    $('#'+params.id + '-body').append(modal_body);
                 }
                 
                 return template;
@@ -2419,10 +2437,13 @@ var Tygh = {
 
             if (action == 'get_params') {
 
-                if ( self.data('caTargetId') )
-                {
+                if ( self.data('caTargetId') ){
                     params.id = self.data('caTargetId');
                 } 
+
+                if (self.hasClass('cm-modal-update')) {
+                    params.update = true;
+                }
 
                 if (self.data('caModalTitle')) {
                     params.title = self.data('caModalTitle');
@@ -2446,7 +2467,7 @@ var Tygh = {
             }
             
         }
-
+        
         $.extend({
             popupStack: {
                 stack: [],
@@ -2461,7 +2482,13 @@ var Tygh = {
                 },
                 last_close: function() {
                     var obj = this.stack.pop();
-                    if (obj && obj.close) {
+                    
+                    if (obj && !obj.close) {
+                        $('#'+obj.name).modal('hide');
+                        return true;
+                    }
+
+                    if (obj && obj.close){
                         obj.close();
                         return true;
                     }
@@ -2474,8 +2501,11 @@ var Tygh = {
                     var position = this.stack.indexOf(name);
                     if (position != -1) {
                         var object = this.stack.splice(position, 1)[0];
-                        if (object.close) {
-                            object.close();
+                        if (object && !object.close) {
+                            $('#'+obj.name).modal('hide');
+                        } 
+                        if (object && object.close) {
+                            obj.close();
                         }
                         return true;
                     }
@@ -2486,6 +2516,8 @@ var Tygh = {
                 }
             }
         });
+
+    
 
     })($);
 

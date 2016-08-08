@@ -17,4 +17,5 @@
     text=$text|default:$link_text
     id=$id
     link_meta=$link_meta
+    size=small
 }
