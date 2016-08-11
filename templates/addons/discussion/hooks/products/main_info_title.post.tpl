@@ -5,6 +5,6 @@
         {if $product.discussion.posts}
         <a class="discussion-review-a cm-external-click" data-ca-scroll="content_discussion" data-ca-external-click-id="discussion">{$product.discussion.search.total_items} {__("reviews", [$product.discussion.search.total_items])}</a>
         {/if}
-        <a class="discussion-review-write cm-dialog-opener cm-dialog-auto-size" data-ca-target-id="new_post_dialog_{$obj_id}" rel="nofollow">{__("write_review")}</a>
+        <a class="discussion-review-write cm-modal-show" data-ca-target-id="new_post_dialog_{$obj_id}" rel="nofollow">{__("write_review")}</a>
     <!--average_rating_product--></div>
 {/if}

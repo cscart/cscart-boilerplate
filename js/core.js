@@ -2362,28 +2362,20 @@ var Tygh = {
                     container.find('.modal-title').html(title);
                 }
 
+                var container = $(this),
+                    zi = $.popupStack.stack.length,
+                    bg = $(_.body).find('.modal-backdrop').last();
+
+                container.css('z-index', 1050+(10*zi));
+                bg.css('z-index',1040+(10*zi));
+
                 container.modal();
-
-                
-
-                container.on('shown.bs.modal', function(params){
-                    var container = $(this),
-                        zi = $.popupStack.stack.length,
-                        bg = $(_.body).find('.modal-backdrop').last();
-
-                    container.css('z-index', 1050+(10*zi));
-                    bg.css('z-index',1040+(10*zi));
-
-                });
 
                 container.on('hidden.bs.modal', function(params){
                     $.popupStack.remove($.popupStack.last());
+                    container.css('z-index', '');
+                    bg.css('z-index', '');
                 });
-
-
-
-                
-
             }, 
 
             generate_template: function(params){

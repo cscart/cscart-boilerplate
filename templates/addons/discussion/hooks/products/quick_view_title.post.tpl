@@ -5,6 +5,6 @@
         {if $product.discussion.posts}
         <a  href="{"products.view?product_id=`$product.product_id`&selected_section=discussion#discussion"|fn_url}" class="discussion-review-a">{$product.discussion.search.total_items} {__("reviews", [$product.discussion.search.total_items])}</a>
         {/if}
-        <a class="discussion-review-write cm-dialog-opener cm-dialog-auto-size" data-ca-target-id="new_post_dialog_{$obj_prefix}{$obj_id}" rel="nofollow">{__("write_review")}</a>
+        <a class="discussion-review-write cm-modal-show" data-ca-target-id="new_post_dialog_{$obj_prefix}{$obj_id}" rel="nofollow">{__("write_review")}</a>
     <!--average_rating_product_{$obj_prefix}{$obj_id}--></div>
 {/if}
