@@ -2352,13 +2352,13 @@ var Tygh = {
 
 
                 params = params || [],
-                title = params.title || '',
+                title = params.title,
                 size = params.size || 'medium';
                 update = params.update || false;
 
                 modal.addClass('modal-'+params.size);
 
-                if (title != '') {
+                if ($.trim(title) != '') {
                     container.find('.modal-title').html(title);
                 }
 
