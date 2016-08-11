@@ -3871,7 +3871,10 @@ var Tygh = {
                         }
 
                         if (!message_set) {
-                            $.scrollToElm(elm);
+                            if (!elm.parent('modal')) {
+                                $.scrollToElm(elm);    
+                            }
+                            
                             message_set = true;
                         }
 
