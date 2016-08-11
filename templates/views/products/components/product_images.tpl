@@ -33,7 +33,40 @@
 
 {if $product.image_pairs}
     {if $settings.Appearance.thumbnails_gallery == "Y"}
+        <input type="hidden" name="no_cache" value="1" />
+        {strip}
         
+            <div class="cm-image-gallery-wrapper">
+                {strip}
+                <div class=" cm-image-gallery" id="images_preview_{$preview_id}">
+                    {if $image_pair_var}
+                        <div class="cm-item-gallery media-left">
+                            <a data-ca-gallery-large-id="det_img_link_{$preview_id}_{$image_id}" class="cm-gallery-item cm-thumbnails-mini active thumbnail">
+                           {include file="common/image.tpl" images=$image_pair_var image_width=$th_size image_height=$th_size show_detailed_link=false obj_id="`$preview_id`_`$image_id`_mini"}
+                            </a>
+                        </div>
+                    {/if}
+                    {if $product.image_pairs}
+                        {foreach from=$product.image_pairs item="image_pair"}
+                            {if $image_pair}
+                                <div class="cm-item-gallery media-left">
+                                    {if $image_pair.image_id}
+                                        {assign var="img_id" value=$image_pair.image_id}
+                                    {else}
+                                        {assign var="img_id" value=$image_pair.detailed_id}
+                                    {/if}
+                                    <a data-ca-gallery-large-id="det_img_link_{$preview_id}_{$img_id}" class="cm-gallery-item cm-thumbnails-mini thumbnail ">
+                                    {include file="common/image.tpl" images=$image_pair image_width=$th_size image_height=$th_size show_detailed_link=false obj_id="`$preview_id`_`$img_id`_mini"}
+                                    </a>
+                                </div>
+                            {/if}
+                        {/foreach}
+                    {/if}
+                </div>
+                {/strip}
+            </div>
+        
+        {/strip}
     {else}
         <div class="product-thumbnails cm-image-gallery" id="images_preview_{$preview_id}" style="width: {$image_width}px;">
             {strip}
