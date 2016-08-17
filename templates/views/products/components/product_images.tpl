@@ -36,7 +36,7 @@
         <input type="hidden" name="no_cache" value="1" />
         {strip}
         
-            <div class="cm-image-gallery-wrapper">
+            <div class="cm-image-gallery-wrapper center-block">
                 {strip}
                 <div class=" cm-image-gallery" id="images_preview_{$preview_id}">
                     {if $image_pair_var}

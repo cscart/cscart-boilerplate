@@ -45,7 +45,7 @@
                     pagination: false,
                     navigation: true,
                     lazyLoad: true,
-                    navigationText: params.items_count == 1 ? ['<i class="icon-left-circle ty-icon-left-circle"></i>', '<i class="icon-right-circle ty-icon-right-circle"></i>'] : ['<i class="icon-left-open-thin ty-icon-left-open-thin"></i>', '<i class="icon-right-open-thin ty-icon-right-open-thin"></i>'],
+                    navigationText: params.items_count == 1 ? ['<i class="glyphicon glyphicon-chevron-left"></i>', '<i class="glyphicon glyphicon-chevron-right"></i>'] : ['<i class="glyphicon glyphicon-menu-left"></i>', '<i class="glyphicon glyphicon-menu-right"></i>'],
                     theme: params.items_count == 1 ? 'owl-one-theme' : 'owl-more-theme',
                     afterInit: function(item) {
                         $(item).css({'visibility':'visible', 'position':'relative'});
