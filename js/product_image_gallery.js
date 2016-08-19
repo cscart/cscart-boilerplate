@@ -63,8 +63,8 @@
                     item_height: params.i_height,
                     clip_width: params.c_width,
                     clip_height: params.i_height,
-                    buttonNextHTML: '<div><i class="icon-right-open-thin ty-icon-right-open-thin"></i></div>',
-                    buttonPrevHTML: '<div><i class="icon-left-open-thin ty-icon-left-open-thin"></i></div>',
+                    buttonNextHTML: '<div><i class="glyphicon glyphicon-chevron-right"></i></div>',
+                    buttonPrevHTML: '<div><i class="glyphicon glyphicon-chevron-left"></i></div>',
                     buttonNextEvent: 'click',
                     buttonPrevEvent: 'click',
                     size: methods.countElms(container)

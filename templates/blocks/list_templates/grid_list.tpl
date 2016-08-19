@@ -21,8 +21,7 @@
         {assign var="cur_number" value=1}
     {/if}
 
-    {* FIXME: Don't move this file *}
-    {script src="js/tygh/product_image_gallery.js"}
+    {script src="design/themes/`$runtime.layout.theme_name`/js/product_image_gallery.js"}
 
     {if $settings.Appearance.enable_quick_view == 'Y'}
         {$quick_nav_ids = $products|fn_fields_from_multi_level:"product_id":"product_id"}
