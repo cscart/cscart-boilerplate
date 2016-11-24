@@ -4,5 +4,20 @@
     "logo": "media/images/logos/main_logo.png",
     "mail": "media/images/logos/main_logo.png",
     "developer": "Simtech",
-    "favicon": "media/images/icons/favicon.ico"
+    "favicon": "media/images/icons/favicon.ico",
+    "EXAMPLE_settings_overrides": {
+        "General": {
+            "enable_compare_products": false
+        },
+        "Appearance": {
+            "default_products_view": "products_without_options",
+            "default_product_details_view": "bigpicture_template",
+            "thumbnails_gallery": true,
+            "enable_quick_view": false
+        },
+        "Thumbnails": {
+            "product_lists_thumbnail_width": 300,
+            "product_lists_thumbnail_height": 300
+        }
+    }
 }
