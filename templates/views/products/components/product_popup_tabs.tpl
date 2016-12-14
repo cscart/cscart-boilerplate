@@ -6,7 +6,7 @@
 
             {capture name=$tab_content_capture}
                 {if $tab.tab_type == 'B'}
-                    {render_block block_id=$tab.block_id dispatch="products.view"}
+                    {render_block block_id=$tab.block_id dispatch="products.view" use_cache=false parse_js=false}
                 {elseif $tab.tab_type == 'T'}
                     {include file=$tab.template product_tab_id=$product_tab_id force_ajax=true}
                 {/if}
