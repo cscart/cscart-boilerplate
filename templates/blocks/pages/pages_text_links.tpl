@@ -2,7 +2,7 @@
 
 {if $items}
     {strip}
-    <ul class="nav nav-pills nav-stacked list-unstyled text-links {if $block.properties.right_to_left_orientation =="Y"} rtl{/if}">
+        <ul class="list-unstyled text-links">
         {foreach from=$items item="page"}
             <li class="level-{$page.level|default:0}{if $page.active || $page|fn_check_is_active_menu_item:$block.type} active{/if}">
                 {if $page.page_type == $smarty.const.PAGE_TYPE_LINK}
