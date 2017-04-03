@@ -9,7 +9,7 @@
 {if $items}
     <nav class="text-links">
     {if !$submenu}
-        <ul class="list-inline">
+        <ul>
             {foreach from=$items item="menu"}
                 <li class="{if $menu.active}active{/if} {if $menu.class} {$menu.class}{/if}">
                     <a {if $menu.href}href="{$menu.href|fn_url}"{else}href="#"{/if}>{$menu.item}</a>
@@ -20,6 +20,7 @@
             {/foreach}
         </ul>
     {else}
+        <ul>
         {foreach from=$items item="menu"}
            <li class="{if $menu.active}active{/if} {if $menu.class} {$menu.class}{/if}">
                 <a {if $menu.href}href="{$menu.href|fn_url}"{/if}>{$menu.item}</a> 
@@ -28,6 +29,7 @@
                 {/if}
             </li>
         {/foreach}
+        </ul>
     {/if}
     </nav>
 {/if}
