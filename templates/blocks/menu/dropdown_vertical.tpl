@@ -3,7 +3,7 @@
 {assign var="name" value="item"}
 {assign var="childs" value="subitems"}
 
-<nav class="navbar navbar-inverse has-submenu" role="navigation">
+<nav class="navbar navbar-inverse has-submenu no-margin-nav" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_{$block.block_id}" aria-expanded="false">
 

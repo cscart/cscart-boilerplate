@@ -3,7 +3,7 @@
 {assign var="name" value="page"}
 {assign var="childs" value="subpages"}
 
-<nav class="navbar navbar-inverse has-submenu" role="navigation">
+<nav class="navbar navbar-inverse has-submenu no-margin-nav" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_{$block.block_id}" aria-expanded="false">
 
