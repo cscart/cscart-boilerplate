@@ -114,6 +114,15 @@
             ui.responsiveFilters();
         });
 
+        var navbar = $('.no-margin-nav .navbar-collapse>ul.nav');
+        if(ui.winWidth() <= 767) {
+            if (!navbar.hasClass('navbar-nav'))
+                navbar.addClass('navbar-nav');
+        } else {
+            if (!navbar.hasClass('navbar-nav'))
+                navbar.removeClass('navbar-nav');
+        }
+
         if (window.addEventListener) {
             window.addEventListener('orientationchange', function() {
                 if(ui.winWidth() <= 767) {

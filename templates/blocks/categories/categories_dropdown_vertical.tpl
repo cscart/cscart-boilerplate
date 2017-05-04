@@ -12,7 +12,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand visible-xs-inline-block" href="#" data-toggle="collapse" data-target="#navbar_{$block.block_id}">{__("menu")}</a>
+        <a class="navbar-brand visible-xs-inline-block" href="#" data-toggle="collapse" data-target="#navbar_{$block.block_id}">{__("category")}</a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar_{$block.block_id}">
