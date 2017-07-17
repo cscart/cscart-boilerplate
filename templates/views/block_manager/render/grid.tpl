@@ -9,7 +9,7 @@
 {if $grid.status == "A" && $content}
     {if $grid.alpha}<div class="row">{/if}
         {$width = $fluid_width|default:$grid.width}
-        <section class="col-lg-{$width}{if $grid.offset} col-lg-offset-{$grid.offset}{/if}{if $grid.user_class} {$grid.user_class}{/if}" >
+        <section class="col-md-{$width}{if $grid.offset} col-md-offset-{$grid.offset}{/if}{if $grid.user_class} {$grid.user_class}{/if}">
             {$content nofilter}
         </section>
     {if $grid.omega}</div>{/if}
