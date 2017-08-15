@@ -1,0 +1,1 @@
+{include file='blocks/product_filters/selected_filters.tpl'}
