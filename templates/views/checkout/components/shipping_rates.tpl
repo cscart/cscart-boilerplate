@@ -77,15 +77,13 @@
                             {assign var="inc_tax_lang" value=__('inc_tax')}
                             {assign var="rate" value="`$rate``$inc_tax_lang`)"}
                         {/if}
-                    {else}
-                        {assign var="rate" value=__("free_shipping")}
                     {/if}
 
                     {hook name="checkout:shipping_method"}
                         {if $display == "radio"}
                             <label for="sh_{$group_key}_{$shipping.shipping_id}" class="control-label">
                                 <input type="radio" id="sh_{$group_key}_{$shipping.shipping_id}" name="shipping_ids[{$group_key}]" value="{$shipping.shipping_id}" onclick="fn_calculate_total_shipping_cost();" {$checked} />
-                                {$shipping.shipping} {$delivery_time} - {$rate nofilter}
+                                {$shipping.shipping} {$delivery_time}{if $rate} - {$rate nofilter}{/if}
                             </label>
                             <hr>
 
@@ -96,6 +94,11 @@
                             <p>
                                 {$strong_begin}{$rate.name} {$delivery_time} - {$rate nofilter}{$strong_begin}
                             </p>
+                        {/if}
+                        {if $shipping.description}
+                            <div class="ty-checkout__shipping-tips">
+                                <p>{$shipping.description nofilter}</p>
+                            </div>
                         {/if}
                     {/hook}
 

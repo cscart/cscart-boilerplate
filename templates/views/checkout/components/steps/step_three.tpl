@@ -35,7 +35,6 @@
                         {/hook}
                     
                         {if $edit}
-                            <p>{__("delivery_times_text")}</p>
                             {__("shipping_tips")}
                         {/if}
                     </div>
