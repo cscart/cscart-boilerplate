@@ -140,6 +140,8 @@
                                             {assign var="inc_tax_lang" value=__('inc_tax')}
                                             {assign var="rate" value="`$rate``$inc_tax_lang`)"}
                                         {/if}
+                                    {else}
+                                        {assign var="rate" value=0}
                                     {/if}
 
                                     <div class="radio">
