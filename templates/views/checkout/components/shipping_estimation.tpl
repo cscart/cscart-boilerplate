@@ -141,13 +141,18 @@
                                             {assign var="rate" value="`$rate``$inc_tax_lang`)"}
                                         {/if}
                                     {else}
-                                        {assign var="rate" value=__("free_shipping")}
+                                        {assign var="rate" value=0}
                                     {/if}
 
                                     <div class="radio">
                                         <label for="sh_{$group_key}_{$shipping.shipping_id}">
-                                            <input type="radio" id="sh_{$group_key}_{$shipping.shipping_id}" name="shipping_ids[{$group_key}]" value="{$shipping.shipping_id}" onclick="fn_calculate_total_shipping();" {$checked} />
-                                            {$shipping.shipping} {$delivery_time} - {$rate nofilter}
+                                            <input
+                                                type="radio"
+                                                id="sh_{$group_key}_{$shipping.shipping_id}"
+                                                name="shipping_ids[{$group_key}]"
+                                                value="{$shipping.shipping_id}"
+                                                onclick="fn_calculate_total_shipping();" {$checked} />
+                                            {$shipping.shipping} {$delivery_time}{if $rate} - {$rate nofilter}{/if}
                                         </label>
                                     </div>
                                     {/hook}

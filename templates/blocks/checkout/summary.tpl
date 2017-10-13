@@ -8,15 +8,15 @@
                 </td>
             </tr>
 
-            {if !$cart.shipping_failed && $cart.chosen_shipping && $cart.shipping_required}
+            {if !$cart.shipping_failed
+                && $cart.chosen_shipping
+                && $cart.shipping_required
+                && $cart.display_shipping_cost
+            }
             <tr>
                 <td>{__("shipping")}</td>
                 <td data-ct-checkout-summary="shipping" class="text-right">
-                    {if !$cart.display_shipping_cost}
-                        <span>{__("free_shipping")}</span>
-                    {else}
-                        <span>{include file="common/price.tpl" value=$cart.display_shipping_cost}</span>
-                    {/if}
+                    <span>{include file="common/price.tpl" value=$cart.display_shipping_cost}</span>
                 </td>
             </tr>
             {/if}
