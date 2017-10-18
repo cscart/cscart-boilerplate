@@ -332,7 +332,7 @@ var Tygh = {
                     $.ceEvent('trigger', 'ce.needScroll', [opt]);
 
                     if (_e.data('caScroll') && opt.need_scroll) {
-                        $.scrollToElm($('#' + _e.data('caScroll')));
+                        $.scrollToElm(_e.data('caScroll'));
                     }
                 }
 
@@ -379,7 +379,7 @@ var Tygh = {
                 }
 
                 if (jelm.hasClass('cm-scroll') && jelm.data('caScroll')) {
-                    $.scrollToElm($(jelm.data('caScroll')));
+                    $.scrollToElm(jelm.data('caScroll'));
                 }
 
                 if (_.changes_warning == 'Y' && jelm.parents('.cm-confirm-changes').length) {
@@ -1437,10 +1437,23 @@ var Tygh = {
             }
         },
 
-        scrollToElm: function(elm)
+        scrollToElm: function(elm, container)
         {
-            if (!elm.size()) {
-                return;
+            container = container || undefined;
+
+            if (typeof(elm) === 'string') {
+                if (elm.length && elm.charAt(0) !== '.' && elm.charAt(0) !== '#') {
+                    elm = '#' + elm;
+                }
+                elm = $(elm, container);
+            }
+
+            if (!(elm instanceof $) || !elm.size()) {
+                if (container instanceof $ && container.length) {
+                    elm = container;
+                } else {
+                    return;
+                }
             }
 
             var delay = 500;
@@ -2337,9 +2350,8 @@ var Tygh = {
 
                 var res = container.dialog('open');
 
-                var s_elm = params.scroll ? $('#' + params.scroll , container) : false;
-                if (s_elm && s_elm.length) {
-                    $.scrollToElm(s_elm);
+                if (params.scroll) {
+                    $.scrollToElm(params.scroll, container);
                 }
 
                 return res;
