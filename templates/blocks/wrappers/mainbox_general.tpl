@@ -1,3 +1,4 @@
+{** block-description:boiler_plate_mainbox_h1 **}
 {if $content|trim}
     <!-- Mainbox general wrapper start -->
     <div class="mainbox-container clearfix{if isset($hide_wrapper)} cm-hidden-wrapper{/if}{if $hide_wrapper} hidden{/if}{if $details_page} details-page{/if}{if $block.user_class} {$block.user_class}{/if}{if $content_alignment == "RIGHT"} pull-right{elseif $content_alignment == "LEFT"} pull-left{/if}">
