@@ -1,3 +1,9 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+
 msgctxt "Languages::boiler_plate_mainbox_h1"
 msgid "Main block (H1 heading)"
 msgstr "Главный блок (H1 заголовок)"
