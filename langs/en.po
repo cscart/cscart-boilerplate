@@ -4,22 +4,6 @@ msgstr "Project-Id-Version: tygh\n"
 "Language-Team: English\n"
 "Language: en_US"
 
-msgctxt "Languages::boiler_plate_mainbox_h1"
-msgid "Main block (H1 heading)"
-msgstr "Main block (H1 heading)"
-
-msgctxt "Languages::boiler_plate_mainbox_h2"
-msgid "Important block (H2 heading)"
-msgstr "Important block (H2 heading)"
-
 msgctxt "Languages::boiler_plate_mainbox_h3"
 msgid "Ordinary block (H3 heading)"
 msgstr "Ordinary block (H3 heading)"
-
-msgctxt "Languages::boiler_plate_sidebox_h3_deprecated"
-msgid "Ordinary block (H3 heading) [Deprecated]"
-msgstr "Ordinary block (H3 heading) [Deprecated]"
-
-msgctxt "Languages::boiler_plate_dropdown"
-msgid "Block with dropdown"
-msgstr "Block with dropdown"

@@ -4,22 +4,6 @@ msgstr "Project-Id-Version: tygh\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
 
-msgctxt "Languages::boiler_plate_mainbox_h1"
-msgid "Main block (H1 heading)"
-msgstr "Главный блок (H1 заголовок)"
-
-msgctxt "Languages::boiler_plate_mainbox_h2"
-msgid "Important block (H2 heading)"
-msgstr "Важный блок (H2 заголовок)"
-
 msgctxt "Languages::boiler_plate_mainbox_h3"
 msgid "Ordinary block (H3 heading)"
 msgstr "Обычный блок (H3 заголовок)"
-
-msgctxt "Languages::boiler_plate_sidebox_h3_deprecated"
-msgid "Ordinary block (H3 heading) [Deprecated]"
-msgstr "Обычный блок (H3 заголовок) (устарел)"
-
-msgctxt "Languages::boiler_plate_dropdown"
-msgid "Block with dropdown"
-msgstr "Выпадающий блок"
