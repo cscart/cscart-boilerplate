@@ -154,7 +154,7 @@
                                                 onclick="fn_calculate_total_shipping();" {$checked}
                                             />
                                             {$shipping.shipping} {$delivery_time}
-                                            {if $rate !== "_free_shipping"} {$rate nofilter}{/if}
+                                            {if !$rate|strstr:"_"} {$rate nofilter}{/if}
                                         </label>
                                     </div>
                                     {/hook}
