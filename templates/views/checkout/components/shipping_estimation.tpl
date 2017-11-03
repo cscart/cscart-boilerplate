@@ -79,7 +79,7 @@
                 {/hook}
                 
                 <div class="{$buttons_class}">
-                    {include file="common/button.tpl" text=__("get_rates") name="dispatch[checkout.shipping_estimation]" id="but_get_rates" as="link"}
+                    {include file="common/button.tpl" text=__("get_rates") name="dispatch[checkout.shipping_estimation]" id="but_get_rates{$location}" as="link"}
                 </div>
 
             </form>
@@ -195,11 +195,11 @@
 {if $location == "popup"}
 <div class="panel-footer col-lg-12 buttons-container" id="shipping_estimation_buttons">
     {if $runtime.mode == "shipping_estimation" || $smarty.request.show_shippings == "Y"}
-        {include file="common/button.tpl" text=__("recalculate_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click" as="link"}
+        {include file="common/button.tpl" text=__("recalculate_rates") external_click_id="but_get_rates{$location}" meta="btn-default cm-external-click" as="link"}
         <br>
         {include file="common/button.tpl" text=__("select_shipping_method") external_click_id="but_select_shipping" meta="btn-default cm-external-click cm-dialog-closer" as="link"}
     {else}
-        {include file="common/button.tpl" text=__("get_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click" as="link"}
+        {include file="common/button.tpl" text=__("get_rates") external_click_id="but_get_rates{$location}" meta="btn-default cm-external-click" as="link"}
     {/if}
 <!--shipping_estimation_buttons--></div>
 {/if}
