@@ -4859,3 +4859,42 @@ var Tygh = {
         }
         return start;
     }
+
+    /**
+     * This workaround is mainly required for a shipping estimator block to work outside of cart page.
+     * This function cannot be just moved from checkout.js, because some themes ("boilerplate" for example)
+     * might not include cs-cart's native core.js, which will lead to breaking delivery estimation
+     * functionality on the cart page.
+     **/
+    if (window.fn_calculate_total_shipping === undefined) {
+    
+        function fn_calculate_total_shipping(wrapper_id) {
+            var $ = Tygh.$;
+    
+            wrapper_id = wrapper_id || 'shipping_estimation';
+            var parent = $('#' + wrapper_id);
+    
+            var radio = $('input[type=radio]:checked', parent);
+            var params = [];
+    
+            $.each(radio, function(id, elm) {
+                params.push({name: elm.name, value: elm.value});
+            });
+    
+            var url = fn_url('checkout.shipping_estimation.get_total');
+    
+            for (var i in params) {
+                url += '&' + params[i]['name'] + '=' + encodeURIComponent(params[i]['value']);
+            }
+    
+            var suffix = parent.find('input[name="suffix"]').first().val();
+            
+            $.ceAjax('request', url, {
+                result_ids: 'shipping_estimation_total' + suffix,
+                data: {
+                    additional_id: parent.find('input[name="additional_id"]').first().val()
+                },
+                method: 'post'
+            });
+        }
+    }
