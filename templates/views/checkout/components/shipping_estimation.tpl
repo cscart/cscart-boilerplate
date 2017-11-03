@@ -154,7 +154,9 @@
                                                 onclick="fn_calculate_total_shipping();" {$checked}
                                             />
                                             {$shipping.shipping} {$delivery_time}
-                                            {if !$rate|strstr:"_"} {$rate nofilter}{/if}
+                                            {if fn_is_lang_var_exists($rate) || preg_match('/.[0-9]*\.[0-9]*/', $rate)}
+                                                {$rate nofilter}
+                                            {/if}
                                         </label>
                                     </div>
                                     {/hook}

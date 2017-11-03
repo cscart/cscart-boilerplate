@@ -86,7 +86,9 @@
                             <label for="sh_{$group_key}_{$shipping.shipping_id}" class="control-label">
                                 <input type="radio" id="sh_{$group_key}_{$shipping.shipping_id}" name="shipping_ids[{$group_key}]" value="{$shipping.shipping_id}" onclick="fn_calculate_total_shipping_cost();" {$checked} />
                                 {$shipping.shipping} {$delivery_time}
-                                {if !$rate|strstr:"_"} {$rate nofilter}{/if}
+                                {if fn_is_lang_var_exists($rate) || preg_match('/.[0-9]*\.[0-9]*/', $rate)}
+                                    {$rate nofilter}
+                                {/if}
                             </label>
                             <hr>
 
