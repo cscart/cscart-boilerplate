@@ -1439,7 +1439,7 @@ var Tygh = {
 
         scrollToElm: function(elm)
         {
-            if (!!(!elm.size)) {
+            if (!(!!elm.size)) {
                 return;
             }
 
