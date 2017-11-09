@@ -332,7 +332,7 @@ var Tygh = {
                     $.ceEvent('trigger', 'ce.needScroll', [opt]);
 
                     if (_e.data('caScroll') && opt.need_scroll) {
-                        $.scrollToElm($('#' + _e.data('caScroll')));
+                        $.scrollToElm(_e.data('caScroll'));
                     }
                 }
 
@@ -379,7 +379,7 @@ var Tygh = {
                 }
 
                 if (jelm.hasClass('cm-scroll') && jelm.data('caScroll')) {
-                    $.scrollToElm($(jelm.data('caScroll')));
+                    $.scrollToElm(jelm.data('caScroll'));
                 }
 
                 if (_.changes_warning == 'Y' && jelm.parents('.cm-confirm-changes').length) {
@@ -724,10 +724,12 @@ var Tygh = {
 
                 // in embedded mode all clicks on links should be caught by ajax handler
                 if (_.embedded && (jelm.is('a') || jelm.closest('a').length)) {
-                    var _elm = jelm.closest('a');
-                    if (_elm.prop('target') != '_blank' && _elm.prop('href').search(/javascript:/i) == -1) {
+                    var _elm = jelm.is('a') ? jelm : jelm.closest('a');
+                    if (_elm.prop('href') && _elm.prop('target') != '_blank' && _elm.prop('href').search(/javascript:/i) == -1) {
                         if (!_elm.hasClass('cm-no-ajax') && !$.externalLink(fn_url(_elm.prop('href')))) {
-                            _elm.data('caScroll', '#' + _.container);
+                            if (!_elm.data('caScroll')) {
+                                _elm.data('caScroll', _.container);
+                            }
                             return $.ajaxLink(e, _.container);
                         } else {
                             _elm.prop('target', '_parent'); // force to open in parent window
@@ -1437,18 +1439,27 @@ var Tygh = {
             }
         },
 
-        scrollToElm: function(elm)
+        scrollToElm: function(elm, container)
         {
-            if (!(!!elm.size)) {
-                return;
+            container = container || undefined;
+            
+            if (typeof(elm) === 'string') {
+                if (elm.length && elm.charAt(0) !== '.' && elm.charAt(0) !== '#') {
+                    elm = '#' + elm;
+                }
+                elm = $(elm, container);
             }
 
-            if (!elm.size()) {
-                return;
+            if (!(elm instanceof $) || !elm.size()) {
+                if (container instanceof $ && container.length) {
+                    elm = container;
+                } else {
+                    return;
+                }
             }
 
             var delay = 500;
-            var offset = 30;
+            var offset = 0;
             var obj;
 
             if (_.area == 'A') {
@@ -1470,7 +1481,7 @@ var Tygh = {
                 obj = $.ceDialog('get_last').find('.object-container');
                 elm = $.ceDialog('get_last').find(elm);
 
-                if(obj.length !== 0 && typeof elm.length !== 0) {
+                if(obj.length && elm.length) {
                     elm_offset = elm.offset().top;
 
                     if(elm_offset < 0) {
@@ -2341,10 +2352,7 @@ var Tygh = {
 
                 var res = container.dialog('open');
 
-                var s_elm = params.scroll ? $('#' + params.scroll , container) : false;
-                if (s_elm && s_elm.length) {
-                    $.scrollToElm(s_elm);
-                }
+                $.scrollToElm(params.scroll, container);
 
                 return res;
             },
@@ -3858,7 +3866,7 @@ var Tygh = {
                 if (_.embedded && form_result == true && !$.externalLink(form.prop('action'))) {
 
                     form.append('<input type="hidden" name="result_ids" value="' + _.container + '" />');
-                    clicked_elm.data('caScroll', '#' + _.container);
+                    clicked_elm.data('caScroll', _.container);
                     return $.ceAjax('submitForm', form, clicked_elm);
                 }
 
