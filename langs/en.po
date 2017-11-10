@@ -4,6 +4,6 @@ msgstr "Project-Id-Version: tygh\n"
 "Language-Team: English\n"
 "Language: en_US"
 
-msgctxt "Languages::boiler_plate_mainbox_h3"
+msgctxt "Languages::boiler_plate_sidebox_h3"
 msgid "Ordinary block (H3 heading)"
 msgstr "Ordinary block (H3 heading)"
