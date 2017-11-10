@@ -375,7 +375,7 @@
                 <object_type><![CDATA[]]></object_type>
                 <content><![CDATA[]]></content>
                 <object_ids><![CDATA[]]></object_ids>
-                <wrapper><![CDATA[blocks/wrappers/footer_general.tpl]]></wrapper>
+                <wrapper><![CDATA[blocks/wrappers/sidebox_general.tpl]]></wrapper>
                 <user_class><![CDATA[]]></user_class>
                 <order><![CDATA[0]]></order>
                 <status><![CDATA[A]]></status>
@@ -407,7 +407,7 @@
 </ul>]]></content>
                 </content>
                 <object_ids><![CDATA[]]></object_ids>
-                <wrapper><![CDATA[blocks/wrappers/footer_general.tpl]]></wrapper>
+                <wrapper><![CDATA[blocks/wrappers/sidebox_general.tpl]]></wrapper>
                 <user_class><![CDATA[footer-no-wysiwyg]]></user_class>
                 <order><![CDATA[1]]></order>
                 <status><![CDATA[A]]></status>
@@ -453,7 +453,7 @@
                             </ul>]]></content>
                 </content>
                 <object_ids><![CDATA[]]></object_ids>
-                <wrapper><![CDATA[blocks/wrappers/footer_general.tpl]]></wrapper>
+                <wrapper><![CDATA[blocks/wrappers/sidebox_general.tpl]]></wrapper>
                 <user_class><![CDATA[footer-no-wysiwyg]]></user_class>
                 <order><![CDATA[2]]></order>
                 <status><![CDATA[A]]></status>
@@ -495,7 +495,7 @@
                             </ul>]]></content>
                 </content>
                 <object_ids><![CDATA[]]></object_ids>
-                <wrapper><![CDATA[blocks/wrappers/footer_general.tpl]]></wrapper>
+                <wrapper><![CDATA[blocks/wrappers/sidebox_general.tpl]]></wrapper>
                 <user_class><![CDATA[footer-no-wysiwyg]]></user_class>
                 <order><![CDATA[0]]></order>
                 <status><![CDATA[A]]></status>
