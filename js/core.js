@@ -4859,3 +4859,33 @@ var Tygh = {
         }
         return start;
     }
+    
+    function fn_calculate_total_shipping(wrapper_id) {
+        var $ = Tygh.$;
+
+        wrapper_id = wrapper_id || 'shipping_estimation';
+        var parent = $('#' + wrapper_id);
+
+        var radio = $('input[type=radio]:checked', parent);
+        var params = [];
+
+        $.each(radio, function(id, elm) {
+            params.push({name: elm.name, value: elm.value});
+        });
+
+        var url = fn_url('checkout.shipping_estimation.get_total');
+
+        for (var i in params) {
+            url += '&' + params[i]['name'] + '=' + encodeURIComponent(params[i]['value']);
+        }
+
+        var suffix = parent.find('input[name="suffix"]').first().val();
+        
+        $.ceAjax('request', url, {
+            result_ids: 'shipping_estimation_total' + suffix,
+            data: {
+                additional_id: parent.find('input[name="additional_id"]').first().val()
+            },
+            method: 'post'
+        });
+    }

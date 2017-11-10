@@ -21,6 +21,8 @@
     <div class="panel-header">
     <h3>{__("calculate_shipping_cost")}</h3>
 {/if}
+
+{assign var="shipping_estimation_block_id" value="shipping_estimation{if $location == "sidebox"}_sidebox{/if}`$id_suffix`"}
     
         <div class="panel-body" id="shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix}">
 
@@ -33,7 +35,7 @@
             <form class="cm-ajax" name="{$prefix}estimation_form{$id_suffix}" action="{""|fn_url}" method="post">
                 {if $location == "sidebox"}<input type="hidden" name="location" value="sidebox" />{/if}
                 {if $additional_id}<input type="hidden" name="additional_id" value="{$additional_id}" />{/if}
-                <input type="hidden" name="result_ids" value="shipping_estimation{if $location == "sidebox"}_sidebox{/if}{$id_suffix},shipping_estimation_buttons" />
+                <input type="hidden" name="result_ids" value="{$shipping_estimation_block_id},shipping_estimation_buttons,shipping_estimation_rates{$id_suffix}" />
 
                 {hook name="checkout:shipping_estimation_fields"}
                 <div class="form-group">
@@ -79,7 +81,7 @@
                 {/hook}
                 
                 <div class="{$buttons_class}">
-                    {include file="common/button.tpl" text=__("get_rates") name="dispatch[checkout.shipping_estimation]" id="but_get_rates" as="link"}
+                    {include file="common/button.tpl" text=__("get_rates") name="dispatch[checkout.shipping_estimation]" id="but_get_rates_{$location}" as="link"}
                 </div>
 
             </form>
@@ -91,6 +93,7 @@
                     <form class="cm-ajax" name="{$prefix}select_shipping_form{$id_suffix}" action="{""|fn_url}" method="post">
                     <input type="hidden" name="redirect_mode" value="cart" />
                     <input type="hidden" name="result_ids" value="checkout_totals" />
+                    <input type="hidden" name="suffix" value="{$id_suffix}" />
 
                     {hook name="checkout:shipping_estimation"}
 
@@ -145,13 +148,13 @@
                                     {/if}
 
                                     <div class="radio">
-                                        <label for="sh_{$group_key}_{$shipping.shipping_id}">
+                                        <label for="sh_{$group_key}_{$shipping.shipping_id}{$id_suffix}">
                                             <input
                                                 type="radio"
-                                                id="sh_{$group_key}_{$shipping.shipping_id}"
+                                                id="sh_{$group_key}_{$shipping.shipping_id}{$id_suffix}"
                                                 name="shipping_ids[{$group_key}]"
                                                 value="{$shipping.shipping_id}"
-                                                onclick="fn_calculate_total_shipping();" {$checked} />
+                                                onclick="fn_calculate_total_shipping({if $location=='sidebox'}'shipping_estimation_sidebox{$id_suffix}'{/if});" {$checked} />
                                             {$shipping.shipping} {$delivery_time}{if $rate} - {$rate nofilter}{/if}
                                         </label>
                                     </div>
@@ -170,9 +173,9 @@
                         {/if}
 
                     {/foreach}
-                    <div id="shipping_estimation_total">
+                    <div id="shipping_estimation_total{$id_suffix}">
                         <p><strong>{__("total")}:</strong>&nbsp;{include file="common/price.tpl" value=$cart.display_shipping_cost }</p>
-                    <!--shipping_estimation_total--></div>
+                    <!--shipping_estimation_total{$id_suffix}--></div>
                     {/hook}
 
                     <div class="{$buttons_class}">
@@ -195,11 +198,11 @@
 {if $location == "popup"}
 <div class="panel-footer col-lg-12 buttons-container" id="shipping_estimation_buttons">
     {if $runtime.mode == "shipping_estimation" || $smarty.request.show_shippings == "Y"}
-        {include file="common/button.tpl" text=__("recalculate_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click" as="link"}
+        {include file="common/button.tpl" text=__("recalculate_rates") external_click_id="but_get_rates_{$location}" meta="btn-default cm-external-click" as="link"}
         <br>
         {include file="common/button.tpl" text=__("select_shipping_method") external_click_id="but_select_shipping" meta="btn-default cm-external-click cm-dialog-closer" as="link"}
     {else}
-        {include file="common/button.tpl" text=__("get_rates") external_click_id="but_get_rates" meta="btn-default cm-external-click" as="link"}
+        {include file="common/button.tpl" text=__("get_rates") external_click_id="but_get_rates_{$location}" meta="btn-default cm-external-click" as="link"}
     {/if}
 <!--shipping_estimation_buttons--></div>
 {/if}
