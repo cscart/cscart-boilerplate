@@ -144,7 +144,7 @@
                                             {assign var="rate" value="`$rate``$inc_tax_lang`)"}
                                         {/if}
                                     {else}
-                                        {assign var="rate" value=0}
+                                        {assign var="rate" value=__("free_shipping")}
                                     {/if}
 
                                     <div class="radio">
@@ -154,8 +154,14 @@
                                                 id="sh_{$group_key}_{$shipping.shipping_id}{$id_suffix}"
                                                 name="shipping_ids[{$group_key}]"
                                                 value="{$shipping.shipping_id}"
-                                                onclick="fn_calculate_total_shipping({if $location=='sidebox'}'shipping_estimation_sidebox{$id_suffix}'{/if});" {$checked} />
-                                            {$shipping.shipping} {$delivery_time}{if $rate} - {$rate nofilter}{/if}
+                                                onclick="fn_calculate_total_shipping(
+                                                {if $location=='sidebox'}
+                                                'shipping_estimation_sidebox{$id_suffix}'
+                                                {/if});"
+                                                {$checked}
+                                            />
+                                            {$shipping.shipping} {$delivery_time}
+                                            {if $rate !== "_free_shipping"} {$rate nofilter}{/if}
                                         </label>
                                     </div>
                                     {/hook}
