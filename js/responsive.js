@@ -13,7 +13,7 @@
 
                     opt.need_scroll = false;
                     setTimeout(function() {
-                        $.scrollToElm($('#' + opt.jelm.data('caScroll')));
+                        $.scrollToElm(opt.jelm.data('caScroll'));
                     }, 310);
                 });
             },
