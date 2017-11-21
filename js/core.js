@@ -3678,7 +3678,12 @@ var Tygh = {
 
                 if (!only_check) {
 
-                    $('[id="' + elm_id + '_error_message"].help-inline', elm.parent()).remove();
+                    var target = elm.parent();
+                    if (lbl.hasClass('cm-warn-below')) {
+                        target = elm.parent().parent();
+                    }
+
+                    $('[id="' + elm_id + '_error_message"].help-inline', target).remove();
 
                     if (set_mark == true) {
                         lbl.parent().addClass('error has-error');
@@ -3686,7 +3691,7 @@ var Tygh = {
                         lbl.addClass('cm-failed-label');
 
                         if (!elm.hasClass('cm-no-failed-msg')) {
-                            elm.parent().append('<span id="' + elm_id + '_error_message" class="help-inline help-block">' + _getMessage(elm_id) + '</span>');
+                            target.append('<span id="' + elm_id + '_error_message" class="help-inline help-block">' + _getMessage(elm_id) + '</span>');
                         }
 
                         if (!message_set) {
