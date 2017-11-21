@@ -25,7 +25,7 @@
 
 {if $show_detailed_link}
     {if $images.detailed_id}
-        <span class="previewer-icon hidden-phone"></span>
+        <span class="previewer-icon hidden-xs"></span>
     {/if}
 </a>
 {/if}
