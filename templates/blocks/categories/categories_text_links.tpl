@@ -24,6 +24,4 @@
             {/foreach}
         </li>
     </ul>
-    </li>
-    </ul>
 {/if}
