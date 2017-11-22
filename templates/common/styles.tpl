@@ -8,6 +8,7 @@
     {style src="../lib/bootstrap/3.3.6/css/bootstrap.min.css"}
     {style src="icons.less"}
     {style src="styles.less"}
+    {style src="components/cart_responsive.less"}
     
 {/hook}
 {/styles}
