@@ -134,13 +134,13 @@
                                     {else}
                                         {if $settings.Appearance.quantity_changer == "Y"}
                                             <span class="input-group-btn">
-                                                <a class="btn btn-default cm-increase">&#43;</a>
+                                                <a class="btn btn-default cm-decrease">&minus;</a>
                                             </span>
                                         {/if}
                                         <input type="text" size="3" id="amount_{$key}" name="cart_products[{$key}][amount]" value="{$product.amount}" class="form-control cm-amount"{if $product.qty_step > 1} data-ca-step="{$product.qty_step}"{/if} />
                                         {if $settings.Appearance.quantity_changer == "Y"}
                                             <span class="input-group-btn">
-                                                <a class="btn btn-default cm-decrease">&minus;</a>
+                                                <a class="btn btn-default cm-increase">&#43;</a>
                                             </span>
                                         {/if}
                                     {/if}

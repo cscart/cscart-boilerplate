@@ -41,7 +41,7 @@
                     <div class="form">
                         <input type="hidden" name="result_ids" value="track_orders_block_*" />
                         <input type="hidden" name="return_url" value="{$smarty.request.return_url|default:$config.current_url}" />
-                        <label for="track_order_item{$block.snapping_id}" class="cm-required control-label">{__("track_my_order")}</label>
+                        <label for="track_order_item{$block.snapping_id}" class="cm-required cm-warn-below control-label">{__("track_my_order")}</label>
                         <div class="input-group">
                             <input type="text" size="20" class="form-control" id="track_order_item{$block.snapping_id}" name="track_data" placeholder="{__("order_id")}{if !$auth.user_id}/{__("email")}{/if}" />
                             {include file="common/go.tpl" name="orders.track_request" alt=__("go")}
