@@ -18,13 +18,13 @@
                     <input size="35" type="text" id="credit_card_number_{$id_suffix}" name="payment_info[card_number]" value="" class="form-control cm-focus cm-autocomplete-off" />
                 </div>
 
-                <div class="form-inline">
+                <div class="form-group form-inline">
                     <label for="credit_card_month_{$id_suffix}" class="cm-cc-date cm-cc-exp-month cm-required control-label">{__("valid_thru")}</label>
                     <label for="credit_card_year_{$id_suffix}" class="cm-required cm-cc-date cm-cc-exp-year hidden"></label>
                     <div class="form-group">
                         <input type="text" id="credit_card_month_{$id_suffix}" name="payment_info[expiry_month]" value="" size="2" maxlength="2" class="form-control " />
-                    </div>/
-                    <div class="form-group  ">
+                    </div> /
+                    <div class="form-group">
                         <input type="text" id="credit_card_year_{$id_suffix}"  name="payment_info[expiry_year]" value="" size="2" maxlength="2" class="form-control" />
                     </div>
                 </div>
