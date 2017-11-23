@@ -5,7 +5,11 @@
 
 <style>
     .vertical-improve .nav > li > .nav {
-        padding-left: 25px;
+        padding: 10px 10px;
+        border: 1px solid #eee;
+        margin-left: -1px;
+        margin-right: -1px;
+        margin-bottom: 5px;
     }
 
     .vertical-improve a {
@@ -15,9 +19,39 @@
     .vertical-improve .active > a {
         background-color: #eee;
     }
+
+    .vertical-improve a[aria-expanded=true] {
+        background-color: #eee;
+        margin: 0 -1px;
+    }
+
+    .vertical-improve a[aria-expanded=true] .caret {
+        transform: rotate(180deg)
+    }
+
+    .vertical-improve {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .vertical-improve-heading {
+        background-color: #ddd;
+
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        margin: 0;
+
+        border-bottom: 1px solid #ddd;
+
+        font-weight: 700;
+    }
 </style>
 
+{$blk_name = $block.name}
+
 <nav class="vertical-improve">
+    <p class="vertical-improve-heading">{$blk_name}</p>
     <ul class="nav">
         {foreach from=$items item="item1" name="item1"}
             {assign var="item1_url" value=$item1|fn_form_dropdown_object_link:$block.type}
