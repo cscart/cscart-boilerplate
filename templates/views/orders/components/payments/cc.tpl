@@ -44,8 +44,8 @@
     {/if}
         <div class="panel panel-default">
             <div class="panel-body">
-                <label for="credit_card_cvv2_{$id_suffix}" class="cm-required cm-integer cm-cc-cvv2 cm-autocomplete-off control-label">{__("cvv2")}</label>
                 <div class="form-group">
+                    <label for="credit_card_cvv2_{$id_suffix}" class="cm-required cm-integer cm-cc-cvv2 cm-autocomplete-off control-label">{__("cvv2")}</label>
                     <input type="text" id="credit_card_cvv2_{$id_suffix}" name="payment_info[cvv2]" value="" size="4" maxlength="4" class="form-control" />
                 </div>
                 <div class="dropdown">
