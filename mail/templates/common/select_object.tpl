@@ -1,7 +1,7 @@
 {assign var="language_text" value=$text|default:__("select_descr_lang")}
 
 {if $style == "graphic"}
-    {if $text}<div class="ty-select-block__txt hidden-phone hidden-tablet">{$text}:</div>{/if}
+    {if $text}<div class="ty-select-block__txt hidden-xs hidden-sm">{$text}:</div>{/if}
     
     <a class="ty-select-block__a cm-combination" id="sw_select_{$selected_id}_wrap_{$suffix}">
         {if $display_icons == true}
@@ -26,7 +26,7 @@
         </ul>
     </div>
 {else}
-    {if $text}<label for="id_{$var_name}" class="ty-select-block__txt hidden-phone hidden-tablet">{$text}:</label>{/if}
+    {if $text}<label for="id_{$var_name}" class="ty-select-block__txt hidden-xs hidden-sm">{$text}:</label>{/if}
     <select id="id_{$var_name}" name="{$var_name}" onchange="Tygh.$.redirect(this.value);" class="ty-valign">
         {foreach from=$items item=item key=id}
             <option value="{"`$link_tpl``$id`"|fn_url}" {if $id == $selected_id}selected="selected"{/if}>{$item.$key_name nofilter}</option>

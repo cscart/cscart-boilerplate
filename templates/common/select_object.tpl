@@ -1,7 +1,7 @@
 {assign var="language_text" value=$text|default:__("select_descr_lang")}
 
 {if $style == "graphic"}
-    {if $text}<div class="hidden-phone hidden-tablet">{$text}:</div>{/if}
+    {if $text}<div class="hidden-xs hidden-sm">{$text}:</div>{/if}
     
     <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="select_{$selected_id}_wrap_{$suffix}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -19,7 +19,7 @@
         </ul>
     </div>
 {else}
-    {if $text}<label for="id_{$var_name}" class="hidden-phone hidden-tablet">{$text}:</label>{/if}
+    {if $text}<label for="id_{$var_name}" class="hidden-xs hidden-sm">{$text}:</label>{/if}
     <select id="id_{$var_name}" name="{$var_name}" onchange="Tygh.$.redirect(this.value);">
         {foreach from=$items item=item key=id}
             <option value="{"`$link_tpl``$id`"|fn_url}" {if $id == $selected_id}selected="selected"{/if}>{$item.$key_name nofilter}</option>

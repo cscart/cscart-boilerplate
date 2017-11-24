@@ -1961,7 +1961,7 @@
               </content>
               <object_ids><![CDATA[]]></object_ids>
               <wrapper><![CDATA[]]></wrapper>
-              <user_class><![CDATA[top-quick-links hidden-phone hidden-tablet]]></user_class>
+              <user_class><![CDATA[top-quick-links hidden-xs hidden-sm]]></user_class>
               <order><![CDATA[3]]></order>
               <status><![CDATA[A]]></status>
               <translations>
