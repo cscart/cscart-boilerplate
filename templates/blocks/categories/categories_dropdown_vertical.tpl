@@ -1,90 +1,43 @@
 {** block-description:dropdown_vertical **}
 
-{assign var="name" value="category"}
-{assign var="childs" value="subcategories"}
-
-<style>
-    .vertical-improve .nav > li > .nav {
-        padding: 10px 10px;
-        border: 1px solid #eee;
-        margin-left: -1px;
-        margin-right: -1px;
-        margin-bottom: 5px;
-    }
-
-    .vertical-improve a {
-        cursor: pointer;
-    }
-
-    .vertical-improve .active > a {
-        background-color: #eee;
-    }
-
-    .vertical-improve a[aria-expanded=true] {
-        background-color: #eee;
-        margin: 0 -1px;
-    }
-
-    .vertical-improve a[aria-expanded=true] .caret {
-        transform: rotate(180deg)
-    }
-
-    .vertical-improve {
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    .vertical-improve-heading {
-        background-color: #ddd;
-
-        position: relative;
-        display: block;
-        padding: 10px 15px;
-        margin: 0;
-
-        border-bottom: 1px solid #ddd;
-
-        font-weight: 700;
-    }
-</style>
-
-{$blk_name = $block.name}
+{$name = "category"}
+{$childs = "subcategories"}
 
 <nav class="vertical-improve">
-    <p class="vertical-improve-heading">{$blk_name}</p>
+    <p class="vertical-improve-heading">{$block.name}</p>
     <ul class="nav">
-        {foreach from=$items item="item1" name="item1"}
-            {assign var="item1_url" value=$item1|fn_form_dropdown_object_link:$block.type}
+        {foreach $items as $item_level_1}
+            {$item_level_1_url = $item_level_1|fn_form_dropdown_object_link:$block.type}
 
-            {assign var="unique_elm_id" value=$item1_url|md5}
-            {assign var="unique_elm_id" value="topmenu_`$block.block_id`_`$unique_elm_id`"}
-            {assign var="unique_elm_child_id" value="topmenu_`$block.block_id`_`$unique_elm_id`_child"}
+            {$unique_elm_hash = $item_level_1_url|md5}
+            {$unique_elm_id = "topmenu_`$block.block_id`_`$unique_elm_hash`"}
+            {$unique_elm_child_id = "topmenu_`$block.block_id`_`$unique_elm_id`_child"}
 
-            <li class="{if $item1.active || $item1|fn_check_is_active_menu_item:$block.type} active{/if}{if $item1.class} {$item1.class}{/if}">
+            <li class="{if $item_level_1.active || $item_level_1|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_1.class} {$item_level_1.class}{/if}">
                 <a
-                    {if $item1.$childs}
+                    {if $item_level_1.$childs}
                         id="{$unique_elm_id}" 
                         data-toggle="collapse" 
                         data-target="#{$unique_elm_child_id}" 
                         aria-expanded="false"
                     {else}
-                        {if $item1_url}href="{$item1_url}"{/if}
+                        {if $item_level_1_url}href="{$item_level_1_url}"{/if}
                     {/if}
-                >{$item1.$name} {if $item1.$childs}<span class="caret"></span>{/if}</a>
+                >{$item_level_1.$name} {if $item_level_1.$childs}<span class="caret"></span>{/if}</a>
 
                 <ul class="nav collapse" id="{$unique_elm_child_id}" role="menu" aria-labelledby="{$unique_elm_id}">
-                    {if $item1.$childs}
+                    {if $item_level_1.$childs}
 
                         {* below child elements without their own childs *}
-                        {if !$item1.$childs|fn_check_second_level_child_array:$childs}
+                        {if !$item_level_1.$childs|fn_check_second_level_child_array:$childs}
 
                             {hook name="blocks:topmenu_dropdown_2levels_elements"}
 
-                                {foreach from=$item1.$childs item="item2" name="item2"}
-                                    {assign var="item_url2" value=$item2|fn_form_dropdown_object_link:$block.type}
+                                {foreach $item_level_1.$childs as $item_level_2}
+                                    {$item_level_2_url = $item_level_2|fn_form_dropdown_object_link:$block.type}
 
-                                    <li class="{if $item2.active || $item2|fn_check_is_active_menu_item:$block.type} active{/if}{if $item2.class} {$item2.class}{/if}">
-                                        <a {if $item_url2} href="{$item_url2}"{/if}>{$item2.$name}</a>
+                                    <li class="{if $item_level_2.active || $item_level_2|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_2.class} {$item_level_2.class}{/if}">
+                                        <a {if $item_level_2_url} href="{$item_level_2_url}"{/if}>{$item_level_2.$name}</a>
                                     </li>
                                 {/foreach}
 
@@ -93,32 +46,32 @@
                         {* below child elements with their own childs *}
                         {else}
                             
-                            {foreach from=$item1.$childs item="item2" name="item2"}
-                                {assign var="item2_url" value=$item2|fn_form_dropdown_object_link:$block.type}
+                            {foreach $item_level_1.$childs as $item_level_2}
+                                {$item_level_2_url = $item_level_2|fn_form_dropdown_object_link:$block.type}
 
-                                {assign var="unique_elm_id2" value=$item2_url|md5}
-                                {assign var="unique_elm_id2" value="topmenu_`$block.block_id`_`$unique_elm_id2`"}
-                                {assign var="unique_elm_child_id2" value="topmenu_`$block.block_id`_`$unique_elm_id2`_child"}
+                                {$unique_elm_id2 = $item_level_2_url|md5}
+                                {$unique_elm_id2 = "topmenu_`$block.block_id`_`$unique_elm_id2`"}
+                                {$unique_elm_child_id2 = "topmenu_`$block.block_id`_`$unique_elm_id2`_child"}
 
-                                <li class="{if $item2.active || $item2|fn_check_is_active_menu_item:$block.type} active{/if}{if $item2.class} {$item2.class}{/if}">
+                                <li class="{if $item_level_2.active || $item_level_2|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_2.class} {$item_level_2.class}{/if}">
                                     <a 
-                                        {if $item2.$childs}
+                                        {if $item_level_2.$childs}
                                             id="{$unique_elm_id2}" 
                                             data-toggle="collapse" 
                                             data-target="#{$unique_elm_child_id2}" 
                                             aria-expanded="false"
                                         {else}
-                                            {if $item2_url}href="{$item2_url}"{/if}
+                                            {if $item_level_2_url}href="{$item_level_2_url}"{/if}
                                         {/if}
-                                    >{$item2.$name} {if $item2.$childs}<span class="caret"></span>{/if}</a>
+                                    >{$item_level_2.$name} {if $item_level_2.$childs}<span class="caret"></span>{/if}</a>
 
                                     <ul class="nav collapse" id="{$unique_elm_child_id2}" role="menu" aria-labelledby="{$unique_elm_id2}">
-                                        {if $item2.$childs}
+                                        {if $item_level_2.$childs}
 
-                                            {foreach from=$item2.$childs item="item3" name="item3"}
-                                                {assign var="item3_url" value=$item3|fn_form_dropdown_object_link:$block.type}
-                                                <li class="{if $item3.active || $item3|fn_check_is_active_menu_item:$block.type} active{/if}{if $item3.class} {$item3.class}{/if}">
-                                                    <a{if $item3_url} href="{$item3_url}"{/if}>{$item3.$name}</a>
+                                            {foreach $item_level_2.$childs as $item_level_3}
+                                                {$item_level_3_url = $item_level_3|fn_form_dropdown_object_link:$block.type}
+                                                <li class="{if $item_level_3.active || $item_level_3|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_3.class} {$item_level_3.class}{/if}">
+                                                    <a{if $item_level_3_url} href="{$item_level_3_url}"{/if}>{$item_level_3.$name}</a>
                                                 </li>
                                             {/foreach}
                                         {/if}

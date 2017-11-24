@@ -1268,7 +1268,54 @@ html[dir="rtl"] {
 
 /*====  End of Dropdown vertical  ====*/
 
+/*=====================================
+=     Vertical dropdown styling       =
+=====================================*/
 
+.vertical-improve {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    a {
+        cursor: pointer;
+    }
+
+    .nav > li > .nav {
+        padding: 10px 10px;
+        border: 1px solid #eee;
+        margin-left: -1px;
+        margin-right: -1px;
+        margin-bottom: 5px;
+    }
+
+    .active > a {
+        background-color: #eee;
+    }
+
+    a[aria-expanded=true] {
+        background-color: #eee;
+        margin: 0 -1px;
+    }
+
+    a[aria-expanded=true] .caret {
+        transform: rotate(180deg)
+    }
+
+    &-heading {
+        background-color: #ddd;
+
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        margin: 0;
+
+        border-bottom: 1px solid #ddd;
+
+        font-weight: 700;
+    }
+}
+
+/*==  /Vertical dropdown styling   ==*/
 
 /*=====================================
 =         Help blocks styling         =
