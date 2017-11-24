@@ -49,7 +49,7 @@
 
         {foreach from=$profile_fields.$section item=field name="profile_fields"}
         
-        {if $field.field_name}
+        {if $field.field_name && $field.is_default == "Y"}
             {assign var="data_name" value="user_data"}
             {assign var="data_id" value=$field.field_name}
             {assign var="value" value=$user_data.$data_id}

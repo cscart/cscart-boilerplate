@@ -20,7 +20,7 @@
     A layout consists of four containers (CSS class .container):
     TOP PANEL, HEADER, CONTENT, and FOOTER.
 
-    Containers are partitioned with fixed-width grids (CSS classes .span1, .span2, etc.).
+    Containers are partitioned with fixed-width grids (CSS classes .col-md-1, .col-md-2, etc.).
 
     Content blocks live inside grids. You can drag'n'drop blocks
     from grid to grid in the layout editor.
