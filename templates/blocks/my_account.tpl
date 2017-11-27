@@ -37,13 +37,13 @@
         {if $settings.Appearance.display_track_orders == 'Y'}
             <li role="separator" class="divider"></li>
             <li id="track_orders_block_{$block.snapping_id}">
-                <form action="{""|fn_url}" method="get" class="cm-ajax cm-ajax-full-render" name="track_order_quick">
+                <form action="{""|fn_url}" method="POST" class="cm-ajax cm-post cm-ajax-full-render" name="track_order_quick">
                     <div class="form">
                         <input type="hidden" name="result_ids" value="track_orders_block_*" />
                         <input type="hidden" name="return_url" value="{$smarty.request.return_url|default:$config.current_url}" />
-                        <label for="track_order_item{$block.snapping_id}" class="cm-required cm-warn-below control-label">{__("track_my_order")}</label>
+                        <label for="track_order_item{$block.snapping_id}" class="cm-required control-label">{__("track_my_order")}</label>
                         <div class="input-group">
-                            <input type="text" size="20" class="form-control" id="track_order_item{$block.snapping_id}" name="track_data" placeholder="{__("order_id")}{if !$auth.user_id}/{__("email")}{/if}" />
+                            <input type="text" size="20" class="form-control cm-hint" id="track_order_item{$block.snapping_id}" name="track_data" placeholder="{__("order_id")}{if !$auth.user_id}/{__("email")}{/if}" />
                             {include file="common/go.tpl" name="orders.track_request" alt=__("go")}
                         </div>
                     </div>
