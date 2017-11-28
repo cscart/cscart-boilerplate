@@ -1317,6 +1317,35 @@ html[dir="rtl"] {
 
 /*==  /Vertical dropdown styling   ==*/
 
+/*======================================
+=        Credit card form fixes        =
+======================================*/
+.credit-card .form-inline {
+
+    @media (max-width: 873px) {
+        .control-label {
+            width: 100%;
+        }
+    }
+
+    .form-group {
+        display: inline-block;
+
+        .form-control {
+            width: auto;
+            padding: 6px 11px;
+        }
+    }
+}
+
+#credit_card_number_1_error_message,
+#credit_card_month_1_error_message,
+#credit_card_year_1_error_message {
+    display: none;
+}
+
+/*====  /Credit card form fixes  ====*/
+
 /*=====================================
 =         Help blocks styling         =
 =====================================*/

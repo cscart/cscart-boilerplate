@@ -1,0 +1,106 @@
+.dispatch-checkout-cart {
+    .product-options {
+        margin: 0px;
+
+        &-item {
+            margin: 0;
+            margin-top: 10px;
+
+            input[type=checkbox] {
+                display: inline;
+            }
+        }
+    }
+
+    .reward-points-product-info {
+        margin-top: 10px;
+    }
+    .sku {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 680px) {
+        table {
+            display: block;
+        }
+        thead {
+            display: none;
+        }
+        tbody {
+            display: block;
+            width: 100% !important;
+            padding: 15px;
+        
+            > tr {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                border: 1px solid #ddd;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                > td {
+                    display: inline;
+                    border-top: 0 !important;
+                    min-width: auto !important;
+                }
+            }
+        }
+
+        .cart-content-image-block {
+            -ms-flex-preferred-size: 100%;
+                flex-basis: 100%;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            
+            .cart-content-image {
+                text-align: center;
+            }
+        }
+
+        .cart-content-description {
+            -ms-flex-preferred-size: 100%;
+                flex-basis: 100%;
+            border-top: 1px solid #ddd !important;
+            border-bottom: 1px solid #ddd;
+
+            .product-options-item {
+                display: inline-block;
+                width: 100%;
+                padding-right: 10px;
+
+                > label, > div {
+                    display: inline-block;
+                    width: auto;
+                }
+            }
+
+            .reward-points-product-info > div {
+                display: inline-block;
+                width: auto;
+            }
+        }
+
+        .cart-content-price{
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            
+            > span {
+                margin: 0;
+            }
+        }
+    }
+}
