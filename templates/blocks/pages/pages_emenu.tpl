@@ -7,11 +7,7 @@
     <ul class="nav">
         {foreach $items as $item_level_1}
             {$item_level_1_url = $item_level_1|fn_form_dropdown_object_link:$block.type}
-
-            {$unique_elm_hash = $item_level_1_url|md5}
-            {$rand = 0|rand:1500}
-            {$unique_elm_hash = "`$unique_elm_hash`_`$rand`"}
-            {$unique_elm_id = "topmenu_`$block.block_id`_`$unique_elm_hash`"}
+            {$unique_elm_id = uniqid()}
             {$unique_elm_child_id = "topmenu_`$block.block_id`_`$unique_elm_id`_child"}
 
             <li class="{if $item_level_1.active || $item_level_1|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_1.class} {$item_level_1.class}{/if}">
@@ -49,11 +45,7 @@
                             
                             {foreach $item_level_1.$childs as $item_level_2}
                                 {$item_level_2_url = $item_level_2|fn_form_dropdown_object_link:$block.type}
-
-                                {$unique_elm_id2 = $item_level_2_url|md5}
-                                {$rand = 0|rand:1500}
-                                {$unique_elm_id2 = "`$unique_elm_id2`_`$rand`"}
-                                {$unique_elm_id2 = "topmenu_`$block.block_id`_`$unique_elm_id2`"}
+                                {$unique_elm_id2 = uniqid()}
                                 {$unique_elm_child_id2 = "topmenu_`$block.block_id`_`$unique_elm_id2`_child"}
 
                                 <li class="{if $item_level_2.active || $item_level_2|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_2.class} {$item_level_2.class}{/if}">
