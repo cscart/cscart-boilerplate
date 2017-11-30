@@ -60,7 +60,7 @@
                                         {/if}
                                     >{$item_level_2.$name} {if $item_level_2.$childs}<span class="caret"></span>{/if}</a>
 
-                                    <ul class="nav panel panel-default collapse" id="{$unique_elm_child_id2}" role="menu" aria-labelledby="{$unique_elm_id2}">
+                                    <ul class="nav collapse" id="{$unique_elm_child_id2}" role="menu" aria-labelledby="{$unique_elm_id2}">
                                         {if $item_level_2.$childs}
 
                                             {foreach $item_level_2.$childs as $item_level_3}
