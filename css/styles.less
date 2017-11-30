@@ -1284,11 +1284,22 @@ html[dir="rtl"] {
         border: 1px solid #ddd;
     }
 
-    .nav > li > .nav {
-        padding: 10px 10px;
-        margin-left: -1px;
-        margin-right: -1px;
-        margin-bottom: 5px;
+    .nav > li {
+        > a {
+            padding-left: 15px;
+        }
+
+        .nav > li {
+            > a {
+                padding-left: 30px;
+            }
+
+            .nav > li {
+                > a {
+                    padding-left: 50px;
+                }
+            }
+        }
     }
 
     .active > a {
