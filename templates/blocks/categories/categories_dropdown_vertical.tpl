@@ -17,10 +17,9 @@
                         data-toggle="collapse" 
                         data-target="#{$unique_elm_child_id}" 
                         aria-expanded="false"
-                    {else}
-                        {if $item_level_1_url}href="{$item_level_1_url}"{/if}
                     {/if}
-                >{$item_level_1.$name} {if $item_level_1.$childs}<span class="caret"></span>{/if}</a>
+                    {if $item_level_1_url}href="{$item_level_1_url}"{/if}
+                ><span>{$item_level_1.$name}</span> {if $item_level_1.$childs}<p class="caret"></p>{/if}</a>
 
                 <ul class="nav collapse" id="{$unique_elm_child_id}" role="menu" aria-labelledby="{$unique_elm_id}">
                     {if $item_level_1.$childs}
@@ -34,7 +33,7 @@
                                     {$item_level_2_url = $item_level_2|fn_form_dropdown_object_link:$block.type}
 
                                     <li class="{if $item_level_2.active || $item_level_2|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_2.class} {$item_level_2.class}{/if}">
-                                        <a {if $item_level_2_url} href="{$item_level_2_url}"{/if}>{$item_level_2.$name}</a>
+                                        <a {if $item_level_2_url} href="{$item_level_2_url}"{/if}><span>{$item_level_2.$name}</span></a>
                                     </li>
                                 {/foreach}
 
@@ -55,10 +54,9 @@
                                             data-toggle="collapse" 
                                             data-target="#{$unique_elm_child_id2}" 
                                             aria-expanded="false"
-                                        {else}
-                                            {if $item_level_2_url}href="{$item_level_2_url}"{/if}
                                         {/if}
-                                    >{$item_level_2.$name} {if $item_level_2.$childs}<span class="caret"></span>{/if}</a>
+                                        {if $item_level_2_url}href="{$item_level_2_url}"{/if}
+                                    ><span>{$item_level_2.$name}</span> {if $item_level_2.$childs}<p class="caret"></p>{/if}</a>
 
                                     <ul class="nav collapse" id="{$unique_elm_child_id2}" role="menu" aria-labelledby="{$unique_elm_id2}">
                                         {if $item_level_2.$childs}
@@ -66,7 +64,7 @@
                                             {foreach $item_level_2.$childs as $item_level_3}
                                                 {$item_level_3_url = $item_level_3|fn_form_dropdown_object_link:$block.type}
                                                 <li class="{if $item_level_3.active || $item_level_3|fn_check_is_active_menu_item:$block.type} active{/if}{if $item_level_3.class} {$item_level_3.class}{/if}">
-                                                    <a{if $item_level_3_url} href="{$item_level_3_url}"{/if}>{$item_level_3.$name}</a>
+                                                    <a{if $item_level_3_url} href="{$item_level_3_url}"{/if}><span>{$item_level_3.$name}</span></a>
                                                 </li>
                                             {/foreach}
                                         {/if}

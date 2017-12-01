@@ -1059,6 +1059,21 @@ var Tygh = {
                 });
             }
 
+            // Accordeon vertical menu: Prevent relocation if click target is not span
+            $(".vertical-improve a")
+                .on("click", function(e){
+                    var isDropdown = e.target.className == "caret";
+                    if (!isDropdown) {
+                        isDropdown = e.target.lastChild.className == "caret";
+                    }
+                    
+                    if ( (e.target.nodeName != "SPAN") && isDropdown) {
+                        e.preventDefault();
+                    } else {
+                        e.stopPropagation();
+                    }
+                });
+
             return true;
         },
 
