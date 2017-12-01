@@ -1268,6 +1268,84 @@ html[dir="rtl"] {
 
 /*====  End of Dropdown vertical  ====*/
 
+/*=====================================
+=     Vertical dropdown styling       =
+=====================================*/
+
+.vertical-improve {
+    a {
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    .caret {
+        float: right;
+        margin-top: 8px;
+    }
+
+    a:hover, a:active, a:focus {
+        color: #333;
+        background-color: #e6e6e6;
+        margin: -1px -1px;
+        border: 1px solid #ddd;
+    }
+
+    .nav > li {
+        > a {
+            padding-left: 15px;
+        }
+
+        .nav > li {
+            > a {
+                padding-left: 30px;
+            }
+
+            .nav > li {
+                > a {
+                    padding-left: 50px;
+                }
+            }
+        }
+    }
+
+    .active > a {
+        color: #333;
+        background-color: #e6e6e6;
+        margin: -1px -1px;
+        border: 1px solid #ddd;
+    }
+
+    a[aria-expanded=true] {
+        background-color: #eee;
+        border: 1px solid #ddd;
+        margin: 0 -1px;
+    }
+
+    a[aria-expanded=true] .caret {
+        transform: rotate(180deg)
+    }
+
+    ul.nav.in, ul.nav.collapsing {
+        border-top: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &-heading {
+        background-color: #ddd;
+
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        margin: 0;
+
+        border-bottom: 1px solid #ddd;
+
+        font-weight: 700;
+    }
+}
+
+/*==  /Vertical dropdown styling   ==*/
 
 /*======================================
 =        Credit card form fixes        =
