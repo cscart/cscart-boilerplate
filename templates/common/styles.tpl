@@ -6,9 +6,9 @@
     
     {style src="../lib/jqueryui/1.10.1/jqueryui.less"}
 
-    {style src="bootstrap_less.less"}
+    {*style src="bootstrap.less"*}
     {* To use precompiled BS, uncomment line below and comment line upper *}
-    {* {style src="../lib/bootstrap/3.3.6/css/bootstrap.min.css"} *}
+    {style src="../lib/bootstrap/3.3.6/css/bootstrap.min.css"}
     
     {style src="icons.less"}
     {style src="styles.less"}
