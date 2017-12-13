@@ -1,4 +1,4 @@
-<div id="{$id}">
+<div id="{$id}" class="no-hidden">
 
     <form name="call_requests_form{if !$product}_main{/if}" id="form_{$id}" action="{""|fn_url}" method="post" class="cm-ajax{if !$product} cm-ajax-full-render{/if}" data-ca-product-form="product_form_{$obj_prefix}{$obj_id}">
         <input type="hidden" name="result_ids" value="{$id}" />
@@ -46,8 +46,8 @@
             <div class="form-group">
                 <label for="call_data_{$id}_convenient_time_from" class="control-label">{__("call_requests.convenient_time")}</label>
                 <div class="form-inline">
-                    <input id="call_data_{$id}_convenient_time_from" class="form-control cm-cr-mask-time" size="5" type="text" name="call_data[time_from]" value="" placeholder="{$smarty.const.CALL_REQUESTS_DEFAULT_TIME_FROM}" /> -
-                    <input id="call_data_{$id}_convenient_time_to" class="form-control cm-cr-mask-time" size="5" type="text" name="call_data[time_to]" value="" placeholder="{$smarty.const.CALL_REQUESTS_DEFAULT_TIME_TO}" />
+                    <input id="call_data_{$id}_convenient_time_from" class="form-control cm-cr-mask-time no-full-width" size="5" type="text" name="call_data[time_from]" value="" placeholder="{$smarty.const.CALL_REQUESTS_DEFAULT_TIME_FROM}" /> -
+                    <input id="call_data_{$id}_convenient_time_to" class="form-control cm-cr-mask-time no-full-width" size="5" type="text" name="call_data[time_to]" value="" placeholder="{$smarty.const.CALL_REQUESTS_DEFAULT_TIME_TO}" />
                 </div>
             </div>
 
