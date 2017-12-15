@@ -16,13 +16,14 @@
             <th>
                 {__("name")}
             </th>
-            <th style="width: 20%">{__("size")}</th>
+            <th class="ty-download__size-col">{__("size")}</th>
         </tr>
     </thead>
 {if $product.files_tree}
     {foreach from=$product.files_tree.folders item="folder"}
+        {hook name="products:folder_tree"}
         <tr>
-            <td>
+            <td class="ty-download__nostyle">
                 <input type="hidden" name="folder_{$folder.folder_id}" value="{$folder.folder_name}" />
                 <div id="on_group_order_{$product.order_id}_folder_{$folder.folder_id}" class="cm-combination {if $expand_all} hidden{/if} glyphicon glyphicon-folder-close fa fa-folder">
                     {$folder.folder_name} {if !$folder.files}<span class="download-empty">({__("folder_is_empty")}){/if}</span>
@@ -36,18 +37,24 @@
             </td>
         </tr>
 
-        <tr id=group_order_{$product.order_id}_folder_{$folder.folder_id} style="{if !$expand_all}display: none;{/if}">
-        {foreach from=$folder.files item="file"}
-            {include file="views/products/components/file_tree.tpl" product_file=$file level=1}
-        {foreachelse}
-            <td>
-                <div class="download-empty">
-                    {__("no_files")}
-                </div>
+        <tr id=group_order_{$product.order_id}_folder_{$folder.folder_id} style="{if !$expand_all}display: none;{/if};">
+            <td colspan="2" class="ty-download__nostyle">
+                {if $folder.files}
+                    <table class="ty-download__table-nomargin">
+                    {foreach from=$folder.files item="file"}
+                        {hook name="products:folder_files_list_item"}
+                            {include file="views/products/components/file_tree.tpl" product_file=$file level=1}
+                        {/hook}
+                    {/foreach}
+                    </table>
+                {else}
+                    <div class="ty-download__empty">
+                        {__("no_files")}
+                    </div>
+                {/if}
             </td>
-            <td></td>
-        {/foreach}
         </tr>
+        {/hook}
     {/foreach}
     
     {if $product.files_tree.files}

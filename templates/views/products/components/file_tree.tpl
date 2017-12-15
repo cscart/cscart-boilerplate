@@ -1,5 +1,5 @@
 {math equation="x*30+5" x=$level|default:"0" assign="shift"}
-
+<tr>
 <td><div style="padding-left: {$shift}px;">
     <i class="download-icon glyphicon glyphicon-file fa fa-file"></i>
     {if $product_file.ekey && ($product_file.activation_type !== "M" || $product_file.active == "Y") && $product_file.edp_info && (!$product_file.max_downloads || $product_file.downloads < $product_file.max_downloads)}
@@ -21,6 +21,7 @@
         </div>
     {/if}
 </div></td>
-<td class="nowrap">
+<td class="nowrap ty-download__size-col">
     {$product_file.file_size|number_format:0:"":" "}&nbsp;{__("bytes")}
 </td>
+</tr>
