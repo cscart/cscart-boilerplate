@@ -1388,12 +1388,20 @@ html[dir="rtl"] {
 
 .ty-download__size-col {
     width: 20%;
-    padding-left: 11px;
+    padding-left: 7px;
 }
 .ty-download__nostyle {
-    //padding: 0 !important;
+    padding: 0 !important;
     border: 0 !important;
 }
 .ty-download__table-nomargin {
     width: 100%;
+
+    > tbody > tr {
+        border-top: 1px solid #ddd;
+        padding-top: 5px;
+    }
+}
+.ty-download__nostyle > .glyphicon {
+    padding-left: 13px;
 }
