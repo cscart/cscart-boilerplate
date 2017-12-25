@@ -7,6 +7,8 @@ The Boilerplate theme exists to simplify custom design development for CS-Cart. 
 
 Boilerplate only has 1,000 lines of our CSS code left, as opposed to 11,000 lines in CS-Cart’s standard Responsive theme (and we aim to get rid of our CSS entirely). That way you don’t have to figure out our code: if you are familiar with Bootstrap, you can get started quickly.
 
+We've also included Bootstrap source code in the theme. That way you can freely optimize and customize Bootstrap according to your needs: disable the unnecessary modules of the framework, change the standard colors and sizes of the elements. You can choose between using precompiled Bootstrap and the source code by changing the loaded styles in the *styles.tpl* file.
+
 We’re looking forward to your pull requests and issues with suggestions on how we can improve Boilerplate. Let’s work on it together, and eventually all of us will have to work less.
 Read our [detailed blog post](http://blog.cs-cart.com/2015/12/25/cs-cart-boilerplate-theme-minimum-of-code-maximum-of-flexibility/) to learn about all the features of the new CS-Cart Boilerplate theme.
 
