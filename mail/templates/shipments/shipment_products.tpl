@@ -25,7 +25,7 @@
 
 <strong>{__("products")}:</strong>
 <p>
-{foreach from=$shipment.items key="hash" item="amount"}
+{foreach from=$shipment.products key="hash" item="amount"}
     {if $amount > 0}
         {$amount}&nbsp;x&nbsp;{$order_info.products.$hash.product}<br />
         {if $order_info.products.$hash.product_options}
