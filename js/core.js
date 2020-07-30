@@ -979,7 +979,9 @@ var Tygh = {
 
             // auto open dialog
             var dlg = $('.cm-dialog-auto-open');
-            dlg.ceDialog('open', $.ceDialog('get_params', dlg));
+            if (dlg.length) {
+                dlg.ceDialog('open', $.ceDialog('get_params', dlg));
+            }
 
             $.ceNotification('init');
 
@@ -1010,23 +1012,25 @@ var Tygh = {
 
             $.commonInit();
 
-            // fix dialog scrolling after click on elements with tooltips
-            $.widget( "ui.dialog", $.ui.dialog, {
-                _moveToTop: function( event, silent ) {
-                    var moved = !!this.uiDialog.nextAll(":visible:not(.tooltip)").insertBefore( this.uiDialog ).length;
-                    if ( moved && !silent ) {
-                        this._trigger( "focus", event );
+            if (jQuery.ui) {
+                // fix dialog scrolling after click on elements with tooltips
+                $.widget( "ui.dialog", $.ui.dialog, {
+                    _moveToTop: function( event, silent ) {
+                        var moved = !!this.uiDialog.nextAll(":visible:not(.tooltip)").insertBefore( this.uiDialog ).length;
+                        if ( moved && !silent ) {
+                            this._trigger( "focus", event );
+                        }
+                        return moved;
                     }
-                    return moved;
-                }
-            });
+                });
 
 
-            $.widget("ui.dialog", $.ui.dialog, {
-                _allowInteraction: function(event) {
-                    return !!$(event.target).closest(".editable-input").length || this._super( event );
-                }
-            });
+                $.widget("ui.dialog", $.ui.dialog, {
+                    _allowInteraction: function(event) {
+                        return !!$(event.target).closest(".editable-input").length || this._super( event );
+                    }
+                });
+            }
 
             // Check if cookie is enabled.
             if(typeof Modernizr !== 'undefined' && Modernizr.cookies == false && !_.embedded) {
@@ -1140,9 +1144,15 @@ var Tygh = {
 
             $('.cm-colorpicker', context).ceColorpicker();
 
-            $('.cm-sortable', context).ceSortable();
+            var sortable = $('.cm-sortable', context);
+            if (sortable.length) {
+                $('.cm-sortable', context).ceSortable();
+            }
 
-            $('.cm-accordion', context).ceAccordion();
+            var accordions = $('.cm-accordion', context);
+            if (accordions.length) {
+                $('.cm-accordion', context).ceAccordion();
+            }
 
             var countryElms = $('select.cm-country', context);
             if (countryElms.length) {
@@ -2701,13 +2711,29 @@ var Tygh = {
         var stackInitedBody = [];
         var tmpCont;
 
-        $.fn.ceDialog = function(method) {
+        function applyMethod (self, args, method) {
             if (methods[method]) {
-                return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+                return methods[method].apply(self, Array.prototype.slice.call(args, 1));
             } else if ( typeof method === 'object' || ! method ) {
-                return methods._init.apply(this, arguments);
+                return methods._init.apply(self, args);
             } else {
                 $.error('ty.dialog: method ' +  method + ' does not exist');
+            }
+        }
+
+        $.fn.ceDialog = function(method) {
+            if (jQuery.ui) {
+                applyMethod(this, arguments, method);
+            } else {
+                var self = this;
+                var args = arguments;
+                var jqueryUiPath = _.dev_js ?
+                    'js/lib/jqueryui/jquery-ui.custom.min.js' :
+                    '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js';
+
+                $.getScript(jqueryUiPath, function(){
+                    applyMethod(self, args, method);
+                });
             }
         };
 
@@ -2862,13 +2888,29 @@ var Tygh = {
             }
         };
 
-        $.fn.ceAccordion = function(method) {
+        function applyMethod (self, args, method) {
             if (methods[method]) {
-                return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+                return methods[method].apply(self, Array.prototype.slice.call(args, 1));
             } else if ( typeof method === 'object' || ! method ) {
-                return methods.init.apply(this, arguments);
+                return methods.init.apply(self, args);
             } else {
                 $.error('ty.accordion: method ' +  method + ' does not exist');
+            }
+        }
+
+        $.fn.ceAccordion = function(method) {
+            if (jQuery.ui) {
+                applyMethod(this, arguments, method);
+            } else {
+                var self = this;
+                var args = arguments;
+                var jqueryUiPath = _.dev_js ?
+                    'js/lib/jqueryui/jquery-ui.custom.min.js' :
+                    '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js';
+                
+                $.getScript(jqueryUiPath, function(){
+                    applyMethod(self, args, method);
+                });
             }
         };
 
@@ -3379,13 +3421,29 @@ var Tygh = {
             }
         };
 
-        $.fn.ceSortable = function(method) {
+        function applyMethod (self, args, method) {
             if (methods[method]) {
-                return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+                return methods[method].apply(self, Array.prototype.slice.call(args, 1));
             } else if ( typeof method === 'object' || ! method ) {
-                return methods.init.apply(this, arguments);
+                return methods.init.apply(self, args);
             } else {
                 $.error('ty.sortable: method ' +  method + ' does not exist');
+            }
+        }
+
+        $.fn.ceSortable = function(method) {
+            if (jQuery.ui) {
+                applyMethod(this, arguments, method);
+            } else {
+                var self = this;
+                var args = arguments;
+                var jqueryUiPath = _.dev_js ?
+                    'js/lib/jqueryui/jquery-ui.custom.min.js' :
+                    '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js';
+
+                $.getScript(jqueryUiPath, function(){
+                    applyMethod(self, args, method);
+                });
             }
         };
     })($);
